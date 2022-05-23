@@ -1,14 +1,43 @@
-{% extends 'base.html'%}
-{%block 'sections'%}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/css.css' %}">
+    <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="select_home">
+                <a href="{%url 'home'%}">
+                    <img src="{% static 'img/jovemprogramador_logo.png' %}" alt="">
+                </a>
+            </div>
+        </nav>
+    </header>
+    {%if messages%}
+{%for message in messages%}
+<script>
+    alert("{{message}}")
+</script>
+{%endfor%}
+{%endif%}
 <div class="container_login">
     <div class="login">
-        <form class="form_login" action="" method="get">{% csrf_token %}
+        <form class="form_login" action="" method="POST">{% csrf_token %}
             <label  class="text_login" for="">LOGIN</label> 
-            <input placeholder="Usuario" class="user_login" type="text" name="" id="">
-            <input placeholder="Senha" class="senha_login" type="password" name="" id="">
+            <input placeholder="Usuario" class="user_login" type="text" name="username" id="">
+            <input placeholder="Senha" class="senha_login" type="password" name="password" id="">
             <button class="efetuar_login" type="submit">Logar</button>
             <a class="cadastro_login" href="">Cadastro</a>
         </form>
     </div>
 </div>
-{%endblock%}
+
+    
+</body>
+</html>
