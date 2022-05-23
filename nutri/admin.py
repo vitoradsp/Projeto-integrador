@@ -1,3 +1,7 @@
 from django.contrib import admin
+from .models import Objetivo,NivelAtividade,Dieta
 
-# Register your models here.
+
+admin.site.register(Objetivo)
+admin.site.register(NivelAtividade)
+admin.site.register(Dieta)
