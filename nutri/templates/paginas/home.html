@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% extends 'base.html'%}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block 'title'%}home{%endblock%}</title>
+    <link rel="stylesheet" href="{% static 'css/css.css' %}">
+</head>
+<body>
+    {%block 'sections'%}
+    <div class="container_main">
+        <div class="containar_welcome">
+            <div class="div_message_wel">
+                <label for="">Welcome</label>
+            </div>
+        </div>
+        <div class="div_introduçao">
+            <div class="conteudo_alimentar">
+                <div class="text_alimentar">
+                    <label for="">
+                        Texto de introduçao aos beneficios a alimentação saudavel
+                    </label>
+                </div>
+                <a href=""> Dê seus primeiros passos <i class="fa-solid fa-shoe-prints"></i></a>
+            </div>
+            <div class="conteudo_sobre_site">
+                <div class="text_sobre_site">
+                    <label for="">
+                        texto sobre o site
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    {%endblock%}
+</body>
+</html>
