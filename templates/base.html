@@ -17,17 +17,19 @@
                     <img src="{% static 'img/jovemprogramador_logo.png' %}" alt="">
                 </a>
             </div>
-            {%if User%}
             <div class="select_opçoes">
                 <div class="user">
+                    {%if User%}
                     <a href="{%url 'login'%}"><i class="fa-solid fa-user-gear"></i></a>
+                    {%else%}
+                    <a href="{%url 'login'%}"><i class="fa-solid fa-user-large"></i></a>
+                    {%endif%}
                 </div>
                 <div class="criar_diet">
                     <a href=""><i class="fa-solid fa-person-circle-plus"></i>
                     </a>
                 </div>
             </div>
-            {%endif%}
         </nav>
     </header>
     <div>
