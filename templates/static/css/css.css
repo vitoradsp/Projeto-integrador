@@ -181,3 +181,44 @@ header,nav{
     font-size: 20px;
     color: #FFFFFF;
 }
+/* TELA TMB */
+.tela_tmb{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.tela_tmb > form{
+    margin-top: 50px;
+    width: 400px;
+    height: 500px;
+    background-color: #0E274D;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.peso, .altura, .idade, .sexo, .objetivo{
+    margin: 10px;
+}
+
+.tela_tmb > form > .objetivo > p, .peso > p, .altura > p, .idade > p, .sexo > p, .objetivo > p{
+    margin: 0;
+    color: white;
+    font-size: 20px;
+}
+.objetivo > input, .peso > input, .altura > input, .idade > input, .sexo > input{
+    font-size: 18px;
+    width: 100px;
+    text-align: center;
+}
+.sexo{
+    color: white;
+}
+.btn_tmb{
+    margin-top: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}

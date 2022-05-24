@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{%block 'sections'%}
+{%if messages%}
+    {%for message in messages%}
+        <script>
+            alert("{{message}}")
+        </script>
+    {%endfor%}
+{%endif%} 
+<div class="tela_tmb">      
+    <form action="" method="post">{% csrf_token %}
+        <div class="objetivo">
+            <p>Objetivo:</p>
+            <select name="" id="">
+                {% for c in objetivo %}
+                <option value="">{{c}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="peso">
+            <p> Peso: </p>
+            <input type="number" placeholder="Nun. Int.">
+        </div>
+        <div class="altura">
+            <p>Altura: </p>
+            <input type="number" placeholder="cm">
+        </div>
+        <div class="idade">
+            <p>Idade: </p>
+            <input type="number" placeholder="anos">
+        </div>
+        <div class="sexo">
+            <p>Sexo: </p> 
+            <p><input type="radio" name="opcao" value="masculino"> Masculino</p> 
+            <p><input type="radio" name="opcao" value="feminino"> Feminino</p>
+        </div>
+        <button class="btn_tmb" type="submit">Enviar</button>
+    </form>
+</div>
+
+
+
+{%endblock%}
