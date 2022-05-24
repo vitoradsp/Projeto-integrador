@@ -59,7 +59,7 @@ header,nav{
     align-items: center;
     width: 100vw;
     height: 400px;
-    background-image:url("{% static 'img/fundo.png' %}");
+    background-image:url("https://img.freepik.com/fotos-gratis/fitness-comida-saudavel-alimentos-fontes-de-omega-3-na-vista-superior-do-fundo-escuro-alimentos-ricos-em-acidos-graxos-incluindo-vegetais-frutos-do-mar-nozes-e-sementes_118925-1411.jpg?w=2000");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     box-shadow: #0E274D 5px 5px 15px 10px;
@@ -180,4 +180,114 @@ header,nav{
     text-decoration: none;
     font-size: 20px;
     color: #FFFFFF;
+}
+/* introdução*/
+.body_intro{
+    display: grid;
+    grid-template-areas:'botao botao botao' 'manter cutting bulking ';
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows:50px 1fr;
+    gap: 20px;
+}
+.container_criar_dieta{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
+}
+.buttom_criar_intro{
+    width: 200px;
+    height: 40px;
+    background-color: rgba(1, 1, 1, 0.8);
+    text-align: center;
+    font-size: 30px;
+    color: #C4C4C4;
+    text-decoration: none;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 5px;
+}
+/*texto sobre objetivo manter*/
+.obj_manter{
+    display: grid;
+    text-align: center;
+    grid-area: manter;
+    padding-left: 55px;
+}
+.local_click_manter{
+    text-decoration: none;
+    width: 100%;
+}
+.titulo_manter{
+    font-size: 40px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #000000;
+}
+.texto_manter{
+    width: 90%;
+    text-align: justify;
+    font-size: 18px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: #000000;
+}
+/*texto sobre objetivo manter*/
+.obj_cutting{
+    display: grid;
+    text-align: center;
+    grid-area: cutting;
+}
+.local_click_cutting{
+    text-decoration: none;
+    width: 100%;
+}
+.titulo_cutting{
+    font-size: 40px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #000000;
+}
+.texto_cutting{
+    width: 90%;
+    padding-left: 15px;
+    text-align: justify;
+    font-size: 18px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: #000000;
+}
+/*texto sobre objetivo manter*/
+.obj_bulking{
+    display: grid;
+    text-align: center;
+    grid-area: bulking;
+    padding-right: 55px;
+}
+.local_click_bulking{
+    text-decoration: none;
+    width: 100%;
+}
+.titulo_bulking{
+    font-size: 40px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #000000;
+}
+.texto_bulking{
+    width: 90%;
+    padding-left: 15px;
+    text-align: justify;
+    font-size: 18px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: #000000;
+}
+/*criar dieta*/
+.body_create_diet{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+.container_todos_dados{
+    width: 95%;
+    height: 90%;
+    background: rgba(1, 1, 1, 0.8);
 }
