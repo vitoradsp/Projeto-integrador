@@ -309,16 +309,16 @@ header,nav{
     align-items: center;
     box-shadow: #000000 10px 10px 10px 10px;
 }
-.peso, .altura, .idade, .sexo, .objetivo{
+.peso, .altura, .idade, .sexo, .objetivo, .nivel_ati{
     margin: 10px;
 }
 
-.tela_tmb > form > .objetivo > p, .peso > p, .altura > p, .idade > p, .sexo > p, .objetivo > p{
+.tela_tmb > form > .objetivo > p, .peso > p, .altura > p, .idade > p, .sexo > p, .objetivo > p, .nivel_ati > p{
     margin: 0;
     color: white;
     font-size: 30px;
 }
-.objetivo > input, .peso > input, .altura > input, .idade > input, .sexo > input{
+.objetivo > input, .peso > input, .altura > input, .idade > input, .sexo > input, .nivel_ati{
     font-size: 18px;
     width: 100px;
     text-align: center;
@@ -338,7 +338,7 @@ header,nav{
     color: white;
 
 }
-.objetivo > select{
+.objetivo > select, .nivel_ati > select{
     font-size: 20px;
 }
 .sexo{
@@ -364,4 +364,7 @@ header,nav{
 }
 .objetivo{
     margin-right: -20px;
+}
+.nivel_ati{
+    margin-left: -1px;
 }

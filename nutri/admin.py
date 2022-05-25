@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Objetivo,NivelAtividade,Dieta
+from .models import Objetivo, NivelAtividade, Dieta
 
 
 admin.site.register(Objetivo)
