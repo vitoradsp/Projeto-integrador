@@ -20,14 +20,14 @@
             </div>
             <div class="select_opçoes">
                 <div class="user">
-                    {%if User%}
+                    {%if user.is.authenticated%}
                     <a href="{%url 'login'%}"><i class="fa-solid fa-user-gear"></i></a>
                     {%else%}
                     <a href="{%url 'login'%}"><i class="fa-solid fa-user-large"></i></a>
                     {%endif%}
                 </div>
                 <div class="criar_diet">
-                    <a href=""><i class="fa-solid fa-person-circle-plus"></i>
+                    <a href="{%url 'introdução'%}"><i class="fa-solid fa-person-circle-plus"></i>
                     </a>
                 </div>
             </div>
