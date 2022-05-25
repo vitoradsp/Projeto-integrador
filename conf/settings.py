@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
+
 ]
 
 MIDDLEWARE = [
@@ -125,7 +126,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS=[
-    os.path.join(BASE_DIR,'arqstatics/static')
+    os.path.join(BASE_DIR,'templates/static')
     ]
 MEDIA_URL='media/'
 MEDIA_ROOT= (os.path.join(BASE_DIR,'media/'))
@@ -139,6 +140,8 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend'
 ]
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = True
 SITE_ID = 1
 LOGIN_REDIRECT_URL = 'home'
 SOCIALACCOUNT_PROVIDERS = {
