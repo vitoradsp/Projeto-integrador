@@ -2,6 +2,8 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.contrib import auth, messages
 from django.contrib.auth import login
+from .models import *
+
 
 def index(request):
     return render(request,'paginas/home.html')
@@ -25,3 +27,7 @@ def introducao(request):
 
 def create_diet(request):
     return render(request,'paginas/create_diet.html')
+
+def Tela_tmb(request):
+    objetivo = Objetivo.objects.all()
+    return render(request, 'paginas/tela_tmb.html', {'objetivo': objetivo})

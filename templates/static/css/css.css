@@ -291,3 +291,77 @@ header,nav{
     height: 90%;
     background: rgba(1, 1, 1, 0.8);
 }
+.tela_tmb{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+.tela_tmb > form{
+    margin-top: 50px;
+    width: 600px;
+    height: 800px;
+    background-color: #0E274D;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: #000000 10px 10px 10px 10px;
+}
+.peso, .altura, .idade, .sexo, .objetivo{
+    margin: 10px;
+}
+
+.tela_tmb > form > .objetivo > p, .peso > p, .altura > p, .idade > p, .sexo > p, .objetivo > p{
+    margin: 0;
+    color: white;
+    font-size: 30px;
+}
+.objetivo > input, .peso > input, .altura > input, .idade > input, .sexo > input{
+    font-size: 18px;
+    width: 100px;
+    text-align: center;
+}
+.valor_tmb{
+    display: none;
+    /*display: flex;*/
+    flex-direction: column;
+    border: solid 2px white;
+    padding: 0 10px 10px 10px;
+}
+.valor_tmb > h2{
+    color: white;
+}
+.valor_tmb > label{
+    font-weight: bold;
+    color: white;
+
+}
+.objetivo > select{
+    font-size: 20px;
+}
+.sexo{
+    color: white;
+    margin-right: -30px;
+}
+.btn_tmb{
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 150px;
+}
+.btn_tmb1{
+    margin-top: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 150px;
+    margin: auto;
+    margin-top: 10px;
+}
+.objetivo{
+    margin-right: -20px;
+}
