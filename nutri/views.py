@@ -28,6 +28,12 @@ def introducao(request):
 def create_diet(request):
     return render(request,'paginas/create_diet.html')
 
-def Tela_tmb(request):
+def tela_tmb(request):
     objetivo = Objetivo.objects.all()
-    return render(request, 'paginas/tela_tmb.html', {'objetivo': objetivo})
+    nivel_at = NivelAtividade.objects.all()
+    if request.method == 'POST':
+        peso = request.POST.get('peso')
+        altura = request.POST.get('height')
+        idade = request.POST.get('age')
+    
+    return render(request, 'paginas/tela_tmb.html', {'objetivo': objetivo, 'nivel_at':nivel_at})
