@@ -283,14 +283,65 @@ header,nav{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    width: 90vw;
     height: 100vh;
+    display: grid;
+    grid-template-areas: 'dados  taco';
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30px;
 }
-.container_todos_dados{
+.container_dados_ref{
+    display: grid;
     width: 95%;
-    height: 90%;
+    height: 95%;
+    grid-area: dados;
+    grid-template-areas: 'opçoes refeicoes';
+    grid-template-columns: 1fr;
+    grid-template-rows: 200px 1fr ;
     background: rgba(1, 1, 1, 0.8);
+    justify-items: center;
 }
+.div_opçoes_de_ref{
+    width: 90%;
+    height: 200px;
+    grid: opçoes;
+    background: #FFFFFF;
+    border-radius: 25px;
+    margin-top: 50px;
+}
+.container_refeiçoes_user{
+    grid: refeicoes;
+}
+
+.container_tabela_taco{
+    display: grid;
+    width: 100%;
+    height: 650px;
+    background: rgba(1, 1, 1, 0.6) ;
+    grid-template-areas: 'titulo ''alimentos';
+    justify-items: center;
+    padding: 30px;
+}
+.body_tabela_Taco{
+    width: 90%;
+    height: 600px;
+    background-color: #000000;
+}
+.titulos_tabela{
+    width: 90%;
+    line-height: 40px;
+    background-color: #FFFFFF;
+}
+.alimentos_tabela_Taco{
+    line-height: 25px;
+    background-color: #FFFFFF;
+    overflow: hidden;
+}
+
+/*tela tmb*/
 .tela_tmb{
     width: 100vw;
     height: 100vh;
