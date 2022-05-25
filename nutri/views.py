@@ -19,3 +19,9 @@ def UserLogin(request):
             messages.info(request, 'Login invalido.')
             return render(request,'paginas/login.html')
     return render(request,'paginas/login.html')
+
+def introducao(request):
+    return render(request,'paginas/introdução_dieta.html')
+
+def create_diet(request):
+    return render(request,'paginas/create_diet.html')
