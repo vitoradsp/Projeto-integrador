@@ -28,7 +28,7 @@ def introducao(request):
 def create_diet(request):
     return render(request,'paginas/create_diet.html')
 
-def Tela_tmb(request):
+def tela_tmb(request):
     objetivo = Objetivo.objects.all()
     if request.method == 'POST':
         peso = request.POST.get('peso')
