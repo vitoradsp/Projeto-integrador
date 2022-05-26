@@ -37,3 +37,5 @@ def tela_tmb(request):
         idade = request.POST.get('age')
     
     return render(request, 'paginas/tela_tmb.html', {'objetivo': objetivo, 'nivel_at':nivel_at})
+def Userperfil(request,id):
+    pass

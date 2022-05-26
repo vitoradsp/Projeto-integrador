@@ -21,7 +21,7 @@
             <div class="select_opçoes">
                 <div class="user">
                     {%if user.is.authenticated%}
-                    <a href="{%url 'login'%}"><i class="fa-solid fa-user-gear"></i></a>
+                    <a href="{%url 'perfil'%}"><i class="fa-solid fa-user-gear"></i></a>
                     {%else%}
                     <a href="{%url 'login'%}"><i class="fa-solid fa-user-large"></i></a>
                     {%endif%}
