@@ -1,18 +1,8 @@
 {% extends 'base.html'%}
 {% load static %}
 {% block 'title' %}Criando sua dieta{%endblock%}
-<script>
-
-    function macros_dieta(){
-        let quantidade_proteina= document.getElementById('quantidade_de_proteina').value()
-        console.log(quantidade_proteina)
-        let quantidade_de_refeicao= document.getElementById('quantidade_de_refeicoes').value()
-        console.log(quantidade_proteina)
-        let quantidade_maxima_proteica=document.getElementById('proteina_max_user').innerText(quantidade_proteina)
-    }
-</script>
 {%block 'sections'%}
-<div class="body_create_diet">
+<div onafterprint="macros_dieta()" class="body_create_diet">
     <div class="container_dados_ref">
         <div class="div_opçoes_de_ref">
             <div class="container_dados_dieta_user">
@@ -58,7 +48,7 @@
                             </select>
                         </span>
                     </div>
-                    <input class="button_macros" onclick="macros_dieta()" type="button" value="Macros">
+                    <input class="button_macros" onclick="macros_dieta_user()" type="button" value="Macros">
                 </div>
             </div>
         </div>
@@ -332,4 +322,13 @@
         </div>
     </div>
 </div>
+<script>
+
+    function macros_dieta_user(){
+        let quantidade_proteina= document.getElementById('quantidade_de_proteina')
+        let quantidade_de_refeicao= document.getElementById('quantidade_de_refeicoes')
+        let quantidade_maxima_proteica=document.getElementById('proteina_max_user').innerText=Number(quantidade_proteina.value*78)
+        document.write(quantidade_maxima_proteica)
+    }
+</script>
 {%endblock%}

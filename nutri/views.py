@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib import auth, messages
 from django.contrib.auth import login
 from .models import *
+from django.contrib.auth.decorators import login_required
 
 
 def index(request):
@@ -25,6 +26,7 @@ def UserLogin(request):
 def introducao(request):
     return render(request,'paginas/introdução_dieta.html')
 
+@login_required
 def create_diet(request):
     return render(request,'paginas/create_diet.html')
 
