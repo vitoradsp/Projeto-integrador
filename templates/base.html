@@ -21,14 +21,13 @@
             <div class="select_opçoes">
                 <div class="user">
                     {%if user.is.authenticated%}
-                    <a href="{%url 'perfil'%}"><i class="fa-solid fa-user-gear"></i></a>
+                    <a href="{%url 'perfil'%}"><i class="fa-solid fa-user-gear"></i>Perfil</a>
                     {%else%}
-                    <a href="{%url 'login'%}"><i class="fa-solid fa-user-large"></i></a>
+                    <a href="{%url 'login'%}"><i class="fa-solid fa-user-large"></i>Login</a>
                     {%endif%}
                 </div>
                 <div class="criar_diet">
-                    <a href="{%url 'introdução'%}"><i class="fa-solid fa-person-circle-plus"></i>
-                    </a>
+                    <a href="{%url 'introdução'%}"><i class="fa-solid fa-person-circle-plus"></i>Criar dieta</a>
                 </div>
             </div>
         </nav>
