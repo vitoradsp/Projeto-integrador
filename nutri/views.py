@@ -22,6 +22,10 @@ def UserLogin(request):
             return render(request,'paginas/login.html')
     return render(request,'paginas/login.html')
 
+def UserRegistration(request):
+    return render(request, 'paginas/registration_screen.html')
+
+
 def introducao(request):
     return render(request,'paginas/introdução_dieta.html')
 
