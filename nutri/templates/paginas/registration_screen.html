@@ -19,21 +19,23 @@
             </div>
         </nav>
     </header>
-<div class="container_login">
-{%if messages%}
+    {%if messages%}
 {%for message in messages%}
-<div class="login_erro">
-    <div class="messagem_de_erro"><label for="">{{message}}</label></div>
-</div>
+<script>
+    alert("{{message}}")
+</script>
 {%endfor%}
 {%endif%}
+<div class="container_login">
     <div class="login">
         <form class="form_login" action="" method="POST">{% csrf_token %}
-            <label  class="text_login" for="">LOGIN</label> 
+            <label  class="text_login" for="">CADASTRO</label> 
             <input placeholder="Usuario" class="user_login" type="text" name="username" id="">
             <input placeholder="Senha" class="senha_login" type="password" name="password" id="">
-            <button class="efetuar_login" type="submit">Logar</button>
-            <a class="cadastro_login" href="{% url 'resgistration_screen' %}">Cadastro</a>
+            <input placeholder="Conf. Senha" class="senha_login" type="password" name="conf_password" id="">
+            <input placeholder="@email.com" class="senha_login" type="email" name="email" id="">
+            <button class="efetuar_login" type="submit">Criar</button>
+            <a class="cadastro_login" href="{% url 'login' %}">Voltar ao Login</a>
         </form>
     </div>
 </div>
