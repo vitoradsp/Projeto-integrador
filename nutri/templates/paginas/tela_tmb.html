@@ -1,8 +1,15 @@
 {% extends 'base.html' %}
 {%block 'sections'%}
-<title>{%block 'title'%}tmb{%endblock%}</title>
+{%block 'title'%}Tmb{%endblock%}
 <!-- Adicionar valor TMB em flax (css) --> 
-<div class="tela_tmb">      
+<div class="tela_tmb"> 
+{%if messages%}
+{%for message in messages%}
+<div class="erro">
+    <div class="messagem_de_erro"><label for="">{{message}}</label></div>
+</div>
+{%endfor%}
+{%endif%}     
     <form action="" method="post">{% csrf_token %}
         <div class="valor_tmb">
             <h2>Valor de injestao diária</h2>
@@ -44,7 +51,7 @@
             <p><input type="radio" name="opcao" value="feminino"> Feminino</p>
         </div>
         <button  class="btn_tmb" type="submit">Gerar TMB</button>
-        
+        <input type="hidden" name="local_dados_do_user">
     </form>
 </div>
 {%endblock%}

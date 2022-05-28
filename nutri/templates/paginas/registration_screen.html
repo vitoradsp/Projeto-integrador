@@ -19,27 +19,25 @@
             </div>
         </nav>
     </header>
-    {%if messages%}
+<div class="container_cadastro">
+{%if messages%}
 {%for message in messages%}
-<script>
-    alert("{{message}}")
-</script>
+<div class="erro">
+    <div class="messagem_de_erro"><label for="">{{message}}</label></div>
+</div>
 {%endfor%}
-{%endif%}
-<div class="container_login">
-    <div class="login">
-        <form class="form_login" action="" method="POST">{% csrf_token %}
-            <label  class="text_login" for="">CADASTRO</label> 
-            <input placeholder="Usuario" class="user_login" type="text" name="username" id="">
-            <input placeholder="Senha" class="senha_login" type="password" name="password" id="">
-            <input placeholder="Conf. Senha" class="senha_login" type="password" name="conf_password" id="">
-            <input placeholder="@email.com" class="senha_login" type="email" name="email" id="">
-            <button class="efetuar_login" type="submit">Criar</button>
+{%endif%} 
+    <div class="cadastro">
+        <form class="form_cadastro" action="" method="POST">{% csrf_token %}
+            <label  class="text_cadastro" for="">CADASTRO</label> 
+            <input placeholder="Usuario" class="user_cadastro" type="text" name="username" id="">
+            <input placeholder="Senha" class="senha_cadastro" type="password" name="password" id="">
+            <input placeholder="Conf. Senha" class="senha_cadastro_conf" type="password" name="conf_password" id="">
+            <input placeholder="@email.com" class="email_cadastro" type="email" name="email" id="">
+            <button class="efetuar_cadastro" type="submit">Criar</button>
             <a class="cadastro_login" href="{% url 'login' %}">Voltar ao Login</a>
         </form>
     </div>
-</div>
-
-    
+</div>  
 </body>
 </html>

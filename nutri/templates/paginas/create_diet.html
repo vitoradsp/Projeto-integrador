@@ -2,7 +2,14 @@
 {% load static %}
 {% block 'title' %}Criando sua dieta{%endblock%}
 {%block 'sections'%}
-<div onafterprint="macros_dieta()" class="body_create_diet">
+<div  class="body_create_diet">
+{%if messages%}
+{%for message in messages%}
+<div class="erro">
+    <div class="messagem_de_erro"><label for="">{{message}}</label></div>
+</div>
+{%endfor%}
+{%endif%}
     <div class="container_dados_ref">
         <div class="div_opçoes_de_ref">
             <div class="container_dados_dieta_user">

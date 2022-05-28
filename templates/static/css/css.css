@@ -13,6 +13,26 @@ header,nav{
     align-items: center;
     border-bottom:#C4C4C4 3px solid;
 }
+/*mensagem de erro*/
+.erro{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+}
+.messagem_de_erro{
+    width:35%;
+    height: 100%;
+    background-color: rgba(255, 0, 0, 0.603);
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    padding: 5px;
+    border: black solid 2px;
+    border-radius: 15px;
+}
+/**/
+
 .select_home{
     width: 280px;
     height: 80px;
@@ -104,6 +124,21 @@ header,nav{
     border-radius:10px;
     padding: 15px;
 }
+.conteudo_sobre_site > label{
+    display:flex;
+    width: 80%;
+    justify-content: space-around;
+    margin-top: 5px;
+    padding: 5px;
+}
+.conteudo_sobre_site > label >a{
+    color:black;
+    font-size: 16px;
+    background-color: #C4C4C4;
+    padding: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
 .conteudo_alimentar>a{
     text-decoration: none;
     gap: 10px;
@@ -134,9 +169,8 @@ header,nav{
     height: 80%;
     background: rgba(253, 253, 253, 0.3);
     border-radius: 5px;
-    margin-bottom: 50px;
 }
-.text_alimentar > label,.text_sobre_site >label{
+.text_alimentar > label{
     width: 80%;
     text-align: justify;
     color: white;
@@ -146,37 +180,34 @@ header,nav{
     font-weight: 400;
     font-size: 18px;
 }
-/*login  */
-.container_login{
+.text_sobre_site >label{
+    width: 80%;
+    text-align: justify;
+    color: white;
+    padding-top: 10px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+}
+.text_sobre_site > label > p > a{
+    font-weight: bolder;
+    color: black;
+}
+/*login e cadastro */
+.container_login,.container_cadastro{
     width: 100%;
     height: 100vh;
     margin-top: 50px;
 }
-.login{
+.login,.cadastro{
     width: 100%;
     height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.login_erro{
-    width: 100%;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-}
-.messagem_de_erro{
-    width:35%;
-    height: 100%;
-    background-color: rgba(255, 0, 0, 0.603);
-    font-size: 18px;
-    font-weight: 600;
-    text-align: center;
-    padding: 5px;
-    border: black solid 2px;
-    border-radius: 15px;
-}
-.form_login{
+.form_login,.form_cadastro{
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -187,7 +218,7 @@ header,nav{
     gap: 30px;
     border-radius: 10px;
 }
-.text_login{
+.text_login,.text_cadastro{
     color: #FFFFFF;
     width: 150px;
     height: 30px;
@@ -195,7 +226,7 @@ header,nav{
     display: flex;
     justify-content: center;
 }
-.user_login,.senha_login{
+.user_login,.senha_login,.email_cadastro,.senha_cadastro_conf{
     width: 200px;
     text-align: center;
     height: 22px;
@@ -204,7 +235,7 @@ header,nav{
     border-radius: 10px;
     padding: 5px;
 }
-.efetuar_login{
+.efetuar_login,.efetuar_cadastro{
     width: 150px;
     height: 30px;
     font-size: 18px;
@@ -226,7 +257,7 @@ header,nav{
     background-color: green;
     color: white;
 }
-.efetuar_login:active{
+.efetuar_login:active,.efetuar_cadastro:active{
     background-color: green;
     color: #FFFCFC;
 }
