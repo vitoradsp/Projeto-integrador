@@ -30,7 +30,7 @@ def UserRegistration(request):
 def introducao(request):
     return render(request,'paginas/introdução_dieta.html')
 
-@login_required
+##@login_required##
 def create_diet(request):
     return render(request,'paginas/create_diet.html')
 

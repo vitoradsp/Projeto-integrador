@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/css.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cadastro.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -35,7 +36,7 @@
             <input placeholder="Conf. Senha" class="senha_cadastro_conf" type="password" name="conf_password" id="">
             <input placeholder="@email.com" class="email_cadastro" type="email" name="email" id="">
             <button class="efetuar_cadastro" type="submit">Criar</button>
-            <a class="cadastro_login" href="{% url 'login' %}">Voltar ao Login</a>
+            <a class="ir_login" href="{% url 'login' %}">Voltar ao Login</a>
         </form>
     </div>
 </div>  

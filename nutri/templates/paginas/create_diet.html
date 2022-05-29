@@ -16,32 +16,32 @@
                 <div class="dados_dieta_user_linha1">
                     <label for="">Gasto calorico médio: <strong>2300</strong></label>
                     <label for="">Caloria dieta: <strong>1900</strong></label>
-                    <label for="">Valor Total das refeições: <strong>475</strong></label>
+                    <label for="">Valor Total das refeições: <strong id="valores_total_de_todas_refeicao"></strong></label><!-- aqui dentro do strong vai a somar de todos os valores da ref -->
                 </div>
                 <div class="dados_dieta_user_linha2">
                     <!--é feito um calculo de proteina(4 calorias)*2,gordura(9 calorias)*0.5 e carbo(4 calorias)*restante de calorias -->
-                    <label for="">Max de proteina: <strong>156</strong><!--2*78 (no 78 é o peso) /calculo proteina=624 calorias--></label>
-                    <label for="">Max de Gordura: <strong>62</strong><!--0.8*78(meu peso)/ calculo gordura=561 calorias--></label>
-                    <!--somo as calorias acima 624 + 561=1185-1900-->
-                    <label for="">Max de Carboidratos: <strong>178</strong><!--4\715(restante de calorias)/ calculo carboidratos=178G de carb--></label>
-                    <label for="">Max de Kcal: <strong>1900</strong><!--soma das contas acima--></label>
+                    <label for="">Max de proteina: <strong id="valores_total_de_proteina">156</strong><!--2*78 (no 78 é o peso) /calculo proteina=624 calorias--></label>
+                    <label for="">Max de Gordura: <strong id="valores_total_de_gordura">62</strong><!--0.8*78(meu peso)/ calculo gordura=561 calorias--></label>
+                    <!--somo as calorias acima 624 + 561=1185-1900=715-->
+                    <label for="">Max de Carboidratos: <strong id="valores_total_de_carboidratos">178</strong><!--4\715(restante de calorias)/ calculo carboidratos=178G de carb--></label>
+                    <label for="">Max de Kcal: <strong id="valor_total_das_kcal">1900</strong><!--soma das contas acima--></label>
                 </div>
                 <div class="dados_dieta_user_linha3">
-                    <label for="">Max de proteina por refeição: <strong id="proteina_max_user">Value</strong></label>
-                    <label for="">Max de Gordura por refeição: <strong>Value</strong></label>
-                    <label for="">Max de Carboidratos por refeição: <strong>Value</strong></label>
-                    <label for="">Max de Kcal por refeição: <strong>Value</strong></label>
+                    <label for="">Max de proteina por refeição: <strong id="proteina_max_ref_user">Value</strong></label>
+                    <label for="">Max de Gordura por refeição: <strong id="gordura_max_ref_user">Value</strong></label>
+                    <label for="">Max de Carboidratos por refeição: <strong id="carboidratos_max_ref_user">Value</strong></label>
+                    <label for="">Max de Kcal por refeição: <strong id="calorias_max_ref_user">Value</strong></label>
                 </div>
                 <div class="dados_dieta_user_opcoes">
                     <div class='dados_dieta_user_quant_ref'>
                         <span>
                             <label for="">Quantidade de refeiçôes</label>
                             <select name="quantidade_de_refeicoes" id="quantidade_de_refeicoes">
-                                <option  value="2">2 refeiçôes</option>
-                                <option  value="3">3 refeiçôes</option>
-                                <option selected="4"  value="4">4 refeiçôes</option>
-                                <option   value="5">5 refeiçôes</option>
-                                <option  value="6">6 refeiçôes</option>
+                                <option  value="2"> 2 refeiçôes</option>
+                                <option  value="3"> 3 refeiçôes</option>
+                                <option selected="4"  value="4"> 4 refeiçôes</option>
+                                <option   value="5"> 5 refeiçôes</option>
+                                <option  value="6"> 6 refeiçôes</option>
                             </select>
                         </span>
                     </div>
@@ -49,9 +49,9 @@
                         <span>
                             <label for="">Quantidade de Proteina</label>
                             <select name="quantidade_de_proteina" id="quantidade_de_proteina">
-                                <option selected="2" value="">2.0G por kilo</option>
-                                <option value="">1.8G por kilo</option>
-                                <option value="">1.6G por kilo</option>
+                                <option selected="2" value=""> 2.0G por kilo</option>
+                                <option value="1.8"> 1.8G por kilo</option>
+                                <option value="1.6"> 1.6G por kilo</option>
                             </select>
                         </span>
                     </div>
@@ -60,82 +60,82 @@
             </div>
         </div>
         <div class="container_refeiçoes_user">
-            <div class="refeiçoes_user_one" >
+            <div class="refeicoes_user_one" >
                 <div class="alimentos_refeicoes_one">
                     <label for="">alimento 1</label>
                     <label for="">alimento 2</label>
                     <label for="">alimento 3</label>
                 </div>
                 <div class="macros_refeicoes_one">
-                    <label for="">Kcal total</label>
-                    <label for="">Proteina total</label>
-                    <label for="">gordura total</label>
-                    <label for="">Carboidratos total</label>                    
+                    <label for="">Kcal total:  <strong id='calorias_da_ref_one'></strong> </label>
+                    <label for="">Proteina total: <strong id='proteina_da_ref_one'></strong> </label>
+                    <label for="">Gordura total: <strong id='gordura_da_ref_one'></strong> </label>
+                    <label for="">Carboidratos total: <strong id='carboidratos_da_ref_one'></strong> </label>                    
                 </div>
             </div>
-            <div class="refeiçoes_user_two">
+            <div class="refeicoes_user_two">
                 <div class="alimentos_refeicoes_two">
                     <label for="">alimento 1</label>
                     <label for="">alimento 2</label>
                     <label for="">alimento 3</label>
                 </div>
                 <div class="macros_refeicoes_two">
-                    <label for=""></label>
-                    <label for=""></label>
-                    <label for=""></label>
-                    <label for=""></label>                    
+                    <label for="">Kcal total: <strong id='calorias_da_ref_two'></strong> </label>
+                    <label for="">Proteina total: <strong id='proteina_da_ref_two'></strong> </label>
+                    <label for="">Gordura total: <strong id='gordura_da_ref_two'></strong> </label>
+                    <label for="">Carboidratos total: <strong id='carboidratos_da_ref_two'></strong> </label>                    
                 </div>
             </div>
-            <div class="refeiçoes_user_tree" >
+            <div class="refeicoes_user_tree" >
                 <div class="alimentos_refeicoes_tree">
                     <label for="">alimento 1</label>
                     <label for="">alimento 2</label>
                     <label for="">alimento 3</label>
                 </div>
                 <div class="macros_refeicoes_tree">
-                    <label for=""></label>
-                    <label for=""></label>
-                    <label for=""></label>
-                    <label for=""></label>                    
+                    <label for="">Kcal total: <strong id='calorias_da_ref_tree'></strong> </label>
+                    <label for="">Proteina total: <strong id='proteina_da_ref_tree'></strong> </label>
+                    <label for="">Gordura total: <strong id='gordura_da_ref_tree'></strong> </label>
+                    <label for="">Carboidratos total: <strong id='carboidratos_da_ref_tree'></strong> </label>                    
                 </div>
             </div>
-            <div class="refeiçoes_user_four">
+            <div class="refeicoes_user_four">
                 <div class="alimentos_refeicoes_four">
                     <label for="">alimento 1</label>
                     <label for="">alimento 2</label>
                     <label for="">alimento 3</label>
                 </div>
                 <div class="macros_refeicoes_four">
-                    <label for=""></label>
-                    <label for=""></label>
-                    <label for=""></label>
-                    <label for=""></label>                    
+                    <label for="">Kcal total: <strong id='calorias_da_ref_four'></strong> </label>
+                    <label for="">Proteina total: <strong id='proteina_da_ref_four'></strong> </label>
+                    <label for="">Gordura total: <strong id='gordura_da_ref_four'></strong> </label>
+                    <label for="">Carboidratos total: <strong id='carboidratos_da_ref_four'></strong> </label>                    
                 </div>
             </div>
-            <div class="refeiçoes_user_five">
+            <div class="refeicoes_user_five">
                 <div class="alimentos_refeicoes_five">
                     <label for="">alimento 1</label>
                     <label for="">alimento 2</label>
                     <label for="">alimento 3</label>
                 </div>
                 <div class="macros_refeicoes_five">
-                    <label for=""></label>
-                    <label for=""></label>
-                    <label for=""></label>
-                    <label for=""></label>                    
+                    <label for="">Kcal total: <strong id='calorias_da_ref_five'></strong> </label>
+                    <label for="">Proteina total: <strong id='proteina_da_ref_five'></strong> </label>
+                    <label for="">Gordura total: <strong id='gordura_da_ref_five'></strong> </label>
+                    <label for="">Carboidratos total: <strong id='carboidratos_da_ref_five'></strong> </label>                    
                 </div>
             </div>
-            <div class="refeiçoes_user_six">
+            <div class="refeicoes_user_six">
                 <div class="alimentos_refeicoes_six">
                     <label for="">alimento 1</label>
                     <label for="">alimento 2</label>
-                    <label for="">alimento 3</label>>
+                    <label for="">alimento 3</label>
                 </div>
                 <div class="macros_refeicoes_six">
-                    <label for=""></label>
-                    <label for=""></label>
-                    <label for=""></label>
-                    <label for=""></label>                    
+                    <label for="">Kcal total: <strong id='calorias_da_ref_six'></strong> </label>
+                    <label for="">Proteina total: <strong id='proteina_da_ref_six'></strong> </label>
+                    <label for="">Gordura total: <strong id='gordura_da_ref_six'></strong> </label>
+                    <label for="">Carboidratos total: <strong id='carboidratos_da_ref_six'></strong> </label>                    
                 </div>
             </div>
         </div>
@@ -154,170 +154,8 @@
                     </tr>
                 </thead>
                 <tbody id="alimentos_tabela_Taco">
+                    <!-- limite de 15 linhas */ -->
                     <tr>
-                        <td class="td_alimento">alimento</td>
-                        <td class="td_kcal">Kcal</td>
-                        <td class="td_prot">Proteina</td>
-                        <td class="td_carb">Carboidratos</td>
-                        <td class="td_gordura">Gordura</td>
-                    </tr>
-                    <tr>
-                        <td class="td_alimento">alimento</td>
-                        <td class="td_kcal">Kcal</td>
-                        <td class="td_prot">Proteina</td>
-                        <td class="td_carb">Carboidratos</td>
-                        <td class="td_gordura">Gordura</td>
-                    </tr><tr>
-                        <td class="td_alimento">alimento</td>
-                        <td class="td_kcal">Kcal</td>
-                        <td class="td_prot">Proteina</td>
-                        <td class="td_carb">Carboidratos</td>
-                        <td class="td_gordura">Gordura</td>
-                    </tr><tr>
-                        <td class="td_alimento">alimento</td>
-                        <td class="td_kcal">Kcal</td>
-                        <td class="td_prot">Proteina</td>
-                        <td class="td_carb">Carboidratos</td>
-                        <td class="td_gordura">Gordura</td>
-                    </tr><tr>
-                        <td class="td_alimento">alimento</td>
-                        <td class="td_kcal">Kcal</td>
-                        <td class="td_prot">Proteina</td>
-                        <td class="td_carb">Carboidratos</td>
-                        <td class="td_gordura">Gordura</td>
-                    </tr><tr>
-                        <td class="td_alimento">alimento</td>
-                        <td class="td_kcal">Kcal</td>
-                        <td class="td_prot">Proteina</td>
-                        <td class="td_carb">Carboidratos</td>
-                        <td class="td_gordura">Gordura</td>
-                    </tr><tr>
-                        <td class="td_alimento">alimento</td>
-                        <td class="td_kcal">Kcal</td>
-                        <td class="td_prot">Proteina</td>
-                        <td class="td_carb">Carboidratos</td>
-                        <td class="td_gordura">Gordura</td>
-                    </tr><tr>
-                        <td class="td_alimento">alimento</td>
-                        <td class="td_kcal">Kcal</td>
-                        <td class="td_prot">Proteina</td>
-                        <td class="td_carb">Carboidratos</td>
-                        <td class="td_gordura">Gordura</td>
-                    </tr><tr>
-                        <td class="td_alimento">alimento</td>
-                        <td class="td_kcal">Kcal</td>
-                        <td class="td_prot">Proteina</td>
-                        <td class="td_carb">Carboidratos</td>
-                        <td class="td_gordura">Gordura</td>
-                    </tr><tr>
-                        <td class="td_alimento">alimento</td>
-                        <td class="td_kcal">Kcal</td>
-                        <td class="td_prot">Proteina</td>
-                        <td class="td_carb">Carboidratos</td>
-                        <td class="td_gordura">Gordura</td>
-                    </tr><tr>
-                        <td class="td_alimento">alimento</td>
-                        <td class="td_kcal">Kcal</td>
-                        <td class="td_prot">Proteina</td>
-                        <td class="td_carb">Carboidratos</td>
-                        <td class="td_gordura">Gordura</td>
-                    </tr><tr>
-                        <td class="td_alimento">alimento</td>
-                        <td class="td_kcal">Kcal</td>
-                        <td class="td_prot">Proteina</td>
-                        <td class="td_carb">Carboidratos</td>
-                        <td class="td_gordura">Gordura</td>
-                    </tr><tr>
-                        <td class="td_alimento">alimento</td>
-                        <td class="td_kcal">Kcal</td>
-                        <td class="td_prot">Proteina</td>
-                        <td class="td_carb">Carboidratos</td>
-                        <td class="td_gordura">Gordura</td>
-                    </tr><tr>
-                        <td class="td_alimento">alimento</td>
-                        <td class="td_kcal">Kcal</td>
-                        <td class="td_prot">Proteina</td>
-                        <td class="td_carb">Carboidratos</td>
-                        <td class="td_gordura">Gordura</td>
-                    </tr><tr>
-                        <td class="td_alimento">alimento</td>
-                        <td class="td_kcal">Kcal</td>
-                        <td class="td_prot">Proteina</td>
-                        <td class="td_carb">Carboidratos</td>
-                        <td class="td_gordura">Gordura</td>
-                    </tr><tr>
-                        <td class="td_alimento">alimento</td>
-                        <td class="td_kcal">Kcal</td>
-                        <td class="td_prot">Proteina</td>
-                        <td class="td_carb">Carboidratos</td>
-                        <td class="td_gordura">Gordura</td>
-                    </tr><tr>
-                        <td class="td_alimento">alimento</td>
-                        <td class="td_kcal">Kcal</td>
-                        <td class="td_prot">Proteina</td>
-                        <td class="td_carb">Carboidratos</td>
-                        <td class="td_gordura">Gordura</td>
-                    </tr><tr>
-                        <td class="td_alimento">alimento</td>
-                        <td class="td_kcal">Kcal</td>
-                        <td class="td_prot">Proteina</td>
-                        <td class="td_carb">Carboidratos</td>
-                        <td class="td_gordura">Gordura</td>
-                    </tr><tr>
-                        <td class="td_alimento">alimento</td>
-                        <td class="td_kcal">Kcal</td>
-                        <td class="td_prot">Proteina</td>
-                        <td class="td_carb">Carboidratos</td>
-                        <td class="td_gordura">Gordura</td>
-                    </tr><tr>
-                        <td class="td_alimento">alimento</td>
-                        <td class="td_kcal">Kcal</td>
-                        <td class="td_prot">Proteina</td>
-                        <td class="td_carb">Carboidratos</td>
-                        <td class="td_gordura">Gordura</td>
-                    </tr><tr>
-                        <td class="td_alimento">alimento</td>
-                        <td class="td_kcal">Kcal</td>
-                        <td class="td_prot">Proteina</td>
-                        <td class="td_carb">Carboidratos</td>
-                        <td class="td_gordura">Gordura</td>
-                    </tr><tr>
-                        <td class="td_alimento">alimento</td>
-                        <td class="td_kcal">Kcal</td>
-                        <td class="td_prot">Proteina</td>
-                        <td class="td_carb">Carboidratos</td>
-                        <td class="td_gordura">Gordura</td>
-                    </tr><tr>
-                        <td class="td_alimento">alimento</td>
-                        <td class="td_kcal">Kcal</td>
-                        <td class="td_prot">Proteina</td>
-                        <td class="td_carb">Carboidratos</td>
-                        <td class="td_gordura">Gordura</td>
-                    </tr><tr>
-                        <td class="td_alimento">alimento</td>
-                        <td class="td_kcal">Kcal</td>
-                        <td class="td_prot">Proteina</td>
-                        <td class="td_carb">Carboidratos</td>
-                        <td class="td_gordura">Gordura</td>
-                    </tr><tr>
-                        <td class="td_alimento">alimento</td>
-                        <td class="td_kcal">Kcal</td>
-                        <td class="td_prot">Proteina</td>
-                        <td class="td_carb">Carboidratos</td>
-                        <td class="td_gordura">Gordura</td>
-                    </tr><tr>
-                        <td class="td_alimento">alimento</td>
-                        <td class="td_kcal">Kcal</td>
-                        <td class="td_prot">Proteina</td>
-                        <td class="td_carb">Carboidratos</td>
-                        <td class="td_gordura">Gordura</td>
-                    </tr><tr>
-                        <td class="td_alimento">alimento</td>
-                        <td class="td_kcal">Kcal</td>
-                        <td class="td_prot">Proteina</td>
-                        <td class="td_carb">Carboidratos</td>
-                        <td class="td_gordura">Gordura</td>
-                    </tr><tr>
                         <td class="td_alimento">alimento</td>
                         <td class="td_kcal">Kcal</td>
                         <td class="td_prot">Proteina</td>
@@ -326,16 +164,35 @@
                     </tr>
                 </tbody>
             </table>
+            <div class="pagination">
+                <span class="step-links">
+                    {% if contacts.has_previous %}
+                        <a href="?page={{ contacts.previous_page_number }}">Anterior</a>
+                    {% endif %}
+            
+                    <span class="current">
+                        Página {{ contacts.number }} De {{ contacts.paginator.num_pages }}.
+                    </span>
+            
+                    {% if contacts.has_next %}
+                        <a href="?page={{ contacts.next_page_number }}">Próxima</a>
+                    {% endif %}
+                </span>
+            </div>
         </div>
     </div>
 </div>
 <script>
-
+    let proteina_max_diet = document.getElementById('valores_total_de_proteina');
+    let gordura_max_diet = document.getElementById('valores_total_de_gordura');
+    let carboidratos_max_diet = document.getElementById('valores_total_de_carboidratos');
+    let calorias_max_diet = document.getElementById('valor_total_das_kcal');
     function macros_dieta_user(){
-        let quantidade_proteina= document.getElementById('quantidade_de_proteina')
-        let quantidade_de_refeicao= document.getElementById('quantidade_de_refeicoes')
-        let quantidade_maxima_proteica=document.getElementById('proteina_max_user').innerText=Number(quantidade_proteina.value*78)
-        document.write(quantidade_maxima_proteica)
+        let quantidade_refeicao = document.getElementById('quantidade_de_refeicoes');
+        let quantidade_max_proteica_ref=document.getElementById('proteina_max_ref_user').innerText=Number(proteina_max_diet.value / quantidade_refeicao.value);
+        let quantidade_max_gordura_ref=document.getElementById('gordura_max_ref_user').innerText=Number(gordura_max_diet.value / quantidade_refeicao.value);
+        let quantidade_max_carboidratos_ref=document.getElementById('carboidratos_max_ref_user').innerText=Number(gordura_max_diet.value / quantidade_refeicao.value);
+        let quantidade_max_calorias_ref=document.getElementById('carboidratos_max_ref_user').innerText=Number(calorias_max_diet.value / quantidade_refeicao.value);
     }
 </script>
 {%endblock%}

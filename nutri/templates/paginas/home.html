@@ -1,16 +1,6 @@
-<!DOCTYPE html>
 {% extends 'base.html'%}
 {% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{%block 'title'%}home{%endblock%}</title>
-    <link rel="stylesheet" href="{% static 'css/css.css' %}">
-</head>
-<body>
-    {%block 'sections'%}
+{%block 'sections'%}
     <div class="container_main">
         <div class="containar_welcome">
             <div class="div_message_wel">
@@ -21,7 +11,17 @@
             <div class="conteudo_alimentar">
                 <div class="text_alimentar">
                     <label for="">
-                        Texto de introduçao aos beneficios a alimentação saudavel
+                        <h3> Benefícios da alimentação saudável</h3>
+                        <p>
+                            A alimentação saudável traz benefícios para a saúde como melhor controle do peso,
+                            rendimento do trabalho, aumento da memória e da concentração,
+                            fortalecimento do sistema imunológico e prevenção de doenças.
+                        </p>
+                        <ul>
+                            <li>Proporciona uma boa noite de sono</li>
+                            <li>Proporciona mais longevidade</li>
+                            <li>Boa atividade cerebral</li>
+                        </ul>
                     </label>
                 </div>
                 <a href=""> Dê seus primeiros passos <i class="fa-solid fa-shoe-prints"></i></a>
@@ -42,8 +42,6 @@
                 </div>
                 <label for=""><a href=""> <i class="fa-brands fa-linkedin-in"></i> Vitor </a> <a href="https://www.linkedin.com/in/fabian-batista-965420214/"> <i class="fa-brands fa-linkedin-in"></i> Fabian </a> <a href="https://www.linkedin.com/in/rodrigo-corte-real-b5640023b/"> <i class="fa-brands fa-linkedin-in"></i> Rodrigo </a> </label>
             </div>
-        </div>Vitor 
+        </div>
     </div>
-    {%endblock%}
-</body>
-</html>
+{%endblock%}

@@ -1,0 +1,462 @@
+/*criar dieta*/
+/*refeiçoes e macros do User*/
+.body_create_diet{
+    width: 95vw;
+    height: 100%;
+    display: grid;
+    grid-template-areas: 'dados'  'taco';
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    padding-left: 50px;
+    padding-bottom: 100px;
+}
+.container_dados_ref{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-areas: 'opçoes' 'refeicoes';
+    grid-template-columns: 1fr;
+    grid-template-rows: 150px 1fr;
+    gap: 45px;
+    justify-items: center;
+    align-items: center;
+    background: rgba(1, 1, 1, 0.8);
+    margin-top: 40px;
+    border-radius: 15px;
+}
+.div_opçoes_de_ref{
+    width: 90%;
+    height: 100%;
+    grid: opçoes;
+    background-color: #FFFFFF;
+    border-radius: 25px;
+    margin-top: 50px;
+    padding: 15px;
+    align-self: center;
+}
+.container_dados_dieta_user{
+    width: 100%;
+    height: 100%;
+    background-color: #C4C4C4;
+    border-radius: 15px;
+    box-shadow: black 5px 3px 8px 3px ;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align:justify;
+    gap: 10px;
+}
+.dados_dieta_user_linha1{
+    width:  120px;
+    height: 80%;
+    background-color: #FFFFFF;
+    padding: 5px;
+    display: flex;
+    text-align:justify;
+    flex-direction: column;
+    justify-items: center;
+    font-weight: 600;
+    border-radius: 10px;
+}
+.dados_dieta_user_linha1 > label > strong{
+    padding: 2px;
+    padding-right: 6px;
+    padding-left: 6px;
+    color: #FFFCFC;
+    background-color: #0E274D;
+}
+.dados_dieta_user_linha2{
+    background-color: #FFFFFF;
+    width:  180px;
+    height: 80%;
+    padding: 5px;
+    display: flex;
+    text-align:justify;
+    flex-direction: column;
+    justify-items: center;
+    border-radius: 10px;
+    font-weight: 600;
+}
+.dados_dieta_user_linha2 > label > strong{
+    padding: 2px;
+    padding-right: 6px;
+    padding-left: 6px;
+    color: #FFFCFC;
+    background-color: #0E274D;
+}
+.dados_dieta_user_linha3{
+    background-color: #FFFFFF;
+    width:  300px;
+    height: 80%;
+    padding: 5px;
+    display: flex;
+    text-align:justify;
+    flex-direction: column;
+    justify-items: center;
+    border-radius: 10px;
+    font-weight: 600;
+}
+.dados_dieta_user_linha3 > label > strong{
+    padding: 2px;
+    padding-right: 6px;
+    padding-left: 6px;
+    color: #FFFCFC;
+    background-color: #0E274D;
+}
+.dados_dieta_user_opcoes{
+    width: 180px;
+    height: 70%;
+    background-color: #FFFFFF;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    justify-items: center;
+    font-weight: 700;
+    gap: 7px;
+}
+.dados_dieta_user_quant_prot > span > select {
+    width: 100%;
+    text-align: center;
+}
+.dados_dieta_user_quant_ref > span > select {
+    width: 100%;
+    text-align: center;
+}
+.button_macros{
+    width: 100%;
+    font-weight: 700;
+    border: #000000 solid 1px;
+    border-radius: 15px;
+    color: darkorange;
+    background-color: #0e274dc4;
+}
+.button_macros:hover{
+    width: 100%;
+    font-weight: 600;
+    border: #000000 solid 1px;
+    border-radius: 15px;
+    color: white;
+    background-color: #0E274D;
+    transition: 1s;
+}
+/*refeiçoes e macros da refeição*/
+.container_refeiçoes_user{
+    width: 90%;
+    height: 95%;
+    grid: refeicoes;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 15px;
+    padding: 15px;
+    gap: 35px;
+}
+.refeicoes_user_one,.refeicoes_user_two,.refeicoes_user_tree,.refeicoes_user_four,.refeicoes_user_five,.refeicoes_user_six{
+    width: 95%;
+    height: 120px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    border-radius: 15px;
+    padding:10px;
+    background-color: #C4C4C4;
+}
+.alimentos_refeicoes_one,.alimentos_refeicoes_two,.alimentos_refeicoes_tree,.alimentos_refeicoes_four,.alimentos_refeicoes_five,.alimentos_refeicoes_six{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+    width: 50% ;
+    height:100%;
+    background-color: white;
+    padding-left:10px;
+    padding-right: 10px;
+    border-radius:5px;
+    font-size:18px;
+    overflow:hidden;
+}
+.macros_refeicoes_one,.macros_refeicoes_two,.macros_refeicoes_tree,.macros_refeicoes_four,.macros_refeicoes_five,.macros_refeicoes_six{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    width: 35%;
+    height:100%;
+    background-color: white;
+    padding-left:10px;
+    padding-right:10px;
+    border-radius:5px;
+}
+.macros_refeicoes_one >label > strong,.macros_refeicoes_two >label > strong,.macros_refeicoes_tree >label > strong,.macros_refeicoes_four > label > strong,.macros_refeicoes_five > label > strong,.macros_refeicoes_six > label > strong{
+    width:15%;
+    background-color: blue;
+    padding:3px 8px 3px 8px;
+    margin-left:10px;
+
+}
+.macros_refeicoes_one >label ,.macros_refeicoes_two >label ,.macros_refeicoes_tree >label ,.macros_refeicoes_four > label ,.macros_refeicoes_five > label ,.macros_refeicoes_six > label {
+    width:100%;
+    height:18px;
+    display:flex;
+    text-align:center;
+    line-height:14px;
+
+}
+
+/*tabela taco*/
+.container_tabela_taco{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 95%;
+    justify-items: center;
+    background-color: rgba(1, 1, 1, 0.8);
+    margin-top: 40px;
+    padding: 30px;
+    text-transform: capitalize;
+    gap: 10px;
+    border-radius: 15px;
+}
+.campo_de_busca_taco{
+    width: 97%;
+    text-align: center;
+    height: 20px;
+    padding: 4px;
+    font-size: 15px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: black 3px solid;
+    border-radius: 10px;
+}
+
+.body_tabela_Taco{
+    justify-items: center;
+    width: 100%;
+    height: 1100px;
+    padding: 25px;
+    background-color: rgba(1, 1, 1, 0.6); ;
+    border-radius: 10px;
+}
+/*TITULO DA TABELA TACO */
+.titulos_tabela{
+    width: 100%;
+    height: 40px;
+    color: #000000;
+    background-color: #FFFCFC;
+    padding: 10px;
+}
+.titulos_tabela > tr{
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+}
+.th_alimento,.th_kcal,.th_prot,.th_carb,.th_gordura{
+    padding: 10px;
+    text-transform: capitalize;
+    font-size: 18px;
+}
+/*DADOS DA TABELA TACO */
+#alimentos_tabela_Taco{
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 900px;
+}
+#alimentos_tabela_Taco > tr{
+    display: table-row;
+    width: 90%;
+    height: 20px;
+    padding: 20px;
+    font-size: 16px;
+    cursor:grabbing;
+}
+
+#alimentos_tabela_Taco > tr:nth-child(even):hover{
+    background-color: #0E274D;
+    color: #FFFCFC;
+}
+#alimentos_tabela_Taco > tr:nth-child(odd){
+    background-color: #C4C4C4;
+}
+#alimentos_tabela_Taco > tr:nth-child(odd):hover{
+    background-color: darkorange ;
+    color: white;
+}
+@media only screen and (max-width: 1600px) {
+    .body_create_diet{
+        width: 95vw;
+        height: 100%;
+        display: grid;
+        grid-template-areas: 'dados'  'taco';
+        grid-template-columns: 600px 1fr ;
+        grid-template-rows: 1fr;
+        justify-self:center;
+        justify-content:center;
+        justify-items: center;
+        padding-bottom: 100px;
+    }
+    .container_dados_ref{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-areas: 'opçoes' 'refeicoes';
+        grid-template-columns: 1fr;
+        grid-template-rows: 200px 1fr;
+        justify-self: center;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        background: rgba(1, 1, 1, 0.8);
+        margin-top: 40px;
+        border-radius: 15px;
+    }
+    .div_opçoes_de_ref{
+        width: 60%;
+        height: 100%;
+        margin-top: 50px;
+        padding: 15px;
+        align-self: center;
+        justify-items: center;
+        align-items: center;
+    }
+    .container_dados_dieta_user{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align:start ;
+        gap: 10px;
+    }
+    .dados_dieta_user_linha1{
+        width:  140px;
+        height: 80%;
+        padding: 5px;
+        display: flex;
+        text-align:justify;
+        flex-direction: column;
+        justify-items: center;
+        font-weight: 400;
+        border-radius: 10px;
+        font-size: 14px;
+    }
+    .dados_dieta_user_linha1 > label > strong{
+        padding: 2px;
+        padding-right: 6px;
+        padding-left: 6px;
+    }
+    .dados_dieta_user_linha2{
+        width:  180px;
+        height: 80%;
+        padding: 5px;
+        display: flex;
+        text-align:start;
+        flex-direction: column;
+        justify-items: center;
+        border-radius: 10px;
+        font-weight: 400;
+        font-size: 14px;
+    }
+    .dados_dieta_user_linha2 > label > strong{
+        padding: 2px;
+        padding-right: 6px;
+        padding-left: 6px;
+    }
+    .dados_dieta_user_linha3{
+        width:  210px;
+        height: 80%;
+        padding: 5px;
+        display: flex;
+        text-align:justify;
+        flex-direction: column;
+        justify-items: center;
+        border-radius: 10px;
+        font-size: 12px;
+        font-weight: 400;
+    }
+    .dados_dieta_user_linha3 > label > strong{
+        padding: 2px;
+        padding-right: 6px;
+        padding-left: 6px;
+    }
+    .dados_dieta_user_opcoes{
+        width: 200px;
+        height: 70%;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        font-size:14px;
+        font-weight: 500;
+    }
+    /*refeiçoes e macros da refeição*/
+    .container_refeiçoes_user{
+        width: 60%;
+        height: 95%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 15px;
+        gap: 35px;
+    }
+    .refeiçoes_user_one,.refeiçoes_user_two,.refeiçoes_user_tree,.refeiçoes_user_four,.refeiçoes_user_five,.refeiçoes_user_six{
+        width: 100%;
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+    }
+    /*tabela taco*/
+    .container_tabela_taco{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height:98%;
+        justify-items: center;
+        margin-top: 40px;
+        padding: 10px;
+        gap: 10px;
+    }
+    .campo_de_busca_taco{
+        width: 97%;
+        text-align: center;
+        height: 20px;
+        padding: 4px;
+        font-size: 15px;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    
+    .body_tabela_Taco{
+        justify-items: center;
+        width: 100%;
+        height: 1100px;
+        padding: 5px;
+    }
+    /*TITULO DA TABELA TACO */
+    .titulos_tabela{
+        width: 100%;
+        height: 40px;
+        padding: 10px;
+    }
+    .titulos_tabela > tr{
+        width: 100%;
+        height: 100%;
+        padding: 5px;
+    }
+    .th_alimento,.th_kcal,.th_prot,.th_carb,.th_gordura{
+        padding: 5px;
+        font-size: 16px;
+    }
+    /*DADOS DA TABELA TACO */
+    #alimentos_tabela_Taco{
+        width: 100%;
+        height: 900px;
+    }
+    #alimentos_tabela_Taco > tr{
+        display: table-row;
+        width: 90%;
+        height: 20px;
+        padding: 20px;
+        font-size: 14px;
+    }
+  }
