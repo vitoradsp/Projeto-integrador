@@ -20,7 +20,7 @@
             </div>
             <div class="select_opçoes">
                 <div class="user">
-                    {%if user.is.authenticated%}
+                    {%if user.is_authenticated%}
                     <a href="{%url 'login'%}"><i class="fa-solid fa-user-gear"></i></a>
                     {%else%}
                     <a href="{%url 'login'%}"><i class="fa-solid fa-user-large"></i></a>
