@@ -41,7 +41,8 @@ def tela_tmb(request):
         peso = request.POST.get('peso')
         altura = request.POST.get('height')
         idade = request.POST.get('age')
-    
+        
     return render(request, 'paginas/tela_tmb.html', {'objetivo': objetivo, 'nivel_at':nivel_at})
-def Userperfil(request,id):
+
+def Userperfil(request, id):
     pass

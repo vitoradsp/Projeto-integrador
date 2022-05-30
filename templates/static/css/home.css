@@ -12,12 +12,12 @@
     height: 400px;
     background-image:url("https://img.freepik.com/fotos-gratis/fitness-comida-saudavel-alimentos-fontes-de-omega-3-na-vista-superior-do-fundo-escuro-alimentos-ricos-em-acidos-graxos-incluindo-vegetais-frutos-do-mar-nozes-e-sementes_118925-1411.jpg?w=2000");
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: 100%;
     box-shadow: #0E274D 5px 5px 15px 10px;
 }
 .div_message_wel{
     text-align: center;
-    width: 40%;
+    width: 100%;
     height: 150px;
     background: rgba(0, 0, 0, 0.27);
 }
