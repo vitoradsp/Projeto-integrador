@@ -1,42 +1,149 @@
 {% extends 'base.html' %}
+{%block 'title'%}Tmb{%endblock%}
 {%block 'sections'%}
-<title>{%block 'title'%}tmb{%endblock%}</title>
 <!-- Adicionar valor TMB em flax (css) --> 
-<div class="tela_tmb">      
+<div class="tela_tmb"> 
+{%if messages%}
+{%for message in messages%}
+<div class="erro">
+    <div class="messagem_de_erro"><label id="messagem_javascript" for="">{{message}}</label></div>
+</div>
+{%endfor%}
+{%endif%}     
     <form action="" method="post">{% csrf_token %}
         <div class="valor_tmb">
             <h2>Valor de injestao diária</h2>
-            <label for="">Seu gasto parado é de 2500kcal </label>
-            <label for="">Com base no seu objetivo (Bulking) você deve ingerir 3000kcal </label>
+            <label for="">Seu gasto parado é de <strong id="gasto_parado_javascript"></strong> </label>
+            <label  for="">
+                Com base no seu objetivo <strong id="objetivo_javascript"></strong> 
+                você deve ingerir <strong id="valor_total_de_calorias_javascript"></strong>
+            </label>
             <button class="btn_tmb1" type="submit">Criar Dieta</button>
         </div>
         <div class="objetivo">
             <p>Objetivo:</p>
-            <select name="" id="">
+            <select name=""  id='objetivo_user'>
                 {% for c in objetivo %}
-                <option value="">{{c}}</option>
+                    <option value="">{{c}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="nivel_ati">
+            <p>Atividade:</p>
+            <select name="" id='nivel_de_ati_user'>
+                {% for c in nivel_at %}
+                    <option value="">{{c}}</option>
                 {% endfor %}
             </select>
         </div>
         <div class="peso">
             <p> Peso: </p>
-            <input type="number" placeholder="Nun. Int." name="peso">
+            <input id="peso_user" type="number" placeholder="Nun. Int." name="peso">
         </div>
         <div class="altura">
             <p>Altura: </p>
-            <input type="number" placeholder="cm" name="height">
+            <input id="height_user" type="number" placeholder="cm" name="height">
         </div>
         <div class="idade">
             <p>Idade: </p>
-            <input type="number" placeholder="anos" name="age">
+            <input id="age_user" type="number" placeholder="anos" name="age">
         </div>
         <div class="sexo">
             <p>Sexo: </p> 
-            <p><input type="radio" name="opcao" value="masculino"> Masculino</p> 
-            <p><input type="radio" name="opcao" value="feminino"> Feminino</p>
+            <p><input id="user_masculino" type="radio" name="opcao" value="masculino"> Masculino</p> 
+            <p><input id="user_feminino" type="radio" name="opcao" value="feminino"> Feminino</p>
         </div>
-        <button class="btn_tmb" type="submit">Gerar TMB</button>
-        
+        <input id='btn_tmb' class="btn_tmb" type="button" value="Gerar Tmb">
+        <input id="local_dados_do_user" type="hidden" name="local_dados_do_user">
     </form>
 </div>
 {%endblock%}
+<script>
+    const erros = document.getElementById('messagem_javascript')
+    let local_de_valores_tmb = document.querySelector('.valor_tmb');
+    let botao_gerar_tmb = document.querySelector('#btn_tmb');
+    console.log(local_de_valores_tmb);
+    console.log('VEIO AQUI FORA')
+    console.log(botao_gerar_tmb);
+    botao_gerar_tmb.addEventListener('click', function (event) { 
+        console.log('VEIO AQUI DENTRO')
+        let cancelar = event.cancelable;
+        if(cancelar === true){
+            event.preventDefault();
+        }else{
+            event.topPropagation() 
+            console.log('so para no toppropagations')
+        };
+        let local_tmb_parado=  document.getElementById('gasto_parado_javascript');
+        let local_objetivo=document.getElementById('objetivo_javascript');
+        let local_caloria_total=document.getElementById('valor_total_de_calorias_javascript');
+        let peso=document.getElementById('peso_user');
+        checkNumber(peso);
+        verifica_espaco(peso);
+        let altura=document.getElementById('height_user');
+        checkNumber(altura);
+        verifica_espaco(altura);
+        let idade=document.getElementById('age_user');
+        checkNumber(idade);
+        verifica_espaco(idade);
+        let n_atividade=document.getElementById('nivel_de_ati_user').value;
+        let objetivo=document.getElementById('objetivo_user').value;
+        let masculino=document.getElementById('user_masculino');
+        let feminino=document.getElementById('user_feminino');   
+        if(masculino.value === true || masculino.checked === true ){
+            let tmb_masculino = Number( 66 +( 13.7 * peso ) + (  5.0 * altura ) - ( 6.8 * idade )) ;
+            local_tmb_parado.innerText= tmb_masculino;
+            local_objetivo.innerText = objetivo;
+            let gasto_total_user = gasto_dia(tmb_masculino,n_atividade);
+            if( objetivo === 'Manter'){
+                local_caloria_total.innerText = gasto_total_user;
+            }else if( objetivo === 'Cutting'){
+                local_caloria_total.innerText = Number(gasto_total_user - 500) ;
+            }else{
+                local_caloria_total.innerText = Number(gasto_total_user + 500);
+            };
+        }else{
+            let tmb_feminino = Number ( 665 ( 9.6 * peso ) + ( 1.8 * altura) - ( 4.7 * idade )) ;
+            local_tmb_parado.innerText = tmb_feminino;
+            local_objetivo.innerText = objetivo;
+            let gasto_total_user = gasto_dia(tmb_feminino,n_atividade);
+            if( objetivo === 'Manter'){
+                local_caloria_total.innerText = gasto_total_user;
+            }else if( objetivo === 'Cutting'){
+                local_caloria_total.innerText = Number(gasto_total_user - 500) ;
+            }else{
+                local_caloria_total.innerText = Number(gasto_total_user + 500);
+            };
+        };
+        let troca_display = local_de_valores_tmb.style.display= "flex";
+        console.log('passou aqui');
+    });
+    function verificar_espaco(objeto){
+        if(objeto ===''){
+            erros.innerText='campos invalidos';
+        }else{
+            console.log('verificado');
+        }
+    };
+    function checkNumber(valor) {
+        var regra = /^[0-9]+$/;
+        if (valor.match(regra)) {
+            console,log('verificado')
+        }else{
+            erros.innerText="Permitido somente número inteiro positivo!";
+        }
+    };
+    function gasto_dia(valor_tmb,n_atividade){
+        if (n_atividade === 'Sedentario') {
+            let gasto_total = valor_tmb * 1.3 ;   
+        }
+        else if (n_atividade === 'Moderado') {
+            let gasto_total = valor_tmb * 1.5 ;   
+        }
+        else{
+            let gasto_total = valor_tmb * 1.8 ;   
+        }
+        return gasto_total;
+    };  
+
+</script>  
