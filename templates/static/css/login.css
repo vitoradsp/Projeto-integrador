@@ -65,3 +65,25 @@
     background-color: green;
     color: #FFFCFC;
 }
+.socialaccount_ballot{
+    text-decoration: none;
+    list-style: none;
+    font-size: 20px;
+    color: #FFFFFF;
+}
+.socialaccount_ballot > a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+.login_google_continue{
+    margin-left: 15px;
+}
+
+.login_google_continue > p{
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+.login_google_continue > form > button{
+    padding: 7px;
+    width: 150px;
+}
