@@ -1,8 +1,8 @@
 /*login */
 .container_login{
     width: 100%;
-    height: 100vh;
-    margin-top: 50px;
+    height: 100%;
+    background-image:url("https://www.saudeemdia.com.br/media/_versions/dieta_anti-inflamatoria_1_widexl.jpg");
 }
 .login{
     width: 100%;
@@ -18,7 +18,7 @@
     align-items: center;
     width: 35%;
     height: 500px;
-    background-color: #0E274D;
+    background-color: #0e274def;
     gap: 30px;
     border-radius: 10px;
 }
