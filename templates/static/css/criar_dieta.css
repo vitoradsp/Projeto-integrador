@@ -181,20 +181,21 @@
 .macros_refeicoes_one,.macros_refeicoes_two,.macros_refeicoes_tree,.macros_refeicoes_four,.macros_refeicoes_five,.macros_refeicoes_six{
     display:flex;
     flex-direction:column;
-    gap:10px;
+    gap:5px;
     width: 35%;
     height:100%;
     background-color: white;
     padding-left:10px;
     padding-right:10px;
     border-radius:5px;
+    font-size: 15px;
 }
 .macros_refeicoes_one >label > strong,.macros_refeicoes_two >label > strong,.macros_refeicoes_tree >label > strong,.macros_refeicoes_four > label > strong,.macros_refeicoes_five > label > strong,.macros_refeicoes_six > label > strong{
     width:15%;
-    background-color: blue;
+    background-color: #0E274D;
     padding:3px 8px 3px 8px;
     margin-left:10px;
-
+    color: white;
 }
 .macros_refeicoes_one >label ,.macros_refeicoes_two >label ,.macros_refeicoes_tree >label ,.macros_refeicoes_four > label ,.macros_refeicoes_five > label ,.macros_refeicoes_six > label {
     width:100%;

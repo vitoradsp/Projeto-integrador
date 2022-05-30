@@ -14,7 +14,23 @@
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
     <link rel="stylesheet" href="{% static 'css/tmb.css' %}">
     <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
-    
+    <script src="{% static 'js/criar_dieta.js' %}" ></script>
+    <script src="{% static 'js/tmb.js' %}" ></script>
+    <script>
+        console.log('javascript entrou')
+        
+        function macros_dieta_user(){
+            let proteina_max_diet =document.getElementById('valores_total_de_proteina').innerHTML;
+            let gordura_max_diet =document.getElementById('valores_total_de_gordura').innerHTML;
+            let carboidratos_max_diet = document.getElementById('valores_total_de_carboidratos').innerHTML;
+            let calorias_max_diet = document.getElementById('valor_total_das_kcal').innerHTML;
+            let quantidade_refeicao = document.getElementById('quantidade_de_refeicoes').value;
+            let quantidade_max_proteica_ref = document.getElementById('proteina_max_ref_user').innerText = parseInt(proteina_max_diet/quantidade_refeicao);
+            let quantidade_max_gordura_ref = document.getElementById('gordura_max_ref_user').innerText=parseInt(gordura_max_diet/quantidade_refeicao);
+            let quantidade_max_carboidratos_ref = document.getElementById('carboidratos_max_ref_user').innerText=parseInt(carboidratos_max_diet/ quantidade_refeicao);
+            let quantidade_max_calorias_ref = document.getElementById('calorias_max_ref_user').innerText=parseInt(calorias_max_diet/ quantidade_refeicao);
+        };
+</script>
 </head>
 <body>
     <header>
@@ -44,7 +60,4 @@
     </div>
     
 </body>
-<script src="" >
-    
-</script>
 </html>

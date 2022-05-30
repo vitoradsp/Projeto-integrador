@@ -16,7 +16,7 @@
                 <div class="dados_dieta_user_linha1">
                     <label for="">Gasto calorico médio: <strong>2300</strong></label>
                     <label for="">Caloria dieta: <strong>1900</strong></label>
-                    <label for="">Valor Total das refeições: <strong id="valores_total_de_todas_refeicao"></strong></label><!-- aqui dentro do strong vai a somar de todos os valores da ref -->
+                    <label for="">Valor Total das refeições: <br><strong id="valores_total_de_todas_refeicao"></strong></label><!-- aqui dentro do strong vai a somar de todos os valores da ref -->
                 </div>
                 <div class="dados_dieta_user_linha2">
                     <!--é feito um calculo de proteina(4 calorias)*2,gordura(9 calorias)*0.5 e carbo(4 calorias)*restante de calorias -->
@@ -55,16 +55,16 @@
                             </select>
                         </span>
                     </div>
-                    <input class="button_macros" onclick="macros_dieta_user()" type="button" value="Macros">
+                    <button class="button_macros" onclick="macros_dieta_user()" type="button" >Macros</button>
                 </div>
             </div>
         </div>
         <div class="container_refeiçoes_user">
             <div class="refeicoes_user_one" >
                 <div class="alimentos_refeicoes_one">
-                    <label id="alimentos_linha_1_ref_1" for="">alimento 1</label>
-                    <label id="alimentos_linha_2_ref_1" for="">alimento 2</label>
-                    <label id="alimentos_linha_3_ref_1" for="">alimento 3</label>
+                    <label id="alimentos_linha_1_ref_1" for=""></label>
+                    <label id="alimentos_linha_2_ref_1" for=""></label>
+                    <label id="alimentos_linha_3_ref_1" for=""></label>
                 </div>
                 <div class="macros_refeicoes_one">
                     <label for="">Kcal total:  <strong id='calorias_da_ref_one'></strong> </label>
@@ -161,7 +161,170 @@
                 </thead>
                 <tbody id="alimentos_tabela_Taco">
                     <!-- limite de 15 linhas */ -->
-                    <tr>
+                    <tr ondblclick="adicionar()">
+                        <td id="td_alimento_1" class="td_alimento_1">ovo</td>
+                        <td class="td_kcal">Kcal</td>
+                        <td class="td_prot">Proteina</td>
+                        <td class="td_carb">Carboidratos</td>
+                        <td class="td_gordura">Gordura</td>
+                    </tr>
+                    <tr ondblclick="adicionar()">
+                        <td class="td_alimento">alimento</td>
+                        <td class="td_kcal">Kcal</td>
+                        <td class="td_prot">Proteina</td>
+                        <td class="td_carb">Carboidratos</td>
+                        <td class="td_gordura">Gordura</td>
+                    </tr><tr ondblclick="adicionar()">
+                        <td class="td_alimento">alimento</td>
+                        <td class="td_kcal">Kcal</td>
+                        <td class="td_prot">Proteina</td>
+                        <td class="td_carb">Carboidratos</td>
+                        <td class="td_gordura">Gordura</td>
+                    </tr><tr ondblclick="adicionar()">
+                        <td class="td_alimento">alimento</td>
+                        <td class="td_kcal">Kcal</td>
+                        <td class="td_prot">Proteina</td>
+                        <td class="td_carb">Carboidratos</td>
+                        <td class="td_gordura">Gordura</td>
+                    </tr><tr ondblclick="adicionar()">
+                        <td class="td_alimento">alimento</td>
+                        <td class="td_kcal">Kcal</td>
+                        <td class="td_prot">Proteina</td>
+                        <td class="td_carb">Carboidratos</td>
+                        <td class="td_gordura">Gordura</td>
+                    </tr><tr ondblclick="adicionar()">
+                        <td class="td_alimento">alimento</td>
+                        <td class="td_kcal">Kcal</td>
+                        <td class="td_prot">Proteina</td>
+                        <td class="td_carb">Carboidratos</td>
+                        <td class="td_gordura">Gordura</td>
+                    </tr><tr ondblclick="adicionar()">
+                        <td class="td_alimento">alimento</td>
+                        <td class="td_kcal">Kcal</td>
+                        <td class="td_prot">Proteina</td>
+                        <td class="td_carb">Carboidratos</td>
+                        <td class="td_gordura">Gordura</td>
+                    </tr><tr ondblclick="adicionar()">
+                        <td class="td_alimento">alimento</td>
+                        <td class="td_kcal">Kcal</td>
+                        <td class="td_prot">Proteina</td>
+                        <td class="td_carb">Carboidratos</td>
+                        <td class="td_gordura">Gordura</td>
+                    </tr><tr ondblclick="adicionar()">
+                        <td class="td_alimento">alimento</td>
+                        <td class="td_kcal">Kcal</td>
+                        <td class="td_prot">Proteina</td>
+                        <td class="td_carb">Carboidratos</td>
+                        <td class="td_gordura">Gordura</td>
+                    </tr><tr ondblclick="adicionar()">
+                        <td class="td_alimento">alimento</td>
+                        <td class="td_kcal">Kcal</td>
+                        <td class="td_prot">Proteina</td>
+                        <td class="td_carb">Carboidratos</td>
+                        <td class="td_gordura">Gordura</td>
+                    </tr><tr ondblclick="adicionar()">
+                        <td class="td_alimento">alimento</td>
+                        <td class="td_kcal">Kcal</td>
+                        <td class="td_prot">Proteina</td>
+                        <td class="td_carb">Carboidratos</td>
+                        <td class="td_gordura">Gordura</td>
+                    </tr><tr ondblclick="adicionar()">
+                        <td class="td_alimento">alimento</td>
+                        <td class="td_kcal">Kcal</td>
+                        <td class="td_prot">Proteina</td>
+                        <td class="td_carb">Carboidratos</td>
+                        <td class="td_gordura">Gordura</td>
+                    </tr><tr ondblclick="adicionar()">
+                        <td class="td_alimento">alimento</td>
+                        <td class="td_kcal">Kcal</td>
+                        <td class="td_prot">Proteina</td>
+                        <td class="td_carb">Carboidratos</td>
+                        <td class="td_gordura">Gordura</td>
+                    </tr><tr ondblclick="adicionar()">
+                        <td class="td_alimento">alimento</td>
+                        <td class="td_kcal">Kcal</td>
+                        <td class="td_prot">Proteina</td>
+                        <td class="td_carb">Carboidratos</td>
+                        <td class="td_gordura">Gordura</td>
+                    </tr><tr ondblclick="adicionar()">
+                        <td class="td_alimento">alimento</td>
+                        <td class="td_kcal">Kcal</td>
+                        <td class="td_prot">Proteina</td>
+                        <td class="td_carb">Carboidratos</td>
+                        <td class="td_gordura">Gordura</td>
+                    </tr><tr ondblclick="adicionar()">
+                        <td class="td_alimento">alimento</td>
+                        <td class="td_kcal">Kcal</td>
+                        <td class="td_prot">Proteina</td>
+                        <td class="td_carb">Carboidratos</td>
+                        <td class="td_gordura">Gordura</td>
+                    </tr><tr ondblclick="adicionar()">
+                        <td class="td_alimento">alimento</td>
+                        <td class="td_kcal">Kcal</td>
+                        <td class="td_prot">Proteina</td>
+                        <td class="td_carb">Carboidratos</td>
+                        <td class="td_gordura">Gordura</td>
+                    </tr><tr ondblclick="adicionar()">
+                        <td class="td_alimento">alimento</td>
+                        <td class="td_kcal">Kcal</td>
+                        <td class="td_prot">Proteina</td>
+                        <td class="td_carb">Carboidratos</td>
+                        <td class="td_gordura">Gordura</td>
+                    </tr><tr ondblclick="adicionar()">
+                        <td class="td_alimento">alimento</td>
+                        <td class="td_kcal">Kcal</td>
+                        <td class="td_prot">Proteina</td>
+                        <td class="td_carb">Carboidratos</td>
+                        <td class="td_gordura">Gordura</td>
+                    </tr><tr ondblclick="adicionar()">
+                        <td class="td_alimento">alimento</td>
+                        <td class="td_kcal">Kcal</td>
+                        <td class="td_prot">Proteina</td>
+                        <td class="td_carb">Carboidratos</td>
+                        <td class="td_gordura">Gordura</td>
+                    </tr><tr ondblclick="adicionar()">
+                        <td class="td_alimento">alimento</td>
+                        <td class="td_kcal">Kcal</td>
+                        <td class="td_prot">Proteina</td>
+                        <td class="td_carb">Carboidratos</td>
+                        <td class="td_gordura">Gordura</td>
+                    </tr><tr ondblclick="adicionar()">
+                        <td class="td_alimento">alimento</td>
+                        <td class="td_kcal">Kcal</td>
+                        <td class="td_prot">Proteina</td>
+                        <td class="td_carb">Carboidratos</td>
+                        <td class="td_gordura">Gordura</td>
+                    </tr><tr ondblclick="adicionar()">
+                        <td class="td_alimento">alimento</td>
+                        <td class="td_kcal">Kcal</td>
+                        <td class="td_prot">Proteina</td>
+                        <td class="td_carb">Carboidratos</td>
+                        <td class="td_gordura">Gordura</td>
+                    </tr><tr ondblclick="adicionar()">
+                        <td class="td_alimento">alimento</td>
+                        <td class="td_kcal">Kcal</td>
+                        <td class="td_prot">Proteina</td>
+                        <td class="td_carb">Carboidratos</td>
+                        <td class="td_gordura">Gordura</td>
+                    </tr><tr ondblclick="adicionar()">
+                        <td class="td_alimento">alimento</td>
+                        <td class="td_kcal">Kcal</td>
+                        <td class="td_prot">Proteina</td>
+                        <td class="td_carb">Carboidratos</td>
+                        <td class="td_gordura">Gordura</td>
+                    </tr><tr ondblclick="adicionar()">
+                        <td class="td_alimento">alimento</td>
+                        <td class="td_kcal">Kcal</td>
+                        <td class="td_prot">Proteina</td>
+                        <td class="td_carb">Carboidratos</td>
+                        <td class="td_gordura">Gordura</td>
+                    </tr><tr ondblclick="adicionar()">
+                        <td class="td_alimento">alimento</td>
+                        <td class="td_kcal">Kcal</td>
+                        <td class="td_prot">Proteina</td>
+                        <td class="td_carb">Carboidratos</td>
+                        <td class="td_gordura">Gordura</td>
+                    </tr><tr ondblclick="adicionar()">
                         <td class="td_alimento">alimento</td>
                         <td class="td_kcal">Kcal</td>
                         <td class="td_prot">Proteina</td>
