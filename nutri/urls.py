@@ -7,6 +7,6 @@ urlpatterns =[
     path('introduçâo/', views.introducao, name='introdução'),
     path('criando_sua_dieta/', views.create_diet, name='criar_dieta'),
     path('tmb/', views.tela_tmb, name ='tela_tmb'),
-    path('perfil/', views.Userperfil, name ='perfil'),
+    path('perfil/', views.userperfil, name ='perfil'),
     path('google/', views.login_google, name ='google'),
 ]

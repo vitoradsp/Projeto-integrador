@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.contrib import auth, messages
 from django.contrib.auth import login
+import requests
 from .models import *
 from django.contrib.auth.decorators import login_required
 
@@ -34,7 +35,9 @@ def introducao(request):
 
 ##@login_required##
 def create_diet(request):
-    return render(request,'paginas/create_diet.html')
+    response = requests.get('http://127.0.0.1:7000/alimentoes/').json()
+   
+    return render(request, 'paginas/create_diet.html', {'response':response})
 
 def tela_tmb(request):
     objetivo = Objetivo.objects.all()
@@ -46,5 +49,5 @@ def tela_tmb(request):
         
     return render(request, 'paginas/tela_tmb.html', {'objetivo': objetivo, 'nivel_at':nivel_at})
 
-def Userperfil(request, id):
+def userperfil(request, id):
     pass
