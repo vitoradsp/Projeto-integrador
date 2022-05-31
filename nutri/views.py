@@ -1,12 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.contrib import auth, messages
-<<<<<<< HEAD
 from django.contrib.auth import login, logout
-=======
-from django.contrib.auth import login
-import requests
->>>>>>> d377cd4f021da3eabf441d89dc6b53362433c4da
 from .models import *
 
 def index(request):
@@ -57,15 +52,9 @@ def introducao(request):
     return render(request, 'paginas/introdução_dieta.html')
 
 def create_diet(request):
-<<<<<<< HEAD
     if request.user.is_authenticated == False:
         return redirect('login_site')
     return render(request,'paginas/create_diet.html')
-=======
-    response = requests.get('http://127.0.0.1:7000/alimentoes/').json()
-   
-    return render(request, 'paginas/create_diet.html', {'response':response})
->>>>>>> d377cd4f021da3eabf441d89dc6b53362433c4da
 
 def tela_tmb(request):
     if request.user.is_authenticated == False:
@@ -78,10 +67,5 @@ def tela_tmb(request):
         idade = request.POST.get('age')
     return render(request, 'paginas/tela_tmb.html', {'objetivo': objetivo, 'nivel_at':nivel_at})
 
-<<<<<<< HEAD
-def Userperfil(request, id):
-    pass
-=======
 def userperfil(request, id):
     pass
->>>>>>> d377cd4f021da3eabf441d89dc6b53362433c4da
