@@ -46,7 +46,7 @@
     justify-content: center;
     align-items: center;
     width:35%;
-    height: 300px;
+    
     background: #0E274D;
     border-radius:10px;
     padding: 15px;
@@ -105,7 +105,7 @@
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 20px;
 }
 .text_sobre_site >label{
     width: 80%;
@@ -115,7 +115,7 @@
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 13px;
+    font-size: 20px;
 }
 .text_sobre_site > label > p > a{
     font-weight: bolder;
