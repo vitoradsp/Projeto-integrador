@@ -6,6 +6,7 @@ urlpatterns =[
     path('registration/', views.UserRegistration, name='resgistration_screen'),
     path('introduçâo/', views.introducao, name='introdução'),
     path('criando_sua_dieta/', views.create_diet, name='criar_dieta'),
-    path('tmb/', views.tela_tmb, name='tela_tmb'),
-    path('perfil/', views.Userperfil, name='perfil'),
+    path('tmb/', views.tela_tmb, name ='tela_tmb'),
+    path('perfil/', views.Userperfil, name ='perfil'),
+    path('google/', views.login_google, name ='google'),
 ]

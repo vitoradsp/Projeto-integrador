@@ -1,0 +1,52 @@
+.body_login_google{
+    width: 98vw;
+    height: 80vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgba(255, 255, 255, 0.781);
+}
+.linha_de_quebra{
+    width: 90%;
+    height:2px;
+    background-color: #ec3a03e0;
+    color: #ec3a03e0;
+}
+.socialaccount_ballot{
+    text-decoration: none;
+    list-style: none;
+    font-size: 20px;
+    color: #FFFFFF;
+}
+.socialaccount_ballot > a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+.login_google_continue{
+    border-radius: 10px ;
+    width: 50%;
+    height: max-content;
+    padding: 20px;
+    background-color: #5050508f;
+    margin-left: 15px;
+    color:white;
+    margin-bottom:200px;
+}
+
+.login_google_continue > p{
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+.login_google_continue > form > button{
+    padding: 7px;
+    width: 150px;
+    border-radius:5px;
+}
+.login_google_continue > form > button:hover{
+    background-color:black;
+    color: #ec3a03e0;
+}
+.login_google_continue > form > button:active{
+    background-color:black;
+    color: greenyellow;
+}

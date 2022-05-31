@@ -26,7 +26,8 @@ def UserLogin(request):
 def UserRegistration(request):
     return render(request, 'paginas/registration_screen.html')
 
-
+def login_google(request):
+    return render(request, 'paginas/login_google.html')
 def introducao(request):
     return render(request,'paginas/introdução_dieta.html')
 
