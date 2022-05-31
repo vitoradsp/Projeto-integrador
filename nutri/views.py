@@ -28,8 +28,9 @@ def UserRegistration(request):
 
 def login_google(request):
     return render(request, 'paginas/login_google.html')
+
 def introducao(request):
-    return render(request,'paginas/introdução_dieta.html')
+    return render(request, 'paginas/introdução_dieta.html')
 
 ##@login_required##
 def create_diet(request):
