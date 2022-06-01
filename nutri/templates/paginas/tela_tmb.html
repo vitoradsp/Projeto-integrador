@@ -11,6 +11,7 @@
 {%endfor%}
 {%endif%}     
     <form action="" method="post">{% csrf_token %}
+        
         <div class="valor_tmb">
             <h2>Valor de injestao diária</h2>
             <label for="">Seu gasto parado é de <strong id="gasto_parado_javascript"></strong> Kcal</label>
@@ -18,7 +19,7 @@
                 Com base no seu objetivo <strong id="objetivo_javascript"></strong> 
                 você deve ingerir <strong id="valor_total_de_calorias_javascript"></strong> Kcal
             </label>
-            <button  class="btn_tmb1" type="button">Criar Dieta</button>
+            <a href="{% url 'criar_dieta' %} "><button  class="btn_tmb1" type="button">Criar Dieta</button></a>
         </div>
         <div class="objetivo">
             <p>Objetivo:</p>
@@ -53,7 +54,7 @@
             <p><input id="user_masculino" checked type="radio" name="opcao" value="masculino"> Masculino</p> 
             <p><input id="user_feminino" type="radio" name="opcao" value="feminino"> Feminino</p>
         </div>
-        <button id='btn_tmb' onclick="botao_gerar()" class="btn_tmb" type="button">Gerar Tmb</button>
+        <button id='btn_tmb' onclick="botao_gerar()" class="btn_tmb" type="submit">Gerar Tmb</button>
         <input id="local_dados_do_user" type="hidden" name="local_dados_do_user">
     </form>
 </div>
