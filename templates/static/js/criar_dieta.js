@@ -1,6 +1,6 @@
 console.log('javascript entrou')
 /* calculos abaixo sobre refeições */
-let dados_taco=[];
+
 alimentos_refeicao=function(numero_da_ref){
     switch (numero_da_ref) {
         case 1:
@@ -44,8 +44,8 @@ macros_refeicao = function(numero_da_ref){
     let alimento_row_3= alimentos[2];
 
 }
-function adicionar(){
-    let alimento = document.getElementById('td_alimento_1').innerHTML;
+function adicionar(this){
+    let alimento = this ;
     let alimento_da_ref_1_row_1 = document.getElementById('alimentos_linha_1_ref_1').innerHTML;
     let alimento_da_ref_1_row_2 = document.getElementById('alimentos_linha_2_ref_1').innerHTML;
     let alimento_da_ref_1_row_3 = document.getElementById('alimentos_linha_3_ref_1').innerHTML;
