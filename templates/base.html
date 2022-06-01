@@ -36,12 +36,10 @@
               <summary>Opções</summary>
               {%if user.is_authenticated%}
               <a href="{%url 'login_site'%}"
-                ><i class="fa-solid fa-user-gear"></i
-              ></a>
+                ><i class="fa-solid fa-user-gear"></i>Login</a>
               {%else%}
               <a href="{%url 'login_site'%}"
-                ><i class="fa-solid fa-user-large"></i>Login</a
-              >
+                ><i class="fa-solid fa-user-large"></i>Login</a>
               {%endif%}
               <a href="{%url 'logout'%}"
                 ><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</a
@@ -49,13 +47,13 @@
             </details>
           </div>
           <div class="criar_diet">
-            {%if dieta == True %}
+            {%if veri_dieta %}
             <a href="{%url 'criar_dieta'%}"
-              ><i class="fa-solid fa-person-circle-plus"></i></a
+              ><i class="fa-solid fa-person-circle-plus">Novo Objetivo</i></a
             >
             {%endif%}
             {% if request.path == "/introduçâo/" %}
-            <a href="{%url 'criar_dieta'%}"
+            <a href="{%url 'tela_tmb'%}"
               ><i class="fa-solid fa-person-circle-plus"></i>Criar Dieta</a
             >
             {%else%}

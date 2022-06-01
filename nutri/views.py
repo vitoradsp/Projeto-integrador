@@ -50,7 +50,14 @@ def UserRegistration(request):
     return render(request, 'paginas/registration_screen.html')
 
 def introducao(request):
-    return render(request, 'paginas/introdução_dieta.html')
+    if request.user.is_authenticated == True:
+        veri_dieta = User.objects.filter(id=request.user.id).filter(dieta=True)
+        if veri_dieta:
+            return render(request, 'paginas/introdução_dieta.html', {'veri_dieta': veri_dieta})
+        else:
+            return render(request, 'paginas/introdução_dieta.html')
+    else:
+        return render(request, 'paginas/introdução_dieta.html')
 
 def create_diet(request):
     if request.user.is_authenticated == False:
@@ -61,13 +68,16 @@ def create_diet(request):
 def tela_tmb(request):
     if request.user.is_authenticated == False:
         return redirect('login_site')
-    objetivo = Objetivo.objects.all()
-    nivel_at = NivelAtividade.objects.all()
-    if request.method == 'POST':
-        peso = request.POST.getlist('local_dados_do_user')
-        altura = request.POST.get('height')
-        idade = request.POST.get('age')
-    return render(request, 'paginas/tela_tmb.html', {'objetivo': objetivo, 'nivel_at':nivel_at})
+    else:
+        veri_dieta = User.objects.filter(id=request.user.id).filter(dieta=True)
+        print(veri_dieta)
+        objetivo = Objetivo.objects.all()
+        nivel_at = NivelAtividade.objects.all()
+        if request.method == 'POST':
+            peso = request.POST.getlist('local_dados_do_user')
+            altura = request.POST.get('height')
+            idade = request.POST.get('age')
+        return render(request, 'paginas/tela_tmb.html', {'objetivo': objetivo, 'nivel_at':nivel_at})
 
 def userperfil(request, id):
     pass
