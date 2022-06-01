@@ -160,13 +160,13 @@
                     </tr>
                 </thead>
                 <tbody id="alimentos_tabela_Taco">
-                    {%for info in response%}
-                    <tr class="row_alimentos" ondblclick="adicionar()">
+                    {%for info in taco%}
+                    <tr class="row_alimentos" onclick="adicionar(this)">
                         <td id="td_alimento_1" class="td_alimento_1">{{info.name}}</td>
-                        <td class="td_kcal">{{info.kcal}}</td>
-                        <td class="td_prot">{{info.protein}}</td>
-                        <td class="td_gordura">{{info.fat}}</td>
-                        <td class="td_carb">{{info.carbo}}</td>
+                        <td class="td_kcal">{{info.kcal}}kcal</td>
+                        <td class="td_prot">{{info.protein}}g</td>
+                        <td class="td_gordura">{{info.fat}}g</td>
+                        <td class="td_carb">{{info.carbo}}g</td>
                     </tr>
                     {%endfor%}
                 </tbody>

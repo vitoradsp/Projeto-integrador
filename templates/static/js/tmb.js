@@ -38,14 +38,20 @@ function botao_gerar(){
             let total_caloria_user = local_caloria_total.innerText =parseInt( gasto_total_user);
             console.log(total_caloria_user)
             let local_backend=document.getElementById('local_dados_do_user');
+            local_backend.value=[tmb_masculino,gasto_total_user,total_caloria_user];
+            console.log(local_backend.value);
         }else if( objetivo === 'Cutting'){
             let total_caloria_user =local_caloria_total.innerText = parseInt(gasto_total_user - 500) ;
             console.log(total_caloria_user)
             let local_backend=document.getElementById('local_dados_do_user');
+            local_backend.value=[tmb_masculino,gasto_total_user,total_caloria_user];
+            console.log(local_backend.value);
         }else{
             let total_caloria_user =local_caloria_total.innerText = parseInt(gasto_total_user + 500);
             console.log(total_caloria_user)
             let local_backend=document.getElementById('local_dados_do_user');
+            local_backend.value=[tmb_masculino,gasto_total_user,total_caloria_user];
+            console.log(local_backend.value);
         };
     }else{
         let tmb_feminino = parseInt ( 665+( 9.6 * peso ) + ( 1.8 * altura) - ( 4.7 * idade )) ;
@@ -57,14 +63,20 @@ function botao_gerar(){
             let total_caloria_user =local_caloria_total.innerText = parseInt(gasto_total_user);
             let local_backend=document.getElementById('local_dados_do_user');
             console.log(total_caloria_user)
+            local_backend.value=[tmb_feminino,gasto_total_user,total_caloria_user];
+            console.log(local_backend.value)
         }else if( objetivo === 'Cutting'){
             let total_caloria_user =local_caloria_total.innerText = parseInt(gasto_total_user - 500) ;
             console.log(total_caloria_user)
             let local_backend=document.getElementById('local_dados_do_user');
+            local_backend.value=[tmb_feminino,gasto_total_user,total_caloria_user];
+            console.log(local_backend.value);
         }else{
             let total_caloria_user = local_caloria_total.innerText = parseInt(gasto_total_user + 500);
             console.log(total_caloria_user)
             let local_backend=document.getElementById('local_dados_do_user');
+            local_backend.value=[tmb_feminino,gasto_total_user,total_caloria_user];
+            console.log(local_backend.value);
         };
     };
 };
