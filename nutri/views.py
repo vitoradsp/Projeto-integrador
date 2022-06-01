@@ -43,11 +43,11 @@ def tela_tmb(request):
     objetivo = Objetivo.objects.all()
     nivel_at = NivelAtividade.objects.all()
     if request.method == 'POST':
-        peso = request.POST.get('peso')
+        peso = request.POST.getlist('local_dados_do_user')
         altura = request.POST.get('height')
         idade = request.POST.get('age')
         
     return render(request, 'paginas/tela_tmb.html', {'objetivo': objetivo, 'nivel_at':nivel_at})
-
+@login_required
 def userperfil(request, id):
     pass
