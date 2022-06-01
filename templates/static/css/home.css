@@ -224,6 +224,35 @@
   }
 }
 @media (max-width: 720px) {
+  .containar_welcome {
+    display: flex;
+    margin-top: 35px;
+    justify-content: center;
+    align-items: center;
+    width: 98vw;
+    height: 200px;
+    background-image: url("https://img.freepik.com/fotos-gratis/fitness-comida-saudavel-alimentos-fontes-de-omega-3-na-vista-superior-do-fundo-escuro-alimentos-ricos-em-acidos-graxos-incluindo-vegetais-frutos-do-mar-nozes-e-sementes_118925-1411.jpg?w=2000");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    box-shadow: #0e274d 5px 5px 15px 10px;
+  }
+  .div_message_wel {
+    text-align: center;
+    width: 100%;
+    height: 150px;
+    background: rgba(0, 0, 0, 0.27);
+  }
+  .div_message_wel > label {
+    width: 100%;
+    height: 100%;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 155px;
+    text-align: center;
+    color: #ffffff;
+  }
   .text_alimentar > label {
     width: 90%;
     text-align: justify;
@@ -277,6 +306,35 @@
   }
 }
 @media (max-width: 590px) {
+  .containar_welcome {
+    display: flex;
+    margin-top: 35px;
+    justify-content: center;
+    align-items: center;
+    width: 98vw;
+    height: 200px;
+    background-image: url("https://img.freepik.com/fotos-gratis/fitness-comida-saudavel-alimentos-fontes-de-omega-3-na-vista-superior-do-fundo-escuro-alimentos-ricos-em-acidos-graxos-incluindo-vegetais-frutos-do-mar-nozes-e-sementes_118925-1411.jpg?w=2000");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    box-shadow: #0e274d 5px 5px 15px 10px;
+  }
+  .div_message_wel {
+    text-align: center;
+    width: 100%;
+    height: 150px;
+    background: rgba(0, 0, 0, 0.27);
+  }
+  .div_message_wel > label {
+    width: 100%;
+    height: 100%;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 155px;
+    text-align: center;
+    color: #ffffff;
+  }
   .div_introduçao {
     padding-top: 40px;
     display: flex;
