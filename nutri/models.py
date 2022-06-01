@@ -22,5 +22,6 @@ class Dieta(models.Model):
     idade = models.IntegerField()
     genero = models.CharField(max_length=255)
     nivel_atividade = models.ForeignKey(NivelAtividade, on_delete=models.DO_NOTHING)
+    dieta = models.BooleanField(default=False)
     def __str__(self):
         return self.usuario

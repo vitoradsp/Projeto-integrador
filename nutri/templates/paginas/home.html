@@ -1,47 +1,70 @@
-{% extends 'base.html'%}
-{% load static %}
-{%block 'sections'%}
-    <div class="container_main">
-        <div class="containar_welcome">
-            <div class="div_message_wel">
-                <label for="">Welcome</label>
-            </div>
-        </div>
-        <div class="div_introduçao">
-            <div class="conteudo_alimentar">
-                <div class="text_alimentar">
-                    <label for="">
-                        <h3> Benefícios da alimentação saudável</h3>
-                        <p>
-                            A alimentação saudável traz benefícios para a saúde como melhor controle do peso,
-                            rendimento do trabalho, aumento da memória e da concentração,
-                            fortalecimento do sistema imunológico e prevenção de doenças.
-                        </p>
-                        <ul>
-                            <li>Proporciona uma boa noite de sono</li>
-                            <li>Proporciona mais longevidade</li>
-                            <li>Boa atividade cerebral</li>
-                        </ul>
-                    </label>
-                </div>
-                <a href=""> Dê seus primeiros passos <i class="fa-solid fa-shoe-prints"></i></a>
-            </div>
-            <div class="conteudo_sobre_site">
-                <div class="text_sobre_site">
-                    <label for="">
-                        <h2>Jovem Programador Nutrients</h2>
-                        <p>Projeto realizado pelo os alunos <a href="https://github.com/vitoradsp">Vitor</a>, <a href="https://github.com/Fabianbatistasilva">Fabian Batista</a> e <a href="https://github.com/CorteRealRodrigo">Rodrigo Corte</a>
-                            em conjuto ao <a href="https://portal.sc.senac.br/portal/home/default.aspx">Senac</a> Usando a linguagem Python com o framework Django
-                        </p>
-                        <p>
-                            Neste projeto realizado no nicho de saúde e bem-estar utilizamos uma <a href="https://github.com/vitoradsp/API-Taco">Api da tabela Taco</a>
-                            que nós mesmo criamos para realizamos um site unico e propor uma quantidade de alimentos para facilitar
-                            o alcance ao seu objetivo, seja ele bem-estar ou ambição de um corpo atletico
-                        </p>
-                    </label>
-                </div>
-                <label for=""><a href=""> <i class="fa-brands fa-linkedin-in"></i> Vitor </a> <a href="https://www.linkedin.com/in/fabian-batista-965420214/"> <i class="fa-brands fa-linkedin-in"></i> Fabian </a> <a href="https://www.linkedin.com/in/rodrigo-corte-real-b5640023b/"> <i class="fa-brands fa-linkedin-in"></i> Rodrigo </a> </label>
-            </div>
-        </div>
+{% extends 'base.html'%} {% load static %} {%block 'sections'%}
+<div class="container_main">
+  <div class="containar_welcome">
+    <div class="div_message_wel">
+      <label for="">Welcome</label>
     </div>
+  </div>
+  <div class="div_introduçao">
+    <div class="conteudo_alimentar">
+      <div class="text_alimentar">
+        <label for="">
+          <h3>Benefícios da alimentação saudável</h3>
+          <p>
+            A alimentação saudável traz benefícios para a saúde como melhor
+            controle do peso, rendimento do trabalho, aumento da memória e da
+            concentração, fortalecimento do sistema imunológico e prevenção de
+            doenças.
+          </p>
+          <ul>
+            <li>Proporciona uma boa noite de sono</li>
+            <li>Proporciona mais longevidade</li>
+            <li>Boa atividade cerebral</li>
+          </ul>
+        </label>
+      </div>
+      <a href="">
+        Dê seus primeiros passos <i class="fa-solid fa-shoe-prints"></i
+      ></a>
+    </div>
+    <div class="conteudo_sobre_site">
+      <div class="text_sobre_site">
+        <label for="">
+          <h2>Jovem Programador Nutrients</h2>
+          <p>
+            Projeto realizado pelo os alunos
+            <a href="https://github.com/vitoradsp">Vitor</a>,
+            <a href="https://github.com/Fabianbatistasilva">Fabian Batista</a> e
+            <a href="https://github.com/CorteRealRodrigo">Rodrigo Corte</a> em
+            conjuto ao
+            <a href="https://portal.sc.senac.br/portal/home/default.aspx"
+              >Senac</a
+            >
+            Usando a linguagem Python com o framework Django
+          </p>
+          <p>
+            Neste projeto realizado no nicho de saúde e bem-estar utilizamos uma
+            <a href="https://github.com/vitoradsp/API-Taco"
+              >Api da tabela Taco</a
+            >
+            que nós mesmo criamos para realizamos um site unico e propor uma
+            quantidade de alimentos para facilitar o alcance ao seu objetivo,
+            seja ele bem-estar ou ambição de um corpo atletico
+          </p>
+        </label>
+      </div>
+      <div class="nosso_link">
+        <label for=""
+          ><a href=""> <i class="fa-brands fa-linkedin-in"></i> Vitor </a>
+          <a href="https://www.linkedin.com/in/fabian-batista-965420214/">
+            <i class="fa-brands fa-linkedin-in"></i> Fabian
+          </a>
+          <a href="https://www.linkedin.com/in/rodrigo-corte-real-b5640023b/">
+            <i class="fa-brands fa-linkedin-in"></i> Rodrigo
+          </a>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
 {%endblock%}

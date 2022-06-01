@@ -1,34 +1,12 @@
 /* introdução*/
 .body_intro{
     display: grid;
-    grid-template-areas:'botao botao botao' 'manter cutting bulking ';
+    grid-template-areas: 'manter cutting bulking ';
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows:50px 1fr;
+    grid-template-rows: 1fr;
     gap: 20px;
 }
-.container_criar_dieta{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    padding-left: 20px;
-}
-.buttom_criar_intro{
-    text-transform: capitalize;
-    width: 200px;
-    height: 40px;
-    background-color: rgba(1, 1, 1, 0.8);
-    text-align: center;
-    font-size: 30px;
-    color: #C4C4C4;
-    text-decoration: none;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    border-radius: 5px;
-}
-.buttom_criar_intro:hover{
-    color: greenyellow;
-}
+
 /*texto sobre objetivo manter*/
 .obj_manter{
     display: grid;

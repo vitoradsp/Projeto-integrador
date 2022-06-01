@@ -1,123 +1,428 @@
-.container_main{
-    width: 100%;
-    height: 100vh;
-    padding-bottom: 200px;
+.container_main {
+  width: 100%;
+  height: 100vh;
+  padding-bottom: 200px;
 }
-.containar_welcome{
+.containar_welcome {
+  display: flex;
+  margin-top: 35px;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 400px;
+  background-image: url("https://img.freepik.com/fotos-gratis/fitness-comida-saudavel-alimentos-fontes-de-omega-3-na-vista-superior-do-fundo-escuro-alimentos-ricos-em-acidos-graxos-incluindo-vegetais-frutos-do-mar-nozes-e-sementes_118925-1411.jpg?w=2000");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  box-shadow: #0e274d 5px 5px 15px 10px;
+}
+.div_message_wel {
+  text-align: center;
+  width: 100%;
+  height: 150px;
+  background: rgba(0, 0, 0, 0.27);
+}
+.div_message_wel > label {
+  width: 100%;
+  height: 100%;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 128px;
+  line-height: 155px;
+  text-align: center;
+  color: #ffffff;
+}
+.div_introduçao {
+  padding-top: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
+  width: 100%;
+}
+.conteudo_alimentar,
+.conteudo_sobre_site {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 35%;
+  height: 500px;
+  background: #0e274d;
+  border-radius: 10px;
+  padding: 15px;
+}
+.conteudo_sobre_site > .nosso_link > label {
+  display: flex;
+  width: 430px;
+  justify-content: space-around;
+  margin-top: 5px;
+  padding: 5px;
+}
+.conteudo_sobre_site > .nosso_link > label > a {
+  color: black;
+  font-size: 16px;
+  background-color: #c4c4c4;
+  padding: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.conteudo_alimentar > a {
+  text-decoration: none;
+  gap: 10px;
+  padding: 5px;
+  margin-top: 15px;
+  background-color: #c4c4c4;
+  display: flex;
+  height: 25px;
+  border-radius: 5px;
+  color: #0e274d;
+  font-size: 16px;
+  font-weight: 700;
+}
+.text_alimentar {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 80%;
+  height: 80%;
+  background: rgba(253, 253, 253, 0.3);
+  border-radius: 5px;
+}
+.text_sobre_site {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 80%;
+  height: 80%;
+  background: rgba(253, 253, 253, 0.3);
+  border-radius: 5px;
+}
+.text_alimentar > label {
+  width: 80%;
+  text-align: justify;
+  color: white;
+  padding-top: 10px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+}
+.text_sobre_site > label {
+  width: 80%;
+  text-align: justify;
+  color: white;
+  padding-top: 10px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+}
+.text_sobre_site > label > p > a {
+  font-weight: bolder;
+  color: black;
+}
+@media (max-width: 1450px) {
+  .conteudo_sobre_site > .nosso_link > label {
     display: flex;
-    margin-top: 35px;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 400px;
-    background-image:url("https://img.freepik.com/fotos-gratis/fitness-comida-saudavel-alimentos-fontes-de-omega-3-na-vista-superior-do-fundo-escuro-alimentos-ricos-em-acidos-graxos-incluindo-vegetais-frutos-do-mar-nozes-e-sementes_118925-1411.jpg?w=2000");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    box-shadow: #0E274D 5px 5px 15px 10px;
-}
-.div_message_wel{
-    text-align: center;
-    width: 100%;
-    height: 150px;
-    background: rgba(0, 0, 0, 0.27);
-}
-.div_message_wel > label{
-    width: 100%;
-    height: 100%;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 128px;
-    line-height: 155px;
-    text-align: center;
-    color: #FFFFFF;
-}
-.div_introduçao{
-    padding-top: 40px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 10px;
-    width: 100%;
-}
-.conteudo_alimentar,.conteudo_sobre_site{
-    display:flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width:35%;
-    
-    background: #0E274D;
-    border-radius:10px;
-    padding: 15px;
-}
-.conteudo_sobre_site > label{
-    display:flex;
-    width: 80%;
+    width: 100%;
     justify-content: space-around;
     margin-top: 5px;
     padding: 5px;
-}
-.conteudo_sobre_site > label >a{
-    color:black;
+    gap: 8px;
+  }
+  .conteudo_sobre_site > .nosso_link > label > a {
+    color: black;
+    width: 100%;
     font-size: 16px;
-    background-color: #C4C4C4;
+    background-color: #c4c4c4;
     padding: 5px;
     text-decoration: none;
     font-weight: bold;
+  }
+  .text_alimentar > label {
+    width: 80%;
+    text-align: justify;
+    color: white;
+    padding-top: 10px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+  }
+  .text_sobre_site > label {
+    width: 80%;
+    text-align: justify;
+    color: white;
+    padding-top: 10px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+  }
 }
-.conteudo_alimentar>a{
+@media (max-width: 1050px) {
+  .text_alimentar > label {
+    width: 80%;
+    text-align: justify;
+    color: white;
+    padding-top: 10px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+  }
+  .text_sobre_site > label {
+    width: 80%;
+    text-align: justify;
+    color: white;
+    padding-top: 10px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 15px;
+  }
+}
+@media (max-width: 880px) {
+  .text_alimentar > label {
+    width: 90%;
+    text-align: justify;
+    color: white;
+    padding-top: 4px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+  }
+  .text_sobre_site > label {
+    width: 90%;
+    text-align: justify;
+    color: white;
+    padding-top: 4px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+  }
+  .conteudo_sobre_site > .nosso_link > label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 5px;
+    padding: 5px;
+    gap: 8px;
+  }
+  .conteudo_sobre_site > .nosso_link > label > a {
+    color: black;
+    font-size: 16px;
+    background-color: #c4c4c4;
+    padding: 5px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+}
+@media (max-width: 720px) {
+  .text_alimentar > label {
+    width: 90%;
+    text-align: justify;
+    color: white;
+    padding-top: 8px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 13px;
+  }
+  .text_sobre_site > label {
+    width: 90%;
+    text-align: justify;
+    color: white;
+    padding-top: 8px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+  }
+  .conteudo_sobre_site > .nosso_link > label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 5px;
+    padding: 5px;
+    gap: 8px;
+  }
+  .conteudo_sobre_site > .nosso_link > label > a {
+    color: black;
+    font-size: 16px;
+    background-color: #c4c4c4;
+    padding: 5px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .conteudo_alimentar > a {
     text-decoration: none;
     gap: 10px;
     padding: 5px;
     margin-top: 15px;
-    background-color: #C4C4C4;
+    background-color: #c4c4c4;
     display: flex;
-    height: 25px;
+    width: 75%;
+    height: 45px;
     border-radius: 5px;
-    color: #0E274D;
+    color: #0e274d;
     font-size: 16px;
     font-weight: 700;
+  }
 }
-.text_alimentar{
-    display:flex;
+@media (max-width: 590px) {
+  .div_introduçao {
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%;
+    gap: 20px;
+  }
+  .conteudo_alimentar,
+  .conteudo_sobre_site {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    text-align: center;
-    width: 80%;
-    height: 80%;
-    background: rgba(253, 253, 253, 0.3);
-    border-radius: 5px;
-}
-.text_sobre_site{
-    display:flex;
-    justify-content: center;
-    text-align: center;
-    width: 80%;
-    height: 80%;
-    background: rgba(253, 253, 253, 0.3);
-    border-radius: 5px;
-}
-.text_alimentar > label{
-    width: 80%;
+    align-items: center;
+    width: 65%;
+    height: 500px;
+    background: #0e274d;
+    border-radius: 10px;
+    padding: 15px;
+  }
+  .text_alimentar > label {
+    width: 95%;
     text-align: justify;
     color: white;
-    padding-top: 10px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-top: 4px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-}
-.text_sobre_site >label{
-    width: 80%;
+    font-weight: 300;
+    font-size: 16px;
+  }
+  .text_sobre_site > label {
+    width: 95%;
     text-align: justify;
     color: white;
-    padding-top: 10px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-top: 4px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-}
-.text_sobre_site > label > p > a{
-    font-weight: bolder;
+    font-weight: 300;
+    font-size: 16px;
+  }
+  .conteudo_sobre_site > .nosso_link > label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 5px;
+    padding: 5px;
+    gap: 8px;
+  }
+  .conteudo_sobre_site > .nosso_link > label > a {
     color: black;
+    font-size: 16px;
+    background-color: #c4c4c4;
+    padding: 5px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .conteudo_alimentar > a {
+    text-decoration: none;
+    gap: 10px;
+    padding: 5px;
+    margin-top: 15px;
+    background-color: #c4c4c4;
+    display: flex;
+    width: 75%;
+    height: 35px;
+    border-radius: 5px;
+    color: #0e274d;
+    font-size: 16px;
+    font-weight: 700;
+  }
+}
+@media (max-width: 370px) {
+  .div_introduçao {
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%;
+    gap: 20px;
+  }
+  .conteudo_alimentar,
+  .conteudo_sobre_site {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 65%;
+    height: 500px;
+    background: #0e274d;
+    border-radius: 10px;
+    padding: 15px;
+  }
+  .text_alimentar > label {
+    width: 95%;
+    text-align: justify;
+    color: white;
+    padding-top: 4px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 13px;
+  }
+  .text_sobre_site > label {
+    width: 95%;
+    text-align: justify;
+    color: white;
+    padding-top: 4px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+  }
+  .conteudo_sobre_site > .nosso_link > label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 5px;
+    padding: 5px;
+    gap: 8px;
+  }
+  .conteudo_sobre_site > .nosso_link > label > a {
+    color: black;
+    font-size: 16px;
+    background-color: #c4c4c4;
+    padding: 5px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .conteudo_alimentar > a {
+    text-decoration: none;
+    gap: 10px;
+    padding: 5px;
+    margin-top: 15px;
+    background-color: #c4c4c4;
+    display: flex;
+    width: 75%;
+    height: 35px;
+    border-radius: 5px;
+    color: #0e274d;
+    font-size: 16px;
+    font-weight: 700;
+  }
 }
