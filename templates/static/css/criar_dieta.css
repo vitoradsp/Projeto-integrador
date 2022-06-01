@@ -360,14 +360,8 @@
     background: rgba(1, 1, 1, 0.8);
     margin-top: 40px;
     border-radius: 15px;
-<<<<<<< HEAD
   }
   .div_opçoes_de_ref {
-=======
-    
-}
-.div_opçoes_de_ref{
->>>>>>> 87239b6ad5f0524e53c816cf239c08d19bdb674b
     width: 90%;
     height: 80%;
     grid: opçoes;
