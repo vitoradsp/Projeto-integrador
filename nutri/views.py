@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib import auth, messages
 from django.contrib.auth import login, logout
 from .models import *
+import requests
 
 def index(request):
     return render(request,'paginas/home.html')
@@ -54,7 +55,8 @@ def introducao(request):
 def create_diet(request):
     if request.user.is_authenticated == False:
         return redirect('login_site')
-    return render(request,'paginas/create_diet.html')
+    taco = requests.get('http://127.0.0.1:7000/alimentoes/').json()
+    return render(request,'paginas/create_diet.html', {'taco': taco})
 
 def tela_tmb(request):
     if request.user.is_authenticated == False:
