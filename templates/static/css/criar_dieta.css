@@ -185,7 +185,6 @@
   padding-right: 10px;
   border-radius: 5px;
   font-size: 18px;
-  overflow: hidden;
 }
 .macros_refeicoes_one,
 .macros_refeicoes_two,
@@ -237,7 +236,9 @@
 #alimentos_linha_2_ref_2,
 #alimentos_linha_1_ref_3,
 #alimentos_linha_2_ref_3 {
-  border-bottom: 3px solid black;
+  border-bottom: 1.5px solid black;
+  border-top: 1.5px solid black;
+  overflow-y: scroll;
 }
 #alimentos_linha_1_ref_4,
 #alimentos_linha_2_ref_4,
@@ -245,7 +246,43 @@
 #alimentos_linha_2_ref_5,
 #alimentos_linha_1_ref_6,
 #alimentos_linha_2_ref_6 {
-  border-bottom: 3px solid black;
+  border-bottom: 1.5px solid black;
+  border-top: 1.5px solid black;
+  overflow-y: scroll;
+}
+#alimentos_linha_3_ref_1,
+#alimentos_linha_3_ref_2,
+#alimentos_linha_3_ref_3,
+#alimentos_linha_3_ref_4,
+#alimentos_linha_3_ref_5,
+#alimentos_linha_3_ref_6{
+  border-bottom: 1.5px solid black;
+  border-top: 1.5px solid black;
+  overflow-y: scroll;
+}
+.alimentos_refeicoes_one > label,
+.alimentos_refeicoes_two > label,
+.alimentos_refeicoes_tree > label,
+.alimentos_refeicoes_four > label,
+.alimentos_refeicoes_five > label,
+.alimentos_refeicoes_six > label{
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  text-align: center;
+}
+.alimentos_refeicoes_one > input,
+.alimentos_refeicoes_two > input,
+.alimentos_refeicoes_tree > input,
+.alimentos_refeicoes_four > input,
+.alimentos_refeicoes_five > input,
+.alimentos_refeicoes_six > input{
+  width: 70%;
+  margin-left: 45px ;
+  height: 15px;
+  display: flex;
+  text-align: center;
+  text-transform: capitalize;
 }
 /*tabela taco*/
 .tabela_taco {

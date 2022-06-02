@@ -1,5 +1,6 @@
-{% extends 'base.html'%} {% load static %} {% block 'title' %}Criando sua
-dieta{%endblock%} {%block 'sections'%}
+{% extends 'base.html'%} {% load static %} 
+{% block 'title' %}Criando sua dieta{%endblock%} 
+{%block 'sections'%}
 <div class="body_create_diet">
   {%if messages%} {%for message in messages%}
   <div class="erro">
@@ -96,9 +97,9 @@ dieta{%endblock%} {%block 'sections'%}
     <div class="container_refeiçoes_user">
       <div class="refeicoes_user_one">
         <div class="alimentos_refeicoes_one">
-          <label id="alimentos_linha_1_ref_1" for=""><input type="number" name="" id=""></label>
-          <label id="alimentos_linha_2_ref_1" for=""><input type="number" name="" id=""></label>
-          <label id="alimentos_linha_3_ref_1" for=""><input type="number" name="" id=""></label>
+          <label id="alimentos_linha_1_ref_1" for=""></label><input type="number" placeholder="quantidade do alimento" name="" id="">
+          <label id="alimentos_linha_2_ref_1" for=""></label><input type="number" placeholder="quantidade do alimento" name="" id="">
+          <label id="alimentos_linha_3_ref_1" for=""></label><input type="number" placeholder="quantidade do alimento" name="" id="">
         </div>
         <div class="macros_refeicoes_one">
           <label for=""
@@ -119,13 +120,17 @@ dieta{%endblock%} {%block 'sections'%}
             type="button"
             value="Macros refeição"
           />
+          <input type="hidden" id="kcal_total_hidden_one" name="kcal_total_hidden" value="">
+          <input type="hidden" id="prot_total_hidden_one" name="prot_total_hidden" value="">
+          <input type="hidden" id="gord_total_hidden_one" name="gord_total_hidden" value="">
+          <input type="hidden" id="carb_total_hidden_one" name="carb_total_hidden" value="">
         </div>
       </div>
       <div class="refeicoes_user_two">
         <div class="alimentos_refeicoes_two">
-          <label id="alimentos_linha_1_ref_2" for=""><input type="number" name="" id=""></label>
-          <label id="alimentos_linha_2_ref_2" for=""><input type="number" name="" id=""></label>
-          <label id="alimentos_linha_3_ref_2" for=""><input type="number" name="" id=""></label>
+          <label id="alimentos_linha_1_ref_2" for=""></label><input type="number" placeholder="quantidade do alimento" name="" id="">
+          <label id="alimentos_linha_2_ref_2" for=""></label><input type="number" placeholder="quantidade do alimento" name="" id="">
+          <label id="alimentos_linha_3_ref_2" for=""></label><input type="number" placeholder="quantidade do alimento" name="" id="">
         </div>
         <div class="macros_refeicoes_two">
           <label for=""
@@ -150,9 +155,9 @@ dieta{%endblock%} {%block 'sections'%}
       </div>
       <div class="refeicoes_user_tree">
         <div class="alimentos_refeicoes_tree">
-          <label id="alimentos_linha_1_ref_3" for=""><input type="number" name="" id=""></label>
-          <label id="alimentos_linha_2_ref_3" for=""><input type="number" name="" id=""></label>
-          <label id="alimentos_linha_3_ref_3" for=""><input type="number" name="" id=""></label>
+          <label id="alimentos_linha_1_ref_3" for=""></label><input type="number" placeholder="quantidade do alimento" name="" id="">
+          <label id="alimentos_linha_2_ref_3" for=""></label><input type="number" placeholder="quantidade do alimento" name="" id="">
+          <label id="alimentos_linha_3_ref_3" for=""></label><input type="number" placeholder="quantidade do alimento" name="" id="">
         </div>
         <div class="macros_refeicoes_tree">
           <label for=""
@@ -177,9 +182,9 @@ dieta{%endblock%} {%block 'sections'%}
       </div>
       <div class="refeicoes_user_four">
         <div class="alimentos_refeicoes_four">
-          <label id="alimentos_linha_1_ref_4" for=""><input type="number" name="" id=""></label>
-          <label id="alimentos_linha_2_ref_4" for=""><input type="number" name="" id=""></label>
-          <label id="alimentos_linha_3_ref_4" for=""><input type="number" name="" id=""></label>
+          <label id="alimentos_linha_1_ref_4" for=""></label><input type="number" placeholder="quantidade do alimento" name="" id="">
+          <label id="alimentos_linha_2_ref_4" for=""></label><input type="number" placeholder="quantidade do alimento" name="" id="">
+          <label id="alimentos_linha_3_ref_4" for=""></label><input type="number" placeholder="quantidade do alimento" name="" id="">
         </div>
         <div class="macros_refeicoes_four">
           <label for=""
@@ -204,9 +209,9 @@ dieta{%endblock%} {%block 'sections'%}
       </div>
       <div class="refeicoes_user_five">
         <div class="alimentos_refeicoes_five">
-          <label id="alimentos_linha_1_ref_5" for=""><input type="number" name="" id=""></label>
-          <label id="alimentos_linha_2_ref_5" for=""><input type="number" name="" id=""></label>
-          <label id="alimentos_linha_3_ref_5" for=""><input type="number" name="" id=""></label>
+          <label id="alimentos_linha_1_ref_5" for=""></label><input type="number" placeholder="quantidade do alimento" name="" id="">
+          <label id="alimentos_linha_2_ref_5" for=""></label><input type="number" placeholder="quantidade do alimento" name="" id="">
+          <label id="alimentos_linha_3_ref_5" for=""></label><input type="number" placeholder="quantidade do alimento" name="" id="">
         </div>
         <div class="macros_refeicoes_five">
           <label for=""
@@ -231,9 +236,9 @@ dieta{%endblock%} {%block 'sections'%}
       </div>
       <div class="refeicoes_user_six">
         <div class="alimentos_refeicoes_six">
-          <label id="alimentos_linha_1_ref_6" for=""><input type="number" name="" id=""></label>
-          <label id="alimentos_linha_2_ref_6" for=""><input type="number" name="" id=""></label>
-          <label id="alimentos_linha_3_ref_6" for=""><input type="number" name="" id=""></label>
+          <label id="alimentos_linha_1_ref_6" for=""></label><input type="number" placeholder="quantidade do alimento" name="" id="">
+          <label id="alimentos_linha_2_ref_6" for=""></label><input type="number" placeholder="quantidade do alimento" name="" id="">
+          <label id="alimentos_linha_3_ref_6" for=""></label><input type="number" placeholder="quantidade do alimento" name="" id="">
         </div>
         <div class="macros_refeicoes_six">
           <label for=""

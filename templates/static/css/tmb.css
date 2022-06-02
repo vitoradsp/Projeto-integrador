@@ -60,7 +60,8 @@
     font-size: 20px;
     border-radius: 5px;
     cursor: pointer;
-    width: 150px;
+    width: 270px;
+    text-align: center;
 }
 .btn_tmb1{
     margin-top: 10px;
@@ -70,10 +71,14 @@
     width: 150px;
     margin: auto;
     margin-top: 10px;
+    text-align: center;
 }
 .objetivo{
     margin-right: -30px;
 }
 .nivel_ati{
     margin-left: -10px;
+}
+.btn_tmb1:hover,.btn_tmb:hover{
+    color: yellowgreen;
 }

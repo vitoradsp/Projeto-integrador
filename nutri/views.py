@@ -70,14 +70,23 @@ def tela_tmb(request):
         return redirect('login_site')
     else:
         veri_dieta = User.objects.filter(id=request.user.id).filter(dieta=True)
-        print(veri_dieta)
         objetivo = Objetivo.objects.all()
         nivel_at = NivelAtividade.objects.all()
         if request.method == 'POST':
             peso = request.POST.getlist('local_dados_do_user')
             altura = request.POST.get('height')
             idade = request.POST.get('age')
-        return render(request, 'paginas/tela_tmb.html', {'objetivo': objetivo, 'nivel_at':nivel_at})
-
+            objetivo  = request.POST.get('objetivo_user')
+            n_atividade = request.POST.get('nivel_de_ati_user')
+            dados_dieta = request.POST.getlist('local_dados_do_user')
+            print(dados_dieta)
+            tmb_parado = dados_dieta[0]
+            print(tmb_parado)
+            gasto_total_dia = dados_dieta[1]
+            recomendado_consumir = dados_dieta[2]
+            return render(request, 'paginas/create_diet.html', {'objetivo': objetivo, 'nivel_at':nivel_at})
+        else: 
+            return render(request, 'paginas/tela_tmb.html', {'objetivo': objetivo, 'nivel_at':nivel_at})
+    
 def userperfil(request, id):
     pass
