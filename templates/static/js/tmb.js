@@ -29,54 +29,68 @@ function botao_gerar(){
     let masculino=document.getElementById('user_masculino').value;
     let feminino=document.getElementById('user_feminino').value;   
     if(masculino.value == 'masculino'  ){
-        let tmb_masculino = parseInt( 66 + ( 13.7 * peso ) + (  5.0 * altura ) - ( 6.8 * idade )) ;
+        let tmb_masculino = parseInt( 66 + ( 13.7 * parseInt(peso) ) + (  5.0 * parseInt(altura) ) - ( 6.8 * parseInt(idade) )) ;
         local_tmb_parado.innerText = tmb_masculino;
         local_objetivo.innerText = objetivo;
         let gasto_total_user = gasto_dia(tmb_masculino,n_atividade);
         console.log(gasto_total_user)
         if( objetivo === 'Manter'){
             let total_caloria_user = local_caloria_total.innerText =parseInt( gasto_total_user);
-            console.log(total_caloria_user)
+            let proteina_user=parseInt(Number(peso)*2);
+            let gordura_user=parseInt(Number(peso)*0.8);
+            let carboidrato_user=parseInt(((proteina_user+gordura_user)-total_caloria_user)/4)
+            console.log(carboidrato_user)
             let local_backend=document.getElementById('local_dados_do_user');
-            local_backend.value=[tmb_masculino,gasto_total_user,total_caloria_user];
+            local_backend.value=[tmb_masculino,gasto_total_user,total_caloria_user,proteina_user,gordura_user,carboidrato_user];
             console.log(local_backend.value);
         }else if( objetivo === 'Cutting'){
             let total_caloria_user =local_caloria_total.innerText = parseInt(gasto_total_user - 500) ;
-            console.log(total_caloria_user)
+            let proteina_user=parseInt(Number(peso)*2);
+            let gordura_user=parseInt(Number(peso)*0.8);
+            let carboidrato_user=parseInt(((proteina_user+gordura_user)-total_caloria_user)/4)
+            console.log(carboidrato_user)
             let local_backend=document.getElementById('local_dados_do_user');
-            local_backend.value=[tmb_masculino,gasto_total_user,total_caloria_user];
+            local_backend.value=[tmb_masculino,gasto_total_user,total_caloria_user,proteina_user,gordura_user,carboidrato_user];
             console.log(local_backend.value);
         }else{
             let total_caloria_user =local_caloria_total.innerText = parseInt(gasto_total_user + 500);
-            console.log(total_caloria_user)
+            let proteina_user=parseInt(Number(peso)*2);
+            let gordura_user=parseInt(Number(peso)*0.8);
+            let carboidrato_user=parseInt(((proteina_user+gordura_user)-total_caloria_user)/4)
+            console.log(carboidrato_user)
             let local_backend=document.getElementById('local_dados_do_user');
-            local_backend.value=[tmb_masculino,gasto_total_user,total_caloria_user];
-            console.log(local_backend.value);
+            local_backend.value=[tmb_masculino,gasto_total_user,total_caloria_user,proteina_user,gordura_user,carboidrato_user];
         };
     }else{
-        let tmb_feminino = parseInt ( 665+( 9.6 * peso ) + ( 1.8 * altura) - ( 4.7 * idade )) ;
+        let tmb_feminino = parseInt ( 665+( 9.6 * parseInt(peso) ) + ( 1.8 * parseInt(altura)) - ( 4.7 * parseInt(idade) )) ;
         local_tmb_parado.innerText = tmb_feminino;
         local_objetivo.innerText = objetivo;
         let gasto_total_user = gasto_dia(tmb_feminino,n_atividade);
         console.log(gasto_total_user)
         if( objetivo === 'Manter'){
             let total_caloria_user =local_caloria_total.innerText = parseInt(gasto_total_user);
+            let proteina_user=parseInt(Number(peso)*2);
+            let gordura_user=parseInt(Number(peso)*0.8);
+            let carboidrato_user=parseInt(((proteina_user+gordura_user)-total_caloria_user)/4)
+            console.log(carboidrato_user)
             let local_backend=document.getElementById('local_dados_do_user');
-            console.log(total_caloria_user)
-            local_backend.value=[tmb_feminino,gasto_total_user,total_caloria_user];
-            console.log(local_backend.value)
+            local_backend.value=[tmb_masculino,gasto_total_user,total_caloria_user,proteina_user,gordura_user,carboidrato_user];
         }else if( objetivo === 'Cutting'){
             let total_caloria_user =local_caloria_total.innerText = parseInt(gasto_total_user - 500) ;
-            console.log(total_caloria_user)
+            let proteina_user=parseInt(Number(peso)*2);
+            let gordura_user=parseInt(Number(peso)*0.8);
+            let carboidrato_user=parseInt(((proteina_user+gordura_user)-total_caloria_user)/4)
+            console.log(carboidrato_user)
             let local_backend=document.getElementById('local_dados_do_user');
-            local_backend.value=[tmb_feminino,gasto_total_user,total_caloria_user];
-            console.log(local_backend.value);
+            local_backend.value=[tmb_masculino,gasto_total_user,total_caloria_user,proteina_user,gordura_user,carboidrato_user];
         }else{
             let total_caloria_user = local_caloria_total.innerText = parseInt(gasto_total_user + 500);
-            console.log(total_caloria_user)
+            let proteina_user=parseInt(Number(peso)*2);
+            let gordura_user=parseInt(Number(peso)*0.8);
+            let carboidrato_user=parseInt(((proteina_user+gordura_user)-total_caloria_user)/4)
+            console.log(carboidrato_user)
             let local_backend=document.getElementById('local_dados_do_user');
-            local_backend.value=[tmb_feminino,gasto_total_user,total_caloria_user];
-            console.log(local_backend.value);
+            local_backend.value=[tmb_masculino,gasto_total_user,total_caloria_user,proteina_user,gordura_user,carboidrato_user];
         };
     };
 };
