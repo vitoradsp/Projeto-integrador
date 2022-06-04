@@ -88,5 +88,9 @@ def tela_tmb(request):
         else: 
             return render(request, 'paginas/tela_tmb.html', {'objetivo': objetivo, 'nivel_at':nivel_at})
     
+def diet_screen(request):
+    return render(request, 'paginas/diet_screen.html') 
+
+
 def userperfil(request, id):
     pass
