@@ -284,6 +284,23 @@
   text-align: center;
   text-transform: capitalize;
 }
+#limpar_ref {
+  width: 100%;
+  font-weight: 700;
+  border: #000000 solid 1px;
+  border-radius: 15px;
+  color: white;
+  background-color: red;
+}
+#limpar_ref:hover {
+  width: 100%;
+  font-weight: 600;
+  border: #000000 solid 1px;
+  border-radius: 15px;
+  color: white;
+  background-color: orangered;
+  transition: 1s;
+}
 /*tabela taco*/
 .tabela_taco {
   width: 800px;
