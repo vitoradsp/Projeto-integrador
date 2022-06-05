@@ -35,12 +35,12 @@ class ImprimirDieta(models.Model):
     ref_13 = models.CharField(max_length=255)
     quant_13 = models.IntegerField()
 
-    ref_12 = models.CharField(max_length=255)
-    quant_12 = models.IntegerField()
+    ref_21 = models.CharField(max_length=255)
+    quant_21 = models.IntegerField()
     ref_22 = models.CharField(max_length=255)
     quant_22 = models.IntegerField()
-    ref_32 = models.CharField(max_length=255)
-    quant_32 = models.IntegerField()
+    ref_23 = models.CharField(max_length=255)
+    quant_23 = models.IntegerField()
 
     ref_31 = models.CharField(max_length=255, blank=True)
     quant_31 = models.IntegerField(blank=True)

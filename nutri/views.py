@@ -60,10 +60,28 @@ def introducao(request):
         return render(request, 'paginas/introdução_dieta.html')
 
 def create_diet(request):
+    taco = requests.get('http://127.0.0.1:7000/alimentoes/').json()
     if request.user.is_authenticated == False:
         return redirect('login_site')
-    taco = requests.get('http://127.0.0.1:7000/alimentoes/').json()
-    return render(request,'paginas/create_diet.html', {'taco': taco})
+    elif request.method == 'POST':
+        ref_11 = request.POST.get('alimento_11')
+        quant_ref_11 = request.POST.get('quant_ref_11')
+        ref_12 = request.POST.get('alimento_12')
+        quant_ref_12 = request.POST.get('quant_ref_12')
+        ref_13 = request.POST.get('alimento_13')
+        quant_ref_13 = request.POST.get('quant_ref_13')
+
+        ref_21 = request.POST.get('alimento_21')
+        quant_ref_21 = request.POST.get('quant_ref_21')
+        ref_22 = request.POST.get('alimento_22')
+        quant_ref_22 = request.POST.get('quant_ref_22')
+        ref_23 = request.POST.get('alimento_23')
+        quant_ref_23 = request.POST.get('quant_ref_23')
+        add_ref = ImprimirDieta.objects.create(usuario=request.user, ref_11=ref_11, quant_11=quant_ref_11, ref_12=ref_12, quant_12=quant_ref_12, ref_13=ref_13, quant_13=quant_ref_13, ref_21=ref_21, quant_21=quant_ref_21, ref_22=ref_22, quant_22=quant_ref_22, ref_23=ref_23, quant_23=quant_ref_23 )
+        add_ref.save()
+        return redirect('diet_screen')
+    else:
+        return render(request,'paginas/create_diet.html', {'taco': taco})
 
 def tela_tmb(request):
     if request.user.is_authenticated == False:
@@ -85,7 +103,9 @@ def tela_tmb(request):
             return render(request, 'paginas/tela_tmb.html', {'objetivo': objetivo, 'nivel_at':nivel_at})
     
 def diet_screen(request):
-    return render(request, 'paginas/diet_screen.html') 
+    dieta = ImprimirDieta.objects.all()
+    print(dieta)
+    return render(request, 'paginas/diet_screen.html', {'dieta':dieta}) 
 
 
 def userperfil(request, id):
