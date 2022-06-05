@@ -436,6 +436,7 @@ function adicionar_alimento(alimento_tabela) {
     let fat_2 = document.getElementById("gord_total_row2_ref_6").value=`${gordura_do_alimentos}`;
     let carb_2 = document.getElementById("carb_total_row2_ref_6").value=`${carboidratos_do_alimentos}`;
   } else if (alimento_da_ref_6_row_3 == "") {
+    let LABEL_2 = (document.getElementById("alimentos_linha_3_ref_6").innerText = nome_do_alimento);
     let kcal_3 = document.getElementById("kcal_total_row3_ref_6").value=`${kcal_do_alimentos}`;
     let prot_3 = document.getElementById("prot_total_row3_ref_6").value=`${prot_do_alimentos}`;
     let fat_3 = document.getElementById("gord_total_row3_ref_6").value=`${gordura_do_alimentos}`;

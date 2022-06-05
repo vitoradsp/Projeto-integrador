@@ -284,8 +284,25 @@
   text-align: center;
   text-transform: capitalize;
 }
+#button_macros_ref {
+  width: 70%;
+  font-weight: 700;
+  border: #000000 solid 1px;
+  border-radius: 15px;
+  color: darkorange;
+  background-color: #0e274dc4;
+}
+#button_macros_ref:hover {
+  width: 70%;
+  font-weight: 600;
+  border: #000000 solid 1px;
+  border-radius: 15px;
+  color: white;
+  background-color: #0e274d;
+  transition: 1s;
+}
 #limpar_ref {
-  width: 100%;
+  width: 35%;
   font-weight: 700;
   border: #000000 solid 1px;
   border-radius: 15px;
@@ -293,7 +310,7 @@
   background-color: red;
 }
 #limpar_ref:hover {
-  width: 100%;
+  width: 35%;
   font-weight: 600;
   border: #000000 solid 1px;
   border-radius: 15px;
@@ -301,6 +318,8 @@
   background-color: orangered;
   transition: 1s;
 }
+
+
 /*tabela taco*/
 .tabela_taco {
   width: 800px;
