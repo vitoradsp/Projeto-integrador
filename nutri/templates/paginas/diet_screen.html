@@ -4,7 +4,15 @@
 <div class="diet">
     {% for a in dieta %}
     <div class="value_det1">
-        <label for="">{{ a }}</label>
+        <label for="">{{ a.ref_1 }}</label>
+        <label for="">{{ a.ref_2 }}</label>
+        
+        <label for="">{{ a.ref_3 }}</label>
+        <label for="">{{ a.ref_4 }}</label>
+        <label for="">{{ a.ref_5 }}</label>
+        <label for="">{{ a.ref_6 }}</label>
     </div>
+    {%endfor%}
+    
 </div>
 {% endblock %}

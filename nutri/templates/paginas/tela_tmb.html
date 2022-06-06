@@ -10,7 +10,7 @@
 </div>
 {%endfor%}
 {%endif%}     
-    <form action="{% url 'criar_dieta'%}" method="post">{% csrf_token %}
+    <form method="post">{% csrf_token %}
         
         <div class="valor_tmb">
             <h2>Valor de injestao diária</h2>
@@ -23,17 +23,17 @@
         </div>
         <div class="objetivo">
             <p>Objetivo:</p>
-            <select name=""  id='objetivo_user'>
+            <select name="objetivo_user"  id='objetivo_user'>
                 {% for c in objetivo %}
-                    <option value="{{c}}">{{c}}</option>
+                    <option value="{{c.id}}">{{c}}</option>
                 {% endfor %}
             </select>
         </div>
         <div class="nivel_ati">
             <p>Atividade:</p>
-            <select name="" id='nivel_de_ati_user'>
+            <select name="nivel_de_ati_user" id='nivel_de_ati_user'>
                 {% for c in nivel_at %}
-                    <option  value="{{c}}">{{c}}</option>
+                    <option  value="{{c.id}}">{{c}}</option>
                 {% endfor %}
             </select>
         </div>
@@ -55,7 +55,7 @@
             <p><input id="user_feminino" type="radio" name="opcao" value="feminino"> Feminino</p>
         </div>
         <input value="Gerar Taxa Metabólica Basal" id='btn_tmb' onclick="botao_gerar()" class="btn_tmb" >
-        <input id="local_dados_do_user" type="hidden" name="local_dados_do_user">
+        <input id="local_dados_do_user" type="hidden" name="local_dados_do_user" multiple>
     </form>
 </div>
 {%endblock%}
