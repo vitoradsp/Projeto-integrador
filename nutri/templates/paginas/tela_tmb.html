@@ -10,7 +10,7 @@
 </div>
 {%endfor%}
 {%endif%}     
-    <form action="" method="post">{% csrf_token %}
+    <form action="{% url 'criar_dieta'%}" method="post">{% csrf_token %}
         
         <div class="valor_tmb">
             <h2>Valor de injestao diária</h2>
@@ -19,7 +19,7 @@
                 Com base no seu objetivo <strong id="objetivo_javascript"></strong>
                 você deve ingerir <strong id="valor_total_de_calorias_javascript"></strong> Kcal
             </label>
-            <a href="{% url 'criar_dieta' %} "><button  class="btn_tmb1" type="button">Criar Dieta</button></a>
+            <button  class="btn_tmb1" type="submit">Criar Dieta</button>
         </div>
         <div class="objetivo">
             <p>Objetivo:</p>
