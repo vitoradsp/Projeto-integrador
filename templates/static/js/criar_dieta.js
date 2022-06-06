@@ -1,34 +1,58 @@
 console.log("javascript entrou");
 /* calculos abaixo sobre refeições */
 function macros_dieta_user() {
-  let proteina_max_diet = document.getElementById(
-    "valores_total_de_proteina"
-  ).innerHTML;
-  let gordura_max_diet = document.getElementById(
-    "valores_total_de_gordura"
-  ).innerHTML;
-  let carboidratos_max_diet = document.getElementById(
-    "valores_total_de_carboidratos"
-  ).innerHTML;
-  let calorias_max_diet = document.getElementById(
-    "valor_total_das_kcal"
-  ).innerHTML;
-  let quantidade_refeicao = document.getElementById(
-    "quantidade_de_refeicoes"
-  ).value;
-  let quantidade_max_proteica_ref = (document.getElementById(
-    "proteina_max_ref_user"
-  ).innerText = parseInt(proteina_max_diet / quantidade_refeicao));
-  let quantidade_max_gordura_ref = (document.getElementById(
-    "gordura_max_ref_user"
-  ).innerText = parseInt(gordura_max_diet / quantidade_refeicao));
-  let quantidade_max_carboidratos_ref = (document.getElementById(
-    "carboidratos_max_ref_user"
-  ).innerText = parseInt(carboidratos_max_diet / quantidade_refeicao));
-  let quantidade_max_calorias_ref = (document.getElementById(
-    "calorias_max_ref_user"
-  ).innerText = parseInt(calorias_max_diet / quantidade_refeicao));
+  let proteina_max_diet = document.getElementById("valores_total_de_proteina").innerHTML;
+  let gordura_max_diet = document.getElementById("valores_total_de_gordura").innerHTML;
+  let carboidratos_max_diet = document.getElementById("valores_total_de_carboidratos").innerHTML;
+  let calorias_max_diet = document.getElementById("valor_total_das_kcal").innerHTML;
+  let quantidade_refeicao = document.getElementById("quantidade_de_refeicoes").value;
+  let funcao_faz_sumir_as_refeicao_nao_selecionada=refeicoes_quanti(Number(quantidade_refeicao));
+  let quantidade_max_proteica_ref = (document.getElementById("proteina_max_ref_user").innerText = parseInt(proteina_max_diet / quantidade_refeicao));
+  let quantidade_max_gordura_ref = (document.getElementById("gordura_max_ref_user").innerText = parseInt(gordura_max_diet / quantidade_refeicao));
+  let quantidade_max_carboidratos_ref = (document.getElementById("carboidratos_max_ref_user").innerText = parseInt(carboidratos_max_diet / quantidade_refeicao));
+  let quantidade_max_calorias_ref = (document.getElementById("calorias_max_ref_user").innerText = parseInt(calorias_max_diet / quantidade_refeicao));
 }
+function refeicao_quanti(quantidade){
+  quantidade_de_refeicao=quantidade;
+  switch (quantidade_de_refeicao) {
+    case 2:
+      /*pego as refeiçôes */
+      let ref_tree_case1 = document.getElementsByClassName('refeicoes_user_tree');
+      let ref_four_case1 = document.getElementsByClassName('refeicoes_user_four');
+      let ref_five_case1 = document.getElementsByClassName('refeicoes_user_five');
+      let ref_six_case1 = document.getElementsByClassName('refeicoes_user_six');
+      /*pego as refeiçôes e coloco em display none */
+      ref_tree.style.display='none';
+      ref_four.style.display='none';
+      ref_five.style.display='none';
+      ref_six.style.display='none';
+      break;
+    case 3:
+      /*pego as refeiçôes */
+      let ref_four_case2 = document.getElementsByClassName('refeicoes_user_four');
+      let ref_five_case2 = document.getElementsByClassName('refeicoes_user_five');
+      let ref_six_case2 = document.getElementsByClassName('refeicoes_user_six');
+      /*pego as refeiçôes e coloco em display none */
+      ref_four.style.display='none';
+      ref_five.style.display='none';
+      ref_six.style.display='none';
+      break;
+    case 4:
+      /*pego as refeiçôes */
+      let ref_five_case3 = document.getElementsByClassName('refeicoes_user_five');
+      let ref_six_case3 = document.getElementsByClassName('refeicoes_user_six');
+      /*pego as refeiçôes e coloco em display none */
+      ref_five.style.display='none';
+      ref_six.style.display='none';
+      break;
+    case 5:
+      /*pego as refeiçôes */
+      let ref_six_case4 = document.getElementsByClassName('refeicoes_user_six');
+      /*pego as refeiçôes e coloco em display none */
+      ref_six.style.display='none';
+      break;
+  }
+};
 /* macros (passe o valor da rfeição)e ele calcular os macros*/
 function macros_refeicao(numero_da_ref) {
   let valor=numero_da_ref;

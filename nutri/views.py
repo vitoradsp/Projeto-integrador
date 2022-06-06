@@ -97,13 +97,13 @@ def tela_tmb(request):
             objetivo  = request.POST.get('objetivo_user')
             n_atividade = request.POST.get('nivel_de_ati_user')
             dados_dieta = request.POST.getlist('local_dados_do_user')
-            print(dados_dieta)
+            print(list(dados_dieta))
             return render(request, 'paginas/create_diet.html', {'objetivo': objetivo, 'nivel_at':nivel_at})
         else: 
             return render(request, 'paginas/tela_tmb.html', {'objetivo': objetivo, 'nivel_at':nivel_at})
     
 def diet_screen(request):
-    dieta = ImprimirDieta.objects.all()
+    dieta = ImprimirDieta.objects.get(id=request.user.id)
     print(dieta)
     return render(request, 'paginas/diet_screen.html', {'dieta':dieta}) 
 
