@@ -1,3 +1,4 @@
+from time import process_time
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.contrib import auth, messages
@@ -91,13 +92,14 @@ def tela_tmb(request):
         objetivo = Objetivo.objects.all()
         nivel_at = NivelAtividade.objects.all()
         if request.method == 'POST':
-            peso = request.POST.getlist('local_dados_do_user')
+            print('veio aqui')
+            peso = request.POST.get('local_dados_do_user')
             altura = request.POST.get('height')
             idade = request.POST.get('age')
             objetivo  = request.POST.get('objetivo_user')
             n_atividade = request.POST.get('nivel_de_ati_user')
             dados_dieta = request.POST.getlist('local_dados_do_user')
-            print(list(dados_dieta))
+            print(dados_dieta)
             return render(request, 'paginas/create_diet.html', {'objetivo': objetivo, 'nivel_at':nivel_at})
         else: 
             return render(request, 'paginas/tela_tmb.html', {'objetivo': objetivo, 'nivel_at':nivel_at})
