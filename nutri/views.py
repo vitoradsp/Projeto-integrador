@@ -73,7 +73,8 @@ def create_diet(request):
             quant_ref_12 = request.POST.get('quant_ref_12')
             ref_13 = request.POST.get('alimento_13')
             quant_ref_13 = request.POST.get('quant_ref_13')
-            ref_1=[ref_11,quant_ref_11,ref_12,quant_ref_12,ref_13,quant_ref_13]
+
+            ref_1=[ ref_11, quant_ref_11, ref_12,quant_ref_12, ref_13, quant_ref_13]
             
             ref_21 = request.POST.get('alimento_21')
             quant_ref_21 = request.POST.get('quant_ref_21')
@@ -81,8 +82,38 @@ def create_diet(request):
             quant_ref_22 = request.POST.get('quant_ref_22')
             ref_23 = request.POST.get('alimento_23')
             quant_ref_23 = request.POST.get('quant_ref_23')
-            ref_2=[ref_21,quant_ref_21,ref_22,quant_ref_22,ref_23,quant_ref_23]
-            add_ref = ImprimirDieta.objects.create(usuario_id=request.user.id, ref_1=ref_1,ref_2=ref_2)
+
+            ref_21 = request.POST.get('alimento_31')
+            quant_ref_21 = request.POST.get('quant_ref_31')
+            ref_22 = request.POST.get('alimento_32')
+            quant_ref_22 = request.POST.get('quant_ref_32')
+            ref_23 = request.POST.get('alimento_33')
+            quant_ref_23 = request.POST.get('quant_ref_33')
+
+            ref_21 = request.POST.get('alimento_41')
+            quant_ref_21 = request.POST.get('quant_ref_41')
+            ref_22 = request.POST.get('alimento_42')
+            quant_ref_22 = request.POST.get('quant_ref_42')
+            ref_23 = request.POST.get('alimento_43')
+            quant_ref_23 = request.POST.get('quant_ref_43')
+
+            ref_21 = request.POST.get('alimento_51')
+            quant_ref_21 = request.POST.get('quant_ref_51')
+            ref_22 = request.POST.get('alimento_52')
+            quant_ref_22 = request.POST.get('quant_ref_52')
+            ref_23 = request.POST.get('alimento_53')
+            quant_ref_23 = request.POST.get('quant_ref_53')
+
+            ref_21 = request.POST.get('alimento_61')
+            quant_ref_21 = request.POST.get('quant_ref_61')
+            ref_22 = request.POST.get('alimento_62')
+            quant_ref_22 = request.POST.get('quant_ref_62')
+            ref_23 = request.POST.get('alimento_63')
+            quant_ref_23 = request.POST.get('quant_ref_63')
+
+            ref_2=[ ref_21, quant_ref_21, ref_22, quant_ref_22, ref_23,quant_ref_23]
+
+            add_ref = ImprimirDieta.objects.create(usuario_id = request.user.id, ref_1 = ref_1, ref_2 = ref_2 )
             add_ref.save()
             return redirect('diet_screen') 
         else:
