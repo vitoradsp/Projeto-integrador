@@ -3,9 +3,7 @@
 <div class="tela_tmb">
 {%if messages%}
 {%for message in messages%}
-<div class="erro">
-    <div class="messagem_de_erro"><label id="messagem_javascript" for="">{{message}}</label></div>
-</div>
+<script>alert('{{message}}')</script>
 {%endfor%}
 {%endif%}     
     <form method="post">{% csrf_token %}
@@ -17,7 +15,11 @@
                 Com base no seu objetivo <strong id="objetivo_javascript"></strong>
                 você deve ingerir <strong id="valor_total_de_calorias_javascript"></strong> Kcal
             </label>
+            {%if ver is not None%}
+            <button  id='btn_tmb' type="submit" class="btn_tmb1" >Atualizar</button>
+            {%else%}
             <button  class="btn_tmb1" type="submit">Criar Dieta</button>
+            {%endif%}
         </div>
         <div class="objetivo">
             <p>Objetivo:</p>
@@ -52,6 +54,7 @@
             <p><input id="user_masculino" checked type="radio" name="opcao" value="masculino"> Masculino</p>
             <p><input id="user_feminino" type="radio" name="opcao" value="feminino"> Feminino</p>
         </div>
+        
         <input value="Gerar Taxa Metabólica Basal" id='btn_tmb' onclick="botao_gerar()" class="btn_tmb" >
         <input id="local_dados_do_user" type="hidden" name="local_dados_do_user" multiple>
     </form>

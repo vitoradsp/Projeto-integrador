@@ -45,11 +45,6 @@
             </details>
           </div>
           <div class="criar_diet">
-            {%if veri_dieta %}
-            <a href="{%url 'criar_dieta'%}"
-              ><i class="fa-solid fa-person-circle-plus">Novo Objetivo</i></a
-            >
-            {%endif%}
             {% if request.path == "/introduçâo/" %}
             <a href="{%url 'tela_tmb'%}"
               ><i class="fa-solid fa-person-circle-plus"></i>Criar Dieta</a
