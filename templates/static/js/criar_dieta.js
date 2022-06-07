@@ -279,34 +279,34 @@ function macros_refeicao(numero_da_ref) {
       let conta_gord_1=parseInt((quantidade_1/100)*gord_1)
       let conta_carb_1=parseInt((quantidade_1/100)*carb_1)
       /*valores alimento 2 */
-      let kcal_2=document.querySelector('#kcal_total_row2_ref_1').innerText;
-      let prot_2=document.querySelector('#prot_total_row2_ref_1').innerText;
-      let gord_2=document.querySelector('#gord_total_row2_ref_1').innerText;
-      let carb_2=document.querySelector('#carb_total_row2_ref_1').innerText;
+      let kcal_2 = document.querySelector('#kcal_total_row2_ref_1').innerText;
+      let prot_2 = document.querySelector('#prot_total_row2_ref_1').innerText;
+      let gord_2 = document.querySelector('#gord_total_row2_ref_1').innerText;
+      let carb_2 = document.querySelector('#carb_total_row2_ref_1').innerText;
       let quantidade_2=document.querySelector('#quanti_row2_ref_1').value;
-      let conta_kcal_2=parseInt((quantidade_2/100)*kcal_2)
-      let conta_prot_2=parseInt((quantidade_2/100)*prot_2)
-      let conta_gord_2=parseInt((quantidade_2/100)*gord_2)
-      let conta_carb_2=parseInt((quantidade_2/100)*carb_2)
+      let conta_kcal_2 = parseInt((quantidade_2/100)*kcal_2)
+      let conta_prot_2 = parseInt((quantidade_2/100)*prot_2)
+      let conta_gord_2 = parseInt((quantidade_2/100)*gord_2)
+      let conta_carb_2 = parseInt((quantidade_2/100)*carb_2)
       /*valores alimento 3 */
-      let kcal_3=document.querySelector('#kcal_total_row3_ref_1').innerText;
-      let prot_3=document.querySelector('#prot_total_row3_ref_1').innerText;
-      let gord_3=document.querySelector('#gord_total_row3_ref_1').innerText;
-      let carb_3=document.querySelector('#carb_total_row3_ref_1').innerText;
+      let kcal_3 = document.querySelector('#kcal_total_row3_ref_1').innerText;
+      let prot_3 = document.querySelector('#prot_total_row3_ref_1').innerText;
+      let gord_3 = document.querySelector('#gord_total_row3_ref_1').innerText;
+      let carb_3 = document.querySelector('#carb_total_row3_ref_1').innerText;
       let quantidade_3=document.querySelector('#quanti_row3_ref_1').value;
-      let conta_kcal_3=parseInt((quantidade_3/100)*kcal_3)
-      let conta_prot_3=parseInt((quantidade_3/100)*prot_3)
-      let conta_gord_3=parseInt((quantidade_3/100)*gord_3)
-      let conta_carb_3=parseInt((quantidade_3/100)*carb_3)
-      totalkcal_1=Number(conta_kcal_1+conta_kcal_2+conta_kcal_3);
-      totalprot_1=Number(conta_prot_1+conta_prot_2+conta_prot_3);
-      totalgord_1=Number(conta_gord_1+conta_gord_2+conta_gord_3);
-      totalcarb_1=Number(conta_carb_1+conta_carb_2+conta_carb_3);
+      let conta_kcal_3 = parseInt((quantidade_3/100)*kcal_3)
+      let conta_prot_3 = parseInt((quantidade_3/100)*prot_3)
+      let conta_gord_3 = parseInt((quantidade_3/100)*gord_3)
+      let conta_carb_3 = parseInt((quantidade_3/100)*carb_3)
+      let totalkcal_1 = Number(conta_kcal_1+conta_kcal_2+conta_kcal_3);
+      let totalprot_1 = Number(conta_prot_1+conta_prot_2+conta_prot_3);
+      let totalgord_1 = Number(conta_gord_1+conta_gord_2+conta_gord_3);
+      let totalcarb_1 = Number(conta_carb_1+conta_carb_2+conta_carb_3);
       /*valores que apareceram para o user */
-      let caloria_do_one = document.querySelector("#caloria_da_ref_one").innerText = `${totalkcal_1}` ;
-      let proteina_do_one = document.querySelector("#proteina_da_ref_one").innerText = `${totalprot_1}` ;
-      let gordura_do_one = document.querySelector("#gordura_da_ref_one").innerText = `${totalgord_1}` ;
-      let carboidratos_do_one_carb = document.querySelector("#carboidratos_one").innerText = `${totalcarb_1}` ;
+      let caloria_do_one = document.querySelector("#caloria_da_ref_one").innerText = totalkcal_1 ;
+      let proteina_do_one = document.querySelector("#proteina_da_ref_one").innerText = totalprot_1 ;
+      let gordura_do_one = document.querySelector("#gordura_da_ref_one").innerText = totalgord_1 ;
+      let carboidratos_do_one_carb = document.querySelector("#carboidratos_one").innerText = totalcarb_1 ;
       break
     case 2:
       /*valores alimento 1 */
@@ -320,34 +320,34 @@ function macros_refeicao(numero_da_ref) {
       let conta_gord_4=parseInt((quantidade_4/100)*gord_4)
       let conta_carb_4=parseInt((quantidade_4/100)*carb_4)
       /*valores alimento 2 */
-      let kcal_5=document.querySelector('#kcal_total_row2_ref_2').innerText;
-      let prot_5=document.querySelector('#prot_total_row2_ref_2').innerText;
-      let gord_5=document.querySelector('#gord_total_row2_ref_2').innerText;
-      let carb_5=document.querySelector('#carb_total_row2_ref_2').innerText;
+      let kcal_5 = document.querySelector('#kcal_total_row2_ref_2').innerText;
+      let prot_5 = document.querySelector('#prot_total_row2_ref_2').innerText;
+      let gord_5 = document.querySelector('#gord_total_row2_ref_2').innerText;
+      let carb_5 = document.querySelector('#carb_total_row2_ref_2').innerText;
       let quantidade_5=document.querySelector('#quanti_row2_ref_2').value;
-      let conta_kcal_5=parseInt((quantidade_5/100)*kcal_5)
-      let conta_prot_5=parseInt((quantidade_5/100)*prot_5)
-      let conta_gord_5=parseInt((quantidade_5/100)*gord_5)
-      let conta_carb_5=parseInt((quantidade_5/100)*carb_5)
+      let conta_kcal_5 = parseInt((quantidade_5/100)*kcal_5)
+      let conta_prot_5 = parseInt((quantidade_5/100)*prot_5)
+      let conta_gord_5 = parseInt((quantidade_5/100)*gord_5)
+      let conta_carb_5 = parseInt((quantidade_5/100)*carb_5)
       /*valores alimento 3 */
-      let kcal_6=document.querySelector('#kcal_total_row3_ref_2').innerText;
-      let prot_6=document.querySelector('#prot_total_row3_ref_2').innerText;
-      let gord_6=document.querySelector('#gord_total_row3_ref_2').innerText;
-      let carb_6=document.querySelector('#carb_total_row3_ref_2').innerText;
+      let kcal_6 = document.querySelector('#kcal_total_row3_ref_2').innerText;
+      let prot_6 = document.querySelector('#prot_total_row3_ref_2').innerText;
+      let gord_6 = document.querySelector('#gord_total_row3_ref_2').innerText;
+      let carb_6 = document.querySelector('#carb_total_row3_ref_2').innerText;
       let quantidade_6=document.querySelector('#quanti_row3_ref_2').value;
-      let conta_kcal_6=parseInt((quantidade_6/100)*kcal_6)
-      let conta_prot_6=parseInt((quantidade_6/100)*prot_6)
-      let conta_gord_6=parseInt((quantidade_6/100)*gord_6)
-      let conta_carb_6=parseInt((quantidade_6/100)*carb_6)
+      let conta_kcal_6 = parseInt((quantidade_6/100)*kcal_6)
+      let conta_prot_6 = parseInt((quantidade_6/100)*prot_6)
+      let conta_gord_6 = parseInt((quantidade_6/100)*gord_6)
+      let conta_carb_6 = parseInt((quantidade_6/100)*carb_6)
       /*valores que apareceram para o user */
-      totalkcal_2=Number(conta_kcal_4+conta_kcal_5+conta_kcal_6);
-      totalprot_2=Number(conta_prot_4+conta_prot_5+conta_prot_6);
-      totalgord_2=Number(conta_gord_4+conta_gord_5+conta_gord_6);
-      totalcarb_2=Number(conta_carb_4+conta_carb_5+conta_carb_6);
-      let caloria_do_two = document.querySelector("#caloria_da_ref_two").innerText = `${Number(totalkcal_2)}` ;
-      let proteina_do_two = document.querySelector("#proteina_da_ref_two").innerText = `${Number(totalprot_2)}` ;
-      let gordura_do_two = document.querySelector("#gordura_da_ref_two").innerText = `${Number(totalgord_2)}` ;
-      let carboidratos_do_two = document.querySelector("#carboidratos_two").innerText = `${Number(totalcarb_2)}` ;
+      let totalkcal_2 = Number(conta_kcal_4+conta_kcal_5+conta_kcal_6);
+      let totalprot_2 = Number(conta_prot_4+conta_prot_5+conta_prot_6);
+      let totalgord_2 = Number(conta_gord_4+conta_gord_5+conta_gord_6);
+      let totalcarb_2 = Number(conta_carb_4+conta_carb_5+conta_carb_6);
+      let caloria_do_two = document.querySelector("#caloria_da_ref_two").innerText = totalkcal_2 ;
+      let proteina_do_two = document.querySelector("#proteina_da_ref_two").innerText = totalprot_2 ;
+      let gordura_do_two = document.querySelector("#gordura_da_ref_two").innerText = totalgord_2 ;
+      let carboidratos_do_two = document.querySelector("#carboidratos_two").innerText = totalcarb_2 ;
       break
     case 3:
       /*valores alimento 1 */
@@ -381,14 +381,14 @@ function macros_refeicao(numero_da_ref) {
       let conta_gord_9=parseInt((quantidade_9/100)*gord_9)
       let conta_carb_9=parseInt((quantidade_9/100)*carb_9)
       /*valores que apareceram para o user */
-      totalkcal_3=Number(conta_kcal_7+conta_kcal_8+conta_kcal_9);
-      totalprot_3=Number(conta_prot_7+conta_prot_8+conta_prot_9);
-      totalgord_3=Number(conta_gord_7+conta_gord_8+conta_gord_9);
-      totalcarb_3=Number(conta_carb_7+conta_carb_8+conta_carb_9);
-      let caloria_do_tree = document.querySelector("#caloria_da_ref_tree").innerText = `${Number(totalkcal_3)}` ;
-      let proteina_do_tree = document.querySelector("#proteina_da_ref_tree").innerText =`${Number(totalprot_3)}`;
-      let gordura_do_tree = document.querySelector("#gordura_da_ref_tree").innerText =  `${Number(totalgord_3)}`;
-      let carboidratos_do_tree = document.querySelector("#carboidratos_tree").innerText = `${Number(totalcarb_3)}` ;
+      let totalkcal_3=Number(conta_kcal_7+conta_kcal_8+conta_kcal_9);
+      let totalprot_3=Number(conta_prot_7+conta_prot_8+conta_prot_9);
+      let totalgord_3=Number(conta_gord_7+conta_gord_8+conta_gord_9);
+      let totalcarb_3=Number(conta_carb_7+conta_carb_8+conta_carb_9);
+      let caloria_do_tree = document.querySelector("#caloria_da_ref_tree").innerText = totalkcal_3 ;
+      let proteina_do_tree = document.querySelector("#proteina_da_ref_tree").innerText = totalprot_3;
+      let gordura_do_tree = document.querySelector("#gordura_da_ref_tree").innerText = totalgord_3;
+      let carboidratos_do_tree = document.querySelector("#carboidratos_tree").innerText =totalcarb_3;
       break
     case 4:
       /*valores alimento 1 */
@@ -422,14 +422,14 @@ function macros_refeicao(numero_da_ref) {
       let conta_gord_12=parseInt((quantidade_12/100)*gord_12)
       let conta_carb_12=parseInt((quantidade_12/100)*carb_12)
       /*valores que apareceram para o user */
-      totalkcal_4=Number(conta_kcal_10+conta_kcal_11+conta_kcal_12);
-      totalprot_4=Number(conta_prot_10+conta_prot_11+conta_prot_12);
-      totalgord_4=Number(conta_gord_10+conta_gord_11+conta_gord_12);
-      totalcarb_4=Number(conta_carb_10+conta_carb_11+conta_carb_12);
-      let caloria_do_four = document.querySelector("#caloria_da_ref_four").innerText = `${Number(totalkcal_4)}` ;
-      let proteina_do_four = document.querySelector("#proteina_da_ref_four").innerText = `${Number(totalprot_4)}` ;
-      let gordura_do_four = document.querySelector("#gordura_da_ref_four").innerText = `${Number(totalgord_4)}` ;
-      let carboidratos_do_four = document.querySelector("#carboidratos_four").innerText = `${Number(totalcarb_4)}` ;
+      let totalkcal_4 = Number(conta_kcal_10+conta_kcal_11+conta_kcal_12);
+      let totalprot_4 = Number(conta_prot_10+conta_prot_11+conta_prot_12);
+      let totalgord_4 = Number(conta_gord_10+conta_gord_11+conta_gord_12);
+      let totalcarb_4 = Number(conta_carb_10+conta_carb_11+conta_carb_12);
+      let caloria_do_four = document.querySelector("#caloria_da_ref_four").innerText = totalkcal_4 ;
+      let proteina_do_four = document.querySelector("#proteina_da_ref_four").innerText = totalprot_4 ;
+      let gordura_do_four = document.querySelector("#gordura_da_ref_four").innerText = totalgord_4 ;
+      let carboidratos_do_four = document.querySelector("#carboidratos_four").innerText = totalcarb_4 ;
       break
     case 5 :
       /*valores alimento 1 */
@@ -463,14 +463,14 @@ function macros_refeicao(numero_da_ref) {
       let conta_gord_15=parseInt((quantidade_15/100)*gord_15)
       let conta_carb_15=parseInt((quantidade_15/100)*carb_15)
       /*valores que apareceram para o user */
-      totalkcal_5=Number(conta_kcal_13+conta_kcal_14+conta_kcal_15);
-      totalprot_5=Number(conta_prot_13+conta_prot_14+conta_prot_15);
-      totalgord_5=Number(conta_gord_13+conta_gord_14+conta_gord_15);
-      totalcarb_5=Number(conta_carb_13+conta_carb_14+conta_carb_15);
-      let caloria_do_five = document.querySelector("#caloria_da_ref_five").innerText = `${Number(totalkcal_5)}`  ;
-      let proteina_do_five = document.querySelector("#proteina_da_ref_five").innerText =`${Number(totalprot_5)}` ;
-      let gordura_do_five = document.querySelector("#gordura_da_ref_five").innerText = `${Number(totalgord_5)}` ;
-      let carboidratos_do_five = document.querySelector("#carboidratos_five").innerText = `${Number(totalcarb_5)}` ;
+      let totalkcal_5=Number(conta_kcal_13+conta_kcal_14+conta_kcal_15);
+      let totalprot_5=Number(conta_prot_13+conta_prot_14+conta_prot_15);
+      let totalgord_5=Number(conta_gord_13+conta_gord_14+conta_gord_15);
+      let totalcarb_5=Number(conta_carb_13+conta_carb_14+conta_carb_15);
+      let caloria_do_five = document.querySelector("#caloria_da_ref_five").innerText = totalkcal_5  ;
+      let proteina_do_five = document.querySelector("#proteina_da_ref_five").innerText =totalprot_5 ;
+      let gordura_do_five = document.querySelector("#gordura_da_ref_five").innerText = totalgord_5 ;
+      let carboidratos_do_five = document.querySelector("#carboidratos_five").innerText = totalcarb_5 ;
       break
     case 6 :
       /*valores alimento 1 */
@@ -504,14 +504,14 @@ function macros_refeicao(numero_da_ref) {
       let conta_gord_18=parseInt((quantidade_18/100)*gord_18)
       let conta_carb_18=parseInt((quantidade_18/100)*carb_18)
       /*valores que apareceram para o user */
-      totalkcal_6=Number(conta_kcal_16+conta_kcal_17+conta_kcal_18);
-      totalprot_6=Number(conta_prot_16+conta_prot_17+conta_prot_18);
-      totalgord_6=Number(conta_gord_16+conta_gord_17+conta_gord_18);
-      totalcarb_6=Number(conta_carb_16+conta_carb_17+conta_carb_18);
-      let caloria_do_six = document.querySelector("#caloria_da_ref_six").innerText = `${Number(totalkcal_6)}`  ;
-      let proteina_do_six = document.querySelector("#proteina_da_ref_six").innerText = `${Number(totalprot_6)}` ;
-      let gordura_do_six = document.querySelector("#gordura_da_ref_six").innerText = `${Number(totalgord_6)}` ;
-      let carboidratos_do_six = document.querySelector("#carboidratos_six").innerText = `${Number(totalcarb_6)}` ;
+      let totalkcal_6=Number(conta_kcal_16+conta_kcal_17+conta_kcal_18);
+      let totalprot_6=Number(conta_prot_16+conta_prot_17+conta_prot_18);
+      let totalgord_6=Number(conta_gord_16+conta_gord_17+conta_gord_18);
+      let totalcarb_6=Number(conta_carb_16+conta_carb_17+conta_carb_18);
+      let caloria_do_six = document.querySelector("#caloria_da_ref_six").innerText = totalkcal_6  ;
+      let proteina_do_six = document.querySelector("#proteina_da_ref_six").innerText = totalprot_6 ;
+      let gordura_do_six = document.querySelector("#gordura_da_ref_six").innerText = totalgord_6 ;
+      let carboidratos_do_six = document.querySelector("#carboidratos_six").innerText = totalcarb_6 ;
       break
   };
 };

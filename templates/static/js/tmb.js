@@ -25,8 +25,9 @@ function botao_gerar(){
     let peso=document.getElementById('peso_user').value;
     let altura=document.getElementById('height_user').value;
     let idade=document.getElementById('age_user').value;
-    let n_atividade=document.getElementById('nivel_de_ati_user').value;
-    let objetivo=document.getElementById('objetivo_user').value;
+    let n_atividade=document.getElementById('nivel_de_ati_user').innerText;
+    let objetivo=document.getElementById('objetivo_user').innerText;
+    console.log(n_atividade,objetivo)
     let masculino=document.getElementById('user_masculino').value;
     let feminino=document.getElementById('user_feminino').value;   
     if(masculino.value == 'masculino'  ){

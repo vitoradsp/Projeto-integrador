@@ -285,7 +285,7 @@
   text-transform: capitalize;
 }
 #button_macros_ref {
-  width: 70%;
+  width: 65%;
   font-weight: 700;
   border: #000000 solid 1px;
   border-radius: 15px;
@@ -293,7 +293,7 @@
   background-color: #0e274dc4;
 }
 #button_macros_ref:hover {
-  width: 70%;
+  width: 65%;
   font-weight: 600;
   border: #000000 solid 1px;
   border-radius: 15px;
