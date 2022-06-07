@@ -99,6 +99,8 @@ def tela_tmb(request):
             peso = request.POST.get('peso')
             altura = request.POST.get('height')
             idade = request.POST.get('age')
+            op = request.POST.get('opcao')
+            print(op)
             objetivo  = request.POST.get('objetivo_user')
             n_atividade = request.POST.get('nivel_de_ati_user')
             dados_dieta = request.POST.getlist('local_dados_do_user')
