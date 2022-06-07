@@ -23,13 +23,11 @@ function botao_gerar(){
     let local_gasto_dia =document.getElementById('gasto_dia_js');
     let local_caloria_total=document.getElementById('valor_total_de_calorias_javascript');
     let peso=document.getElementById('peso_user').value;
-    verificar_dados(peso);
     let altura=document.getElementById('height_user').value;
-    verificar_dados(altura);
     let idade=document.getElementById('age_user').value;
-    verificar_dados(idade);
-    let n_atividade=document.getElementById('nivel_de_ati_user').value;
-    let objetivo=document.getElementById('objetivo_user').value;
+    let n_atividade=document.getElementById('nivel_de_ati_user').innerText;
+    let objetivo=document.getElementById('objetivo_user').innerText;
+    console.log(n_atividade,objetivo)
     let masculino=document.getElementById('user_masculino').value;
     let feminino=document.getElementById('user_feminino').value;   
     if(masculino.value == 'masculino'  ){
@@ -98,21 +96,3 @@ function botao_gerar(){
         };
     };
 };
-
-function verificar_dados(valor){
-    if( valor != parseInt ){
-        localStorage.clear();
-        document.location.reload(true);
-        ReferenceError('valores precisam ser inteiros');
-    }
-    else if(valor <=0){
-        localStorage.clear();
-        document.location.reload(true);
-        ReferenceError('valores precisam ser positivos');
-    }
-    else if(valor >230){
-        localStorage.clear();
-        document.location.reload(true);
-        ReferenceError('valores ultrapassam o limite permitido');
-    }
-}

@@ -1,6 +1,7 @@
 {% extends 'base.html' %} {%block 'title'%}Tmb{%endblock%} {%block 'sections'%}
 <!-- Adicionar valor TMB em flax (css) -->
 <div class="tela_tmb">
+<<<<<<< HEAD
   {%if messages%} {%for message in messages%}
   <div class="erro">
     <div class="messagem_de_erro">
@@ -70,5 +71,61 @@
     <input value="Gerar Taxa Metabólica Basal" id="btn_tmb" onclick="botao_gerar()"class="btn_tmb">
     <input id="local_dados_do_user" type="hidden" name="local_dados_do_user" />
   </form>
+=======
+{%if messages%}
+{%for message in messages%}
+<div class="erro">
+    <div class="messagem_de_erro"><label id="messagem_javascript" for="">{{message}}</label></div>
+</div>
+{%endfor%}
+{%endif%}     
+    <form method="post">{% csrf_token %}
+        
+        <div class="valor_tmb">
+            <h2>Valor de injestao diária</h2>
+            <label for="">Seu gasto parado é de <strong id="gasto_parado_javascript"></strong> Kcal  e seu gasto diario médio <strong id="gasto_dia_js"></strong> Kcal</label>
+            <label for="">
+                Com base no seu objetivo <strong id="objetivo_javascript"></strong>
+                você deve ingerir <strong id="valor_total_de_calorias_javascript"></strong> Kcal
+            </label>
+            <button  class="btn_tmb1" type="submit">Criar Dieta</button>
+        </div>
+        <div class="objetivo">
+            <p>Objetivo:</p>
+            <select name="objetivo_user"  id='objetivo_user'>
+                {% for c in objetivo %}
+                    <option value="{{c.id}}">{{c}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="nivel_ati">
+            <p>Atividade:</p>
+            <select name="nivel_de_ati_user" id='nivel_de_ati_user'>
+                {% for c in nivel_at %}
+                    <option  value="{{c.id}}">{{c}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="peso">
+            <p> Peso: </p>
+            <input id="peso_user" type="number" placeholder="Nun. Int." name="peso">
+        </div>
+        <div class="altura">
+            <p>Altura: </p>
+            <input id="height_user" type="number" placeholder="cm" name="height">
+        </div>
+        <div class="idade">
+            <p>Idade: </p>
+            <input id="age_user" type="number" placeholder="anos" name="age">
+        </div>
+        <div class="sexo">
+            <p>Sexo: </p> 
+            <p><input id="user_masculino" checked type="radio" name="opcao" value="masculino"> Masculino</p> 
+            <p><input id="user_feminino" type="radio" name="opcao" value="feminino"> Feminino</p>
+        </div>
+        <input value="Gerar Taxa Metabólica Basal" id='btn_tmb' onclick="botao_gerar()" class="btn_tmb" >
+        <input id="local_dados_do_user" type="hidden" name="local_dados_do_user" multiple>
+    </form>
+>>>>>>> 93cfe5078a74b8f68029e149380d2a581fa56154
 </div>
 {%endblock%}
