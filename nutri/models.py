@@ -36,9 +36,15 @@ class ImprimirDieta(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     ref_1 = models.CharField(max_length=255)   
     ref_2 = models.CharField(max_length=255)
+<<<<<<< HEAD
     ref_3 = models.CharField(max_length=255, blank=True, default='')    
     ref_4 = models.CharField(max_length=255, blank=True, default='')   
     ref_5 = models.CharField(max_length=255, blank=True, default='') 
+=======
+    ref_3 = models.CharField(max_length=255,blank=True)    
+    ref_4 = models.CharField(max_length=255,blank=True)   
+    ref_5 = models.CharField(max_length=255,blank=True) 
+>>>>>>> 100480ac12388d9ab37c8e83dcc7c5e357e13d3b
     ref_6 = models.CharField(max_length=255, blank=True, default='')
     def __str__(self):
         return self.usuario.username
