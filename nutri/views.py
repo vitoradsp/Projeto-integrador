@@ -87,7 +87,7 @@ def tela_tmb(request):
     if request.user.is_authenticated == False:
         return redirect('login_site')
     else:
-        veri_dieta = User.objects.filter(id=request.user.id).filter(dieta=True)
+        veri_dieta = User.objects.filter(id=request.user.id,dieta=True)
         objetivo = Objetivo.objects.all()
         nivel_at = NivelAtividade.objects.all()
         if request.method == 'POST':
