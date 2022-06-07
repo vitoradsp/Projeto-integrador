@@ -45,16 +45,17 @@
   justify-content: center;
   text-align: justify;
   gap: 20px;
+  padding: 5px;
 }
 .dados_dieta_user_linha1 {
-  width: 130px;
+  width: 120px;
   height: 85%;
   background-color: #ffffff;
   display: flex;
   text-align: start;
   flex-direction: column;
   justify-content: space-around;
-  font-weight: 600;
+  font-weight: 400;
   border-radius: 10px;
   padding: 10px;
 }
@@ -74,8 +75,8 @@
   flex-direction: column;
   justify-content: space-around;
   border-radius: 10px;
-  font-weight: 600;
-  padding: 10px;
+  font-weight: 400;
+  padding: 50px;
 }
 .dados_dieta_user_linha2 > label > strong {
   padding: 2px;
@@ -93,7 +94,7 @@
   flex-direction: column;
   justify-content: space-around;
   border-radius: 10px;
-  font-weight: 600;
+  font-weight: 400;
   padding: 10px;
 }
 .dados_dieta_user_linha3 > label > strong {
@@ -104,20 +105,17 @@
   background-color: #0e274d;
 }
 .dados_dieta_user_opcoes {
-  width: 180px;
-  height: 75%;
+  width: 10px;
+  height: 35%;
   background-color: #ffffff;
   padding: 15px;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
   justify-items: center;
+  align-items: center;
   font-weight: 700;
   gap: 7px;
-}
-.dados_dieta_user_quant_prot > span > select {
-  width: 100%;
-  text-align: center;
 }
 .dados_dieta_user_quant_ref > span > select {
   width: 100%;
@@ -285,25 +283,25 @@
   text-transform: capitalize;
 }
 #button_macros_ref {
-  width: 65%;
-  font-weight: 700;
+  width: 62%;
+  font-weight: 500;
   border: #000000 solid 1px;
-  border-radius: 15px;
+  border-radius: 5px;
   color: darkorange;
   background-color: #0e274dc4;
 }
 #button_macros_ref:hover {
-  width: 65%;
-  font-weight: 600;
+  width: 62%;
+  font-weight: 500;
   border: #000000 solid 1px;
-  border-radius: 15px;
+  border-radius: 5px;
   color: white;
   background-color: #0e274d;
   transition: 1s;
 }
 #limpar_ref {
   width: 35%;
-  font-weight: 700;
+  font-weight: 500;
   border: #000000 solid 1px;
   border-radius: 15px;
   color: white;
@@ -311,7 +309,7 @@
 }
 #limpar_ref:hover {
   width: 35%;
-  font-weight: 600;
+  font-weight: 500;
   border: #000000 solid 1px;
   border-radius: 15px;
   color: white;
