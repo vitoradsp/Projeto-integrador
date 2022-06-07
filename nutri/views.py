@@ -75,7 +75,8 @@ def create_diet(request):
             quant_ref_12 = request.POST.get('quant_ref_12')
             ref_13 = request.POST.get('alimento_13')
             quant_ref_13 = request.POST.get('quant_ref_13')
-            ref_1=[ref_11,quant_ref_11,ref_12,quant_ref_12,ref_13,quant_ref_13]
+
+            ref_1=[ ref_11, quant_ref_11, ref_12,quant_ref_12, ref_13, quant_ref_13]
             
             ref_21 = request.POST.get('alimento_21')
             quant_ref_21 = request.POST.get('quant_ref_21')
