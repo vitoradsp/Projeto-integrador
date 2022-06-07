@@ -133,7 +133,7 @@ function adicionar_alimento(alimento_tabela) {
   ).innerHTML;
   if (alimento_da_ref_1_row_1 == "") {
     let LABEL_1 = document.getElementById("alimentos_linha_1_ref_1").innerText = nome_do_alimento;
-    let nome = document.getElementById("alimento_linha_1_ref_1").value=nome_do_alimento;
+    let nome = document.getElementById("alimento_total_row1_ref_1").value=nome_do_alimento;
     let kcal_1 = document.getElementById("kcal_total_row1_ref_1").value= kcal_do_alimentos;
     let prot_1 = document.getElementById("prot_total_row1_ref_1").value=prot_do_alimentos;
     let fat_1 = document.getElementById("gord_total_row1_ref_1").value=gordura_do_alimentos;

@@ -70,6 +70,7 @@ def create_diet(request):
     else:
         if request.method == 'POST':
             ref_11 = request.POST.get('alimento_11')
+            print(ref_11)
             quant_ref_11 = request.POST.get('quant_ref_11')
             ref_12 = request.POST.get('alimento_12')
             quant_ref_12 = request.POST.get('quant_ref_12')
@@ -130,7 +131,6 @@ def tela_tmb(request):
     else:
         objetivo = Objetivo.objects.all()
         nivel_at = NivelAtividade.objects.all()
-        ver = Dieta.objects.get(usuario_id=request.user.id)
         if request.method == 'POST':
             peso = request.POST.get('peso')
             altura = request.POST.get('height')
@@ -139,22 +139,28 @@ def tela_tmb(request):
             objetivo  = request.POST.get('objetivo_user')
             n_atividade = request.POST.get('nivel_de_ati_user')
             dados_dieta = request.POST.getlist('local_dados_do_user')
-            if peso.isdigit() == False:
-                messages.info(request, 'Peso invalido')
+            if peso== '' or altura =='' or idade == '':
+                messages.info(request, 'Preencha todos os campos.')
                 return redirect('tela_tmb')
-            print(peso.isdigit())
-            if ver is not None:
-                print('asdas')
-                dados_dieta=(dados_dieta[0].split(','))
+            if peso.isdigit() == False or altura.isdigit() == False or idade.isdigit() == False:
+                messages.info(request, 'Campo(s) invalido(s).')
+                return redirect('tela_tmb')
+            try:
+                ver = Dieta.objects.get(usuario_id=request.user.id)
                 add_diet = Dieta.objects.get(usuario_id=request.user.id)
                 add_diet=Dieta.objects.update(objetivo_id = objetivo , peso = peso, altura = altura, idade = idade, genero = sexo, tmb=dados_dieta[0], gasto_dia=dados_dieta[1] ,caloria_dieta=dados_dieta[2],proteina=dados_dieta[3],gordura=dados_dieta[4],carboidratos=dados_dieta[5],nivel_atividade_id = n_atividade ,dieta = True )
                 return redirect('criar_dieta')
-            dados_dieta=(dados_dieta[0].split(','))
-            add_diet=Dieta.objects.create(usuario_id = request.user.id, objetivo_id = objetivo , peso = peso, altura = altura, idade = idade, genero = sexo, tmb=dados_dieta[0], gasto_dia=dados_dieta[1] ,caloria_dieta=dados_dieta[2],proteina=dados_dieta[3],gordura=dados_dieta[4],carboidratos=dados_dieta[5],nivel_atividade_id = n_atividade ,dieta = True )
-            add_diet.save()
-            return redirect('criar_dieta')
-        else: 
-            return render(request, 'paginas/tela_tmb.html', {'objetivo': objetivo, 'nivel_at':nivel_at, 'ver':ver})
+            except:
+                dados_dieta=(dados_dieta[0].split(','))
+                add_diet=Dieta.objects.create(usuario_id = request.user.id, objetivo_id = objetivo , peso = peso, altura = altura, idade = idade, genero = sexo, tmb=dados_dieta[0], gasto_dia=dados_dieta[1] ,caloria_dieta=dados_dieta[2],proteina=dados_dieta[3],gordura=dados_dieta[4],carboidratos=dados_dieta[5],nivel_atividade_id = n_atividade ,dieta = True )
+                add_diet.save()
+                return redirect('criar_dieta')
+        else:
+            try:
+                ver = Dieta.objects.get(usuario_id=request.user.id)
+                return render(request, 'paginas/tela_tmb.html', {'objetivo': objetivo, 'nivel_at':nivel_at, 'ver':ver})
+            except:
+                return render(request, 'paginas/tela_tmb.html', {'objetivo': objetivo, 'nivel_at':nivel_at})
     
 def diet_screen(request):
     dieta = ImprimirDieta.objects.filter(usuario_id=request.user.id)
