@@ -69,7 +69,6 @@ def create_diet(request):
     else:
         if request.method == 'POST':
             ref_11 = request.POST.get('alimento_11')
-            print(ref_11)
             quant_ref_11 = request.POST.get('quant_ref_11')
             ref_12 = request.POST.get('alimento_12')
             quant_ref_12 = request.POST.get('quant_ref_12')
@@ -84,6 +83,11 @@ def create_diet(request):
             ref_23 = request.POST.get('alimento_23')
             quant_ref_23 = request.POST.get('quant_ref_23')
 
+            check = [ref_11,quant_ref_11, ref_12, quant_ref_12, ref_13, quant_ref_13, ref_21,quant_ref_21,quant_ref_22,ref_23,quant_ref_23]
+            for y in check:
+                if y == '':
+                    messages.info(request, 'Campo(s) Vazio(s).')
+                    return redirect('criar_dieta')
             
             ref_31 = request.POST.get('alimento_31')
             quant_ref_31 = request.POST.get('quant_ref_31')
@@ -115,11 +119,19 @@ def create_diet(request):
             quant_ref_62 = request.POST.get('quant_ref_62')
             ref_63 = request.POST.get('alimento_63')
             quant_ref_63 = request.POST.get('quant_ref_63')
-
-            
-            add_ref = ImprimirDieta.objects.create(usuario_id=request.user.id, ref_11=ref_11, ref_12 = ref_12, ref_13=ref_13, ref_21=ref_21,ref_22=ref_22,ref_23=ref_23,ref_31=ref_31,ref_32=ref_32,ref_33=ref_33,ref_41=ref_41,ref_42=ref_42,ref_43=ref_43,ref_51=ref_51,ref_52=ref_52,ref_53=ref_53,ref_61=ref_61,ref_62=ref_62,ref_63=ref_63, quant_11=quant_ref_11, quant_12=quant_ref_12, quant_13=quant_ref_13, quant_21=quant_ref_21, quant_22=quant_ref_22, quant_23=quant_ref_23, quant_31=quant_ref_31, quant_32=quant_ref_32, quant_33=quant_ref_33, quant_41=quant_ref_41, quant_42=quant_ref_42, quant_43=quant_ref_43, quant_51=quant_ref_51, quant_52=quant_ref_52, quant_53=quant_ref_53, quant_61=quant_ref_61, quant_62=quant_ref_62, quant_63=quant_ref_63)
-            add_ref.save()
-            return redirect('diet_screen') 
+            if ref_31 == '' and quant_ref_31 != 0 or ref_32 == '' and quant_ref_32 != 0 or ref_33 == '' and quant_ref_33 != 0 or ref_41 == '' and quant_ref_41 != 0 or ref_42 == '' and quant_ref_42 != 0 or ref_43 == '' and quant_ref_43 != 0 or ref_51 == '' and quant_ref_51 != 0 or ref_52 == '' and quant_ref_52 != 0 or ref_53 == '' and quant_ref_53 != 0 or ref_61 == '' and quant_ref_61 != 0 or ref_62 == '' and quant_ref_62 != 0 or ref_63 == '' and quant_ref_63 != 0:
+                messages.info(request, 'Preencha todos os campos fornecidos.') 
+                return redirect('criar_dieta')
+            try:
+                ver = ImprimirDieta.objects.get(usuario_id=request.user.id)
+                if ver.exists():
+                    dados_dieta=(dados_dieta[0].split(','))
+                    add_diet = ImprimirDieta.objects.get(usuario_id=request.user.id)
+                    add_diet=ImprimirDieta.objects.update(usuario_id=request.user.id, ref_11=ref_11, ref_12 = ref_12, ref_13=ref_13, ref_21=ref_21,ref_22=ref_22,ref_23=ref_23,ref_31=ref_31,ref_32=ref_32,ref_33=ref_33,ref_41=ref_41,ref_42=ref_42,ref_43=ref_43,ref_51=ref_51,ref_52=ref_52,ref_53=ref_53,ref_61=ref_61,ref_62=ref_62,ref_63=ref_63, quant_11=quant_ref_11, quant_12=quant_ref_12, quant_13=quant_ref_13, quant_21=quant_ref_21, quant_22=quant_ref_22, quant_23=quant_ref_23, quant_31=quant_ref_31, quant_32=quant_ref_32, quant_33=quant_ref_33, quant_41=quant_ref_41, quant_42=quant_ref_42, quant_43=quant_ref_43, quant_51=quant_ref_51, quant_52=quant_ref_52, quant_53=quant_ref_53, quant_61=quant_ref_61, quant_62=quant_ref_62, quant_63=quant_ref_63)
+            except:       
+                add_ref = ImprimirDieta.objects.create(usuario_id=request.user.id, ref_11=ref_11, ref_12 = ref_12, ref_13=ref_13, ref_21=ref_21,ref_22=ref_22,ref_23=ref_23,ref_31=ref_31,ref_32=ref_32,ref_33=ref_33,ref_41=ref_41,ref_42=ref_42,ref_43=ref_43,ref_51=ref_51,ref_52=ref_52,ref_53=ref_53,ref_61=ref_61,ref_62=ref_62,ref_63=ref_63, quant_11=quant_ref_11, quant_12=quant_ref_12, quant_13=quant_ref_13, quant_21=quant_ref_21, quant_22=quant_ref_22, quant_23=quant_ref_23, quant_31=quant_ref_31, quant_32=quant_ref_32, quant_33=quant_ref_33, quant_41=quant_ref_41, quant_42=quant_ref_42, quant_43=quant_ref_43, quant_51=quant_ref_51, quant_52=quant_ref_52, quant_53=quant_ref_53, quant_61=quant_ref_61, quant_62=quant_ref_62, quant_63=quant_ref_63)
+                add_ref.save()
+                return redirect('diet_screen') 
         else:
             return render(request,'paginas/create_diet.html', {'taco': taco,'dados': dados})
 
@@ -165,6 +177,3 @@ def diet_screen(request):
     dieta = ImprimirDieta.objects.filter(usuario_id=request.user.id)
     return render(request, 'paginas/diet_screen.html', {'dieta':dieta}) 
 
-
-def userperfil(request, id):
-    pass

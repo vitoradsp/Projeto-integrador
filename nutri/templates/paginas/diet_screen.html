@@ -3,93 +3,93 @@
 {%block 'sections' %}
 <div class="diet">
     <div class="value_diet">
-
+    {%for x in dieta%}
         <div class="ref1">
 
-            <label for="">{{ dieta.ref_11 }}</label>
-            <label for="">{{ dieta.quant_11 }}</label>
+            <label for="">{{ x.ref_11 }}</label>
+            <label for="">{{ x.quant_11 }}</label>
 
-            <label for="">{{ dieta.ref_12 }}</label>
-            <label for="">{{ dieta.quant_12 }}</label>
+            <label for="">{{ x.ref_12 }}</label>
+            <label for="">{{ x.quant_12 }}</label>
 
-            <label for="">{{ dieta.ref_13 }}</label>
-            <label for="">{{ dieta.quant_13 }}</label>
+            <label for="">{{ x.ref_13 }}</label>
+            <label for="">{{ x.quant_13 }}</label>
 
         </div>
 
         <div class="ref_21">
 
-            <label for="">{{ dieta.ref_21 }}</label>
-            <label for="">{{ dieta.quant_21 }}</label>
+            <label for="">{{ x.ref_21 }}</label>
+            <label for="">{{ x.quant_21 }}</label>
 
-            <label for="">{{ dieta.ref_22 }}</label>
-            <label for="">{{ dieta.quant_22 }}</label>
+            <label for="">{{ x.ref_22 }}</label>
+            <label for="">{{ x.quant_22 }}</label>
 
-            <label for="">{{ dieta.ref_23 }}</label>
-            <label for="">{{ dieta.quant_23 }}</label>
+            <label for="">{{ x.ref_23 }}</label>
+            <label for="">{{ x.quant_23 }}</label>
 
         </div>
 
-        {% if dieta.ref_31 != '' %}
+        {% if x.ref_31 != '' %}
             <div class="ref2">
 
-                <label for="">{{ dieta.ref_31 }}</label>
-                <label for="">{{ dieta.quant_31 }}</label>
+                <label for="">{{ x.ref_31 }}</label>
+                <label for="">{{ x.quant_31 }}</label>
 
-                <label for="">{{ dieta.ref_32 }}</label>
-                <label for="">{{ dieta.quant_32 }}</label>
+                <label for="">{{ x.ref_32 }}</label>
+                <label for="">{{ x.quant_32 }}</label>
 
-                <label for="">{{ dieta.ref_33 }}</label>
-                <label for="">{{ dieta.quant_33 }}</label>
+                <label for="">{{ x.ref_33 }}</label>
+                <label for="">{{ x.quant_33 }}</label>
 
             </div>
         {% endif %}
         
-        {% if dieta.ref_41 != '' %}
+        {% if x.ref_41 != '' %}
             <div class="ref2">
 
-                <label for="">{{ dieta.ref_41 }}</label>
-                <label for="">{{ dieta.quant_41 }}</label>
+                <label for="">{{ x.ref_41 }}</label>
+                <label for="">{{ x.quant_41 }}</label>
 
-                <label for="">{{ dieta.ref_42 }}</label>
-                <label for="">{{ dieta.quant_42 }}</label>
+                <label for="">{{ x.ref_42 }}</label>
+                <label for="">{{ x.quant_42 }}</label>
 
-                <label for="">{{ dieta.ref_43 }}</label>
-                <label for="">{{ dieta.quant_43 }}</label>
+                <label for="">{{ x.ref_43 }}</label>
+                <label for="">{{ x.quant_43 }}</label>
 
             </div>
         {% endif %}
 
-        {% if dieta.ref_51 != '' %}
+        {% if x.ref_51 != '' %}
             <div class="ref2">
 
-                <label for="">{{ dieta.ref_51 }}</label>
-                <label for="">{{ dieta.quant_51 }}</label>
+                <label for="">{{ x.ref_51 }}</label>
+                <label for="">{{ x.quant_51 }}</label>
 
-                <label for="">{{ dieta.ref_52 }}</label>
-                <label for="">{{ dieta.quant_52 }}</label>
+                <label for="">{{ x.ref_52 }}</label>
+                <label for="">{{ x.quant_52 }}</label>
 
-                <label for="">{{ dieta.ref_53 }}</label>
-                <label for="">{{ dieta.quant_53 }}</label>
+                <label for="">{{ x.ref_53 }}</label>
+                <label for="">{{ x.quant_53 }}</label>
 
             </div>
         {% endif %}
 
-        {% if dieta.ref_61 != '' %}
+        {% if x.ref_61 != '' %}
             <div class="ref2">
 
-                <label for="">{{ dieta.ref_61 }}</label>
-                <label for="">{{ dieta.quant_61 }}</label>
+                <label for="">{{x.ref_61}}</label>
+                <label for="">{{x.quant_61}}</label>
 
-                <label for="">{{ dieta.ref_62 }}</label>
-                <label for="">{{ dieta.quant_62 }}</label>
+                <label for="">{{x.ref_62}}</label>
+                <label for="">{{x.quant_62}}</label>
 
-                <label for="">{{ dieta.ref_63 }}</label>
-                <label for="">{{ dieta.quant_63 }}</label>
+                <label for="">{{x.ref_63}}</label>
+                <label for="">{{x.quant_63}}</label>
 
             </div>
         {% endif %}
-
+    {%endfor%}
         
     </div>
     
