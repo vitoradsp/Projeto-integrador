@@ -615,3 +615,63 @@
     font-size: 15px;
   }
 }
+@media (max-width: 1820px) {
+  .container_dados_ref {
+    width: 600px;
+    height: 1600px;
+  }
+  .div_opçoes_de_ref {
+    width: 75%;
+    height: 80%;
+    grid: opçoes;
+    background-color: #ffffff;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+  }
+  .container_dados_dieta_user {
+    width: 95%;
+    height: 90%;
+    gap: 20px;
+    padding: 5px;
+  }
+  .dados_dieta_user_linha1 {
+    width: 120px;
+    height: 95%;
+    background-color: #ffffff;
+    display: flex;
+    text-align: start;
+    flex-direction: column;
+    justify-content: space-around;
+    font-weight: 200;
+    border-radius: 10px;
+    padding: 5px;
+  }
+  .container_refeiçoes_user{
+    width: 80%;
+  }
+}
+@media(max-width: 1000px) {
+  .body_create_diet{
+    flex-direction: column-reverse;
+    margin-left: 50px;
+  }
+  .container_tabela_taco{
+    width: 596px;
+    height: 505px;
+    margin-top: 400px;
+  }
+ }
+ @media( max-width: 600px){
+  .container_tabela_taco{
+    width: 500px;
+  }
+  .body_create_diet{
+    margin-left: -18px
+  }
+  .container_dados_ref{
+    width: 500px;
+    height: 1000px;
+  }
+ }
