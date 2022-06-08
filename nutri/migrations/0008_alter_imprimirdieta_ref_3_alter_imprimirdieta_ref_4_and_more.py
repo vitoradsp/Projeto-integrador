@@ -13,16 +13,16 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='imprimirdieta',
             name='ref_3',
-            field=models.CharField(blank=True, default='', max_length=255),
+            field=models.CharField(blank=True, max_length=255),
         ),
         migrations.AlterField(
             model_name='imprimirdieta',
             name='ref_4',
-            field=models.CharField(blank=True, default='', max_length=255),
+            field=models.CharField(blank=True, max_length=255),
         ),
         migrations.AlterField(
             model_name='imprimirdieta',
             name='ref_5',
-            field=models.CharField(blank=True, default='', max_length=255),
+            field=models.CharField(blank=True, max_length=255),
         ),
     ]
