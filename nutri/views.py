@@ -63,7 +63,6 @@ def introducao(request):
 def create_diet(request):
     taco = requests.get('http://127.0.0.1:7000/alimentoes/').json()
     dados = Dieta.objects.get(usuario_id=request.user.id)
-    print(dados.caloria_dieta)
     if request.user.is_authenticated == False:
         return redirect('login_site')
     #UPDATE DIETA        
@@ -164,7 +163,6 @@ def tela_tmb(request):
     
 def diet_screen(request):
     dieta = ImprimirDieta.objects.filter(usuario_id=request.user.id)
-    print(dieta)
     return render(request, 'paginas/diet_screen.html', {'dieta':dieta}) 
 
 
