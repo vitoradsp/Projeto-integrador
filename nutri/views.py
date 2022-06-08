@@ -63,13 +63,13 @@ def introducao(request):
 def create_diet(request):
     taco = requests.get('http://127.0.0.1:7000/alimentoes/').json()
     dados = Dieta.objects.get(usuario_id=request.user.id)
-    print(dados.caloria_dieta)
     if request.user.is_authenticated == False:
         return redirect('login_site')
     #UPDATE DIETA        
     else:
         if request.method == 'POST':
             ref_11 = request.POST.get('alimento_11')
+            print(ref_11)
             quant_ref_11 = request.POST.get('quant_ref_11')
             ref_12 = request.POST.get('alimento_12')
             quant_ref_12 = request.POST.get('quant_ref_12')
@@ -163,7 +163,6 @@ def tela_tmb(request):
     
 def diet_screen(request):
     dieta = ImprimirDieta.objects.filter(usuario_id=request.user.id)
-    print(dieta)
     return render(request, 'paginas/diet_screen.html', {'dieta':dieta}) 
 
 

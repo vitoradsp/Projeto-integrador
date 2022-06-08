@@ -2,15 +2,65 @@
 {% block 'title'%} Dieta {%endblock%} 
 {%block 'sections' %}
 <div class="diet">
-    {% for a in dieta %}
     <div class="value_det1">
-        <label for="">{{ a.ref_1 }}</label>
-        <label for="">{{ a.ref_2 }}</label>
+
+        <div class="ref1">
+
+            <label for="">{{ dieta.ref1 }}</label>
+            <label for="">{{ dieta.quant1 }}</label>
+
+            <label for="">{{ dieta.ref2 }}</label>
+            <label for="">{{ dieta.quant2 }}</label>
+
+            <label for="">{{ dieta.ref3 }}</label>
+            <label for="">{{ dieta.quant3 }}</label>
+
+        </div>
+
+        <div class="ref2">
+
+            <label for="">{{ dieta.ref4 }}</label>
+            <label for="">{{ dieta.quant4 }}</label>
+
+            <label for="">{{ dieta.ref5 }}</label>
+            <label for="">{{ dieta.quant5 }}</label>
+
+            <label for="">{{ dieta.ref6 }}</label>
+            <label for="">{{ dieta.quant6 }}</label>
+
+        </div>
+
+        {% if dieta.ref7 %}
+            <div class="ref2">
+
+                <label for="">{{ dieta.ref7 }}</label>
+                <label for="">{{ dieta.quant7 }}</label>
+
+                <label for="">{{ dieta.ref8 }}</label>
+                <label for="">{{ dieta.quant8 }}</label>
+
+                <label for="">{{ dieta.ref9 }}</label>
+                <label for="">{{ dieta.quant9 }}</label>
+
+            </div>
+        {% endif %}
         
-        <label for="">{{ a.ref_3 }}</label>
-        <label for="">{{ a.ref_4 }}</label>
-        <label for="">{{ a.ref_5 }}</label>
-        <label for="">{{ a.ref_6 }}</label>
+        {% if dieta.ref10 %}
+            <div class="ref2">
+
+                <label for="">{{ dieta.ref10 }}</label>
+                <label for="">{{ dieta.quant10 }}</label>
+
+                <label for="">{{ dieta.ref11 }}</label>
+                <label for="">{{ dieta.quant11 }}</label>
+
+                <label for="">{{ dieta.ref12 }}</label>
+                <label for="">{{ dieta.quant12 }}</label>
+
+            </div>
+        {% endif %}
+
+        
     </div>
     {%endfor%}
     
