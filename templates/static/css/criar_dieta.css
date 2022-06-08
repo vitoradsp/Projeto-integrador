@@ -76,8 +76,10 @@
   justify-content: space-around;
   border-radius: 10px;
   font-weight: 400;
-  padding: 50px;
+  padding: 10px;
 }
+
+
 .dados_dieta_user_linha2 > label > strong {
   padding: 2px;
   padding-right: 6px;
@@ -105,8 +107,8 @@
   background-color: #0e274d;
 }
 .dados_dieta_user_opcoes {
-  width: 10px;
-  height: 35%;
+  width: 150px;
+  height: 75%;
   background-color: #ffffff;
   padding: 15px;
   display: flex;
