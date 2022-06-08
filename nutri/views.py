@@ -90,9 +90,9 @@ def create_diet(request):
                     return redirect('criar_dieta')
             
             ref_31 = request.POST.get('alimento_31')
-            quant_ref_31 = request.POST.get('quant_ref_31')
+            quant_ref_31 = int(request.POST.get('quant_ref_31'))
             ref_32 = request.POST.get('alimento_32')
-            quant_ref_32 = request.POST.get('quant_ref_32')
+            quant_ref_32 = int(request.POST.get('quant_ref_32'))
             ref_33 = request.POST.get('alimento_33')
             quant_ref_33 = request.POST.get('quant_ref_33')
 
@@ -119,9 +119,6 @@ def create_diet(request):
             quant_ref_62 = request.POST.get('quant_ref_62')
             ref_63 = request.POST.get('alimento_63')
             quant_ref_63 = request.POST.get('quant_ref_63')
-            if ref_31 == '' and quant_ref_31 != 0 or ref_32 == '' and quant_ref_32 != 0 or ref_33 == '' and quant_ref_33 != 0 or ref_41 == '' and quant_ref_41 != 0 or ref_42 == '' and quant_ref_42 != 0 or ref_43 == '' and quant_ref_43 != 0 or ref_51 == '' and quant_ref_51 != 0 or ref_52 == '' and quant_ref_52 != 0 or ref_53 == '' and quant_ref_53 != 0 or ref_61 == '' and quant_ref_61 != 0 or ref_62 == '' and quant_ref_62 != 0 or ref_63 == '' and quant_ref_63 != 0:
-                messages.info(request, 'Preencha todos os campos fornecidos.') 
-                return redirect('criar_dieta')
             try:
                 ver = ImprimirDieta.objects.get(usuario_id=request.user.id)
                 if ver.exists():
