@@ -144,7 +144,7 @@ function adicionar_alimento(alimento_tabela) {
   ).innerHTML;
   if (alimento_da_ref_1_row_1 == "") {
     let LABEL_1 = document.getElementById("alimentos_linha_1_ref_1").innerText = nome_do_alimento;
-    let nome = document.getElementById("alimento_linha_1_ref_1").value=nome_do_alimento;
+    let nome = document.getElementById("alimento_total_row1_ref_1").value=nome_do_alimento;
     let kcal_1 = document.getElementById("kcal_total_row1_ref_1").value= kcal_do_alimentos;
     let prot_1 = document.getElementById("prot_total_row1_ref_1").value=prot_do_alimentos;
     let fat_1 = document.getElementById("gord_total_row1_ref_1").value=gordura_do_alimentos;
@@ -318,9 +318,9 @@ function macros_refeicao(numero_da_ref) {
       let totalgord_1 = Number(conta_gord_1+conta_gord_2+conta_gord_3);
       let totalcarb_1 = Number(conta_carb_1+conta_carb_2+conta_carb_3);
       if (quantidade_1==0 ||quantidade_2==0 ||quantidade_3==0  ){
-        alert('adicione quantidade nos alimentos ou adicione os alimentos')
+        alert('Adicione quantidade nos alimentos ou Adicione os alimentos')
       }else if(kcal_1==0||kcal_2==0||kcal_3==0){
-        alert('adicione Alimentos ')
+        alert('Adicione Alimentos ')
       }
       /*valores que apareceram para o user */
       let caloria_do_one = document.getElementById("calorias_da_ref_one").innerText = totalkcal_1 ;
@@ -361,9 +361,9 @@ function macros_refeicao(numero_da_ref) {
       let conta_carb_6 = parseInt((quantidade_6/100)*carb_6)
       /*valores que apareceram para o user */
       if (quantidade_4==0 ||quantidade_5==0 ||quantidade_6==0  ){
-        alert('adicione quantidade nos alimentos ou adicione os alimentos')
+        alert('Adicione quantidade nos alimentos ou Adicione os alimentos')
       }else if(kcal_4==0||kcal_5==0||kcal_6==0){
-        alert('adicione Alimentos ')
+        alert('Adicione Alimentos ')
       }
       let totalkcal_2 = Number(conta_kcal_4+conta_kcal_5+conta_kcal_6);
       let totalprot_2 = Number(conta_prot_4+conta_prot_5+conta_prot_6);
@@ -411,9 +411,9 @@ function macros_refeicao(numero_da_ref) {
       let totalgord_3=Number(conta_gord_7+conta_gord_8+conta_gord_9);
       let totalcarb_3=Number(conta_carb_7+conta_carb_8+conta_carb_9);
       if (quantidade_7==0 ||quantidade_8==0 ||quantidade_9==0  ){
-        alert('adicione quantidade nos alimentos ou adicione os alimentos')
+        alert('Adicione quantidade nos alimentos ou Adicione os alimentos')
       }else if(kcal_7==0||kcal_8==0||kcal_9==0){
-        alert('adicione Alimentos ')
+        alert('Adicione Alimentos ')
       }
       let caloria_do_tree = document.getElementById("calorias_da_ref_tree").innerText = totalkcal_3 ;
       let proteina_do_tree = document.getElementById("proteina_da_ref_tree").innerText = totalprot_3;
@@ -457,9 +457,9 @@ function macros_refeicao(numero_da_ref) {
       let totalgord_4 = Number(conta_gord_10+conta_gord_11+conta_gord_12);
       let totalcarb_4 = Number(conta_carb_10+conta_carb_11+conta_carb_12);
       if (quantidade_10==0 ||quantidade_11==0 ||quantidade_12==0  ){
-        alert('adicione quantidade nos alimentos ou adicione os alimentos')
+        alert('Adicione quantidade nos alimentos ou Adicione os alimentos')
       }else if(kcal_10==0||kcal_11==0||kcal_12==0){
-        alert('adicione Alimentos ')
+        alert('Adicione Alimentos ')
       }
       let caloria_do_four = document.getElementById("calorias_da_ref_four").innerText = totalkcal_4 ;
       let proteina_do_four = document.getElementById("proteina_da_ref_four").innerText = totalprot_4 ;
@@ -508,9 +508,9 @@ function macros_refeicao(numero_da_ref) {
       let totalgord_5=Number(conta_gord_13+conta_gord_14+conta_gord_15);
       let totalcarb_5=Number(conta_carb_13+conta_carb_14+conta_carb_15);
       if (quantidade_13==0 ||quantidade_14==0 ||quantidade_15==0  ){
-        alert('adicione quantidade nos alimentos ou adicione os alimentos')
+        alert('Adicione quantidade nos alimentos ou Adicione os alimentos')
       }else if(kcal_13==0||kcal_14==0||kcal_15==0){
-        alert('adicione Alimentos ')
+        alert('Adicione Alimentos ')
       }
       let caloria_do_five = document.getElementById("calorias_da_ref_five").innerText = totalkcal_5  ;
       let proteina_do_five = document.getElementById("proteina_da_ref_five").innerText =totalprot_5 ;
@@ -554,9 +554,9 @@ function macros_refeicao(numero_da_ref) {
       let totalgord_6=Number(conta_gord_16+conta_gord_17+conta_gord_18);
       let totalcarb_6=Number(conta_carb_16+conta_carb_17+conta_carb_18);
       if (quantidade_16==0 ||quantidade_17==0 ||quantidade_18==0  ){
-        alert('adicione quantidade nos alimentos ou adicione os alimentos')
+        alert('Adicione quantidade nos alimentos ou Adicione os alimentos')
       }else if(kcal_16==0||kcal_17==0||kcal_18==0){
-        alert('adicione Alimentos ')
+        alert('Adicione Alimentos ')
       }
       let caloria_do_six = document.getElementById("calorias_da_ref_six").innerText = totalkcal_6  ;
       let proteina_do_six = document.getElementById("proteina_da_ref_six").innerText = totalprot_6 ;

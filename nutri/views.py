@@ -63,20 +63,19 @@ def introducao(request):
 def create_diet(request):
     taco = requests.get('http://127.0.0.1:7000/alimentoes/').json()
     dados = Dieta.objects.get(usuario_id=request.user.id)
-    print(dados.caloria_dieta)
     if request.user.is_authenticated == False:
         return redirect('login_site')
     #UPDATE DIETA        
     else:
         if request.method == 'POST':
             ref_11 = request.POST.get('alimento_11')
+            print(ref_11)
             quant_ref_11 = request.POST.get('quant_ref_11')
             ref_12 = request.POST.get('alimento_12')
             quant_ref_12 = request.POST.get('quant_ref_12')
             ref_13 = request.POST.get('alimento_13')
             quant_ref_13 = request.POST.get('quant_ref_13')
 
-            ref_1=[ ref_11, quant_ref_11, ref_12,quant_ref_12, ref_13, quant_ref_13]
             
             ref_21 = request.POST.get('alimento_21')
             quant_ref_21 = request.POST.get('quant_ref_21')
@@ -84,7 +83,7 @@ def create_diet(request):
             quant_ref_22 = request.POST.get('quant_ref_22')
             ref_23 = request.POST.get('alimento_23')
             quant_ref_23 = request.POST.get('quant_ref_23')
-            ref_2=[ref_21,quant_ref_21,ref_22,quant_ref_22,ref_23,quant_ref_23]
+
             
             ref_31 = request.POST.get('alimento_31')
             quant_ref_31 = request.POST.get('quant_ref_31')
@@ -92,7 +91,7 @@ def create_diet(request):
             quant_ref_32 = request.POST.get('quant_ref_32')
             ref_33 = request.POST.get('alimento_33')
             quant_ref_33 = request.POST.get('quant_ref_33')
-            ref_3=[ref_31,quant_ref_31,ref_32,quant_ref_32,ref_33,quant_ref_33]
+
             
             ref_41 = request.POST.get('alimento_41')
             quant_ref_41 = request.POST.get('quant_ref_41')
@@ -100,7 +99,7 @@ def create_diet(request):
             quant_ref_42 = request.POST.get('quant_ref_42')
             ref_43 = request.POST.get('alimento_43')
             quant_ref_43 = request.POST.get('quant_ref_43')
-            ref_4=[ref_41,quant_ref_41,ref_42,quant_ref_42,ref_43,quant_ref_43]
+
             
             ref_51 = request.POST.get('alimento_51')
             quant_ref_51 = request.POST.get('quant_ref_51')
@@ -108,7 +107,7 @@ def create_diet(request):
             quant_ref_52 = request.POST.get('quant_ref_52')
             ref_53 = request.POST.get('alimento_53')
             quant_ref_53 = request.POST.get('quant_ref_53')
-            ref_5=[ref_51,quant_ref_51,ref_52,quant_ref_52,ref_53,quant_ref_53]
+
             
             ref_61 = request.POST.get('alimento_61')
             quant_ref_61 = request.POST.get('quant_ref_61')
@@ -116,9 +115,9 @@ def create_diet(request):
             quant_ref_62 = request.POST.get('quant_ref_62')
             ref_63 = request.POST.get('alimento_63')
             quant_ref_63 = request.POST.get('quant_ref_63')
-            ref_6=[ref_61,quant_ref_61,ref_62,quant_ref_62,ref_63,quant_ref_63]
+
             
-            add_ref = ImprimirDieta.objects.create(usuario_id=request.user.id, ref_1=ref_1,ref_2=ref_2, ref_3=ref_3, ref_4=ref_4, ref_5=ref_5, ref_6=ref_6)
+            add_ref = ImprimirDieta.objects.create(usuario_id=request.user.id, ref_11=ref_11, ref_12 = ref_12, ref_13=ref_13, ref_21=ref_21,ref_22=ref_22,ref_23=ref_23,ref_31=ref_31,ref_32=ref_32,ref_33=ref_33,ref_41=ref_41,ref_42=ref_42,ref_43=ref_43,ref_51=ref_51,ref_52=ref_52,ref_53=ref_53,ref_61=ref_61,ref_62=ref_62,ref_63=ref_63, quant_11=quant_ref_11, quant_12=quant_ref_12, quant_13=quant_ref_13, quant_21=quant_ref_21, quant_22=quant_ref_22, quant_23=quant_ref_23, quant_31=quant_ref_31, quant_32=quant_ref_32, quant_33=quant_ref_33, quant_41=quant_ref_41, quant_42=quant_ref_42, quant_43=quant_ref_43, quant_51=quant_ref_51, quant_52=quant_ref_52, quant_53=quant_ref_53, quant_61=quant_ref_61, quant_62=quant_ref_62, quant_63=quant_ref_63)
             add_ref.save()
             return redirect('diet_screen') 
         else:
@@ -130,7 +129,6 @@ def tela_tmb(request):
     else:
         objetivo = Objetivo.objects.all()
         nivel_at = NivelAtividade.objects.all()
-        ver = Dieta.objects.get(usuario_id=request.user.id)
         if request.method == 'POST':
             peso = request.POST.get('peso')
             altura = request.POST.get('height')
@@ -139,30 +137,32 @@ def tela_tmb(request):
             objetivo  = request.POST.get('objetivo_user')
             n_atividade = request.POST.get('nivel_de_ati_user')
             dados_dieta = request.POST.getlist('local_dados_do_user')
-            if peso.isdigit() == False:
-                messages.info(request, 'Peso invalido')
+            if peso == '' or altura == '' or idade == '':
+                messages.info(request, 'Preencha todos os campos.')
                 return redirect('tela_tmb')
-            print(peso.isdigit())
-            if ver is not None:
-                print('asdas')
+            elif peso.isdigit() == False or idade.isdigit() == False or altura.isdigit() == False:
+                messages.info(request, 'Caracteres invalidos')
+                return redirect('tela_tmb')
+            elif int(altura) > 272 or int(peso) > 300 or int(idade) > 100:
+                messages.info(request, 'Campo(s) invalido(s).')
+                return redirect('tela_tmb')
+            try:
+                ver = Dieta.objects.get(usuario_id=request.user.id)
+                if ver.exists():
+                    dados_dieta=(dados_dieta[0].split(','))
+                    add_diet = Dieta.objects.get(usuario_id=request.user.id)
+                    add_diet=Dieta.objects.update(objetivo_id = objetivo , peso = peso, altura = altura, idade = idade, genero = sexo, tmb=dados_dieta[0], gasto_dia=dados_dieta[1] ,caloria_dieta=dados_dieta[2],proteina=dados_dieta[3],gordura=dados_dieta[4],carboidratos=dados_dieta[5],nivel_atividade_id = n_atividade ,dieta = True )
+                    return redirect('criar_dieta')
+            except:    
                 dados_dieta=(dados_dieta[0].split(','))
-                add_diet = Dieta.objects.get(usuario_id=request.user.id)
-                add_diet=Dieta.objects.update(objetivo_id = objetivo , peso = peso, altura = altura, idade = idade, genero = sexo, tmb=dados_dieta[0], gasto_dia=dados_dieta[1] ,caloria_dieta=dados_dieta[2],proteina=dados_dieta[3],gordura=dados_dieta[4],carboidratos=dados_dieta[5],nivel_atividade_id = n_atividade ,dieta = True )
+                add_diet=Dieta.objects.create(usuario_id = request.user.id, objetivo_id = objetivo , peso = peso, altura = altura, idade = idade, genero = sexo, tmb=dados_dieta[0], gasto_dia=dados_dieta[1] ,caloria_dieta=dados_dieta[2],proteina=dados_dieta[3],gordura=dados_dieta[4],carboidratos=dados_dieta[5],nivel_atividade_id = n_atividade ,dieta = True )
+                add_diet.save()
                 return redirect('criar_dieta')
-            dados_dieta=(dados_dieta[0].split(','))
-            add_diet=Dieta.objects.create(usuario_id = request.user.id, objetivo_id = objetivo , peso = peso, altura = altura, idade = idade, genero = sexo, tmb=dados_dieta[0], gasto_dia=dados_dieta[1] ,caloria_dieta=dados_dieta[2],proteina=dados_dieta[3],gordura=dados_dieta[4],carboidratos=dados_dieta[5],nivel_atividade_id = n_atividade ,dieta = True )
-            add_diet.save()
-            return redirect('criar_dieta')
         else: 
-            return render(request, 'paginas/tela_tmb.html', {'objetivo': objetivo, 'nivel_at':nivel_at, 'ver':ver})
+            return render(request, 'paginas/tela_tmb.html', {'objetivo': objetivo, 'nivel_at':nivel_at})
     
 def diet_screen(request):
     dieta = ImprimirDieta.objects.filter(usuario_id=request.user.id)
-    print(len(dieta))
-    print(len(dieta))
-    print(len(dieta))
-    print(len(dieta))
-    print(dieta)
     if len(dieta) == 0:
         if request.user.is_authenticated == False:
             messages.info(request, 'Faça o Login')
