@@ -51,7 +51,11 @@
     color: #FFFFFF;
 }
 .ir_cadastro:hover{
-    background-color: #C4C4C4;
+    background: linear-gradient(to right, #18acba, #5bafe4); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
     border-radius: 10px;
     border: #000000 1.5px solid;
     padding: 10px;
@@ -65,3 +69,24 @@
     background-color: green;
     color: #FFFCFC;
 }
+.ir_cadastro:before {
+    content: '';
+    background: linear-gradient(to right, #4382c9, #5bafe4); 
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -2;
+  }
+  .ir_cadastro:after {
+    content: '';
+    background: #fff;
+    top: 2px;
+    bottom: 2px;
+    left: 2px;
+    right: 2px;
+    position: absolute;
+    border-radius: 8px;
+    z-index: -1;
+  }

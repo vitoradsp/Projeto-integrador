@@ -1,4 +1,15 @@
-console.log("javascript entrou");
+const input = document.getElementById('txtBusca');
+const trs = [...document.querySelectorAll('.body_tabela_Taco tbody tr')];
+console.log(trs)
+
+input.addEventListener('input', () => {
+  const search = input.value.toLowerCase();
+  trs.forEach(el => {
+    const matches = el.textContent.toLowerCase().includes(search);
+    el.style.display = matches ? 'block' : 'none';
+  });
+});
+
 function refeicoes_quanti(quantidade){
   console.log(quantidade)
   switch (Number(quantidade)){

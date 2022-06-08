@@ -59,7 +59,7 @@ header,nav{
     border-radius: 5px;
 }
 .criar_diet>a{
-    font-size: 20px;
+    font-size: 22px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -69,7 +69,7 @@ header,nav{
     color: black ;
     background-color: #FFFCFC ;
     border-radius: 5px;
-    padding: 5px;
+    padding: 7px;
 }
 .user > details{
     font-size: 20px;

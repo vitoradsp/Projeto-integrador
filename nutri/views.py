@@ -158,7 +158,17 @@ def tela_tmb(request):
     
 def diet_screen(request):
     dieta = ImprimirDieta.objects.filter(usuario_id=request.user.id)
+    print(len(dieta))
+    print(len(dieta))
+    print(len(dieta))
+    print(len(dieta))
     print(dieta)
+    if len(dieta) == 0:
+        if request.user.is_authenticated == False:
+            messages.info(request, 'Faça o Login')
+            return redirect('login_site')
+        messages.info(request, 'Crie sua dieta')
+        return redirect('tela_tmb')   
     return render(request, 'paginas/diet_screen.html', {'dieta':dieta}) 
 
 
