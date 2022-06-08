@@ -3,95 +3,140 @@
 {%block 'sections' %}
 <div class="diet">
     <div class="value_diet">
+        <table>
+            <thead>
+                <tr >
+                    <th>Alimento</th>
+                    <th>Quantidade (g)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <br>
+                <br>
+                {% for valor in dieta %}
+                <tr>
+                    <td class="nome">{{ valor.ref_11 }}</td>
+                    <td class="quant">{{ valor.quant_11 }} g</td>
+                </tr>
+                <tr>
+                    <td class="nome">{{ valor.ref_12 }}</td>
+                    <td class="quant">{{ valor.quant_12 }} g</td>
+                </tr>
+                <tr>
+                    <td class="nome">{{ valor.ref_13 }}</td>
+                    <td class="quant">{{ valor.quant_13 }} g</td>
+                </tr>
 
-        <div class="ref1">
+                <thead>
+                    <tr class="nun_ref">
+                        <th class="nun_ref">2º Refeição</th>
+                    </tr>
+                </thead>
 
-            <label for="">{{ dieta.ref_11 }}</label>
-            <label for="">{{ dieta.quant_11 }}</label>
+                <tr>
+                    <td class="nome">{{ valor.ref_21 }}</td>
+                    <td class="quant">{{ valor.quant_21 }} g</td>
+                </tr>
+                <tr>
+                    <td class="nome">{{ valor.ref_22 }}</td>
+                    <td class="quant">{{ valor.quant_22 }} g</td>
+                </tr>
+                <tr>
+                    <td class="nome">{{ valor.ref_23 }}</td>
+                    <td class="quant">{{ valor.quant_23 }} g</td>
+                </tr>
 
-            <label for="">{{ dieta.ref_12 }}</label>
-            <label for="">{{ dieta.quant_12 }}</label>
+                {% if valor.ref_31 != '' %}
+                <thead>
+                    <tr class="nun_ref">
+                        <th class="nun_ref">3º Refeição</th>
+                    </tr>
+                </thead>
+                
+                <tr>
+                    <td class="nome">{{ valor.ref_31 }}</td>
+                    <td class="quant">{{ valor.quant_31 }} g</td>
+                </tr>
+                <tr>
+                    <td class="nome">{{ valor.ref_32 }}</td>
+                    <td class="quant">{{ valor.quant_32 }} g</td>
+                </tr>
+                <tr>
+                    <td class="nome">{{ valor.ref_33 }}</td>
+                    <td class="quant">{{ valor.quant_33 }} g</td>
+                </tr>
+                {% endif %}
+                
+                {% if valor.ref_41 != '' %}
+                <thead>
+                    <tr class="nun_ref">
+                        <th class="nun_ref">4º Refeição</th>
+                    </tr>
+                </thead>
 
-            <label for="">{{ dieta.ref_13 }}</label>
-            <label for="">{{ dieta.quant_13 }}</label>
+                <tr>
+                    <td class="nome">{{ valor.ref_41 }}</td>
+                    <td class="quant">{{ valor.quant_41 }} g</td>
+                </tr>
+                <tr>
+                    <td class="nome">{{ valor.ref_42 }}</td>
+                    <td class="quant">{{ valor.quant_42 }} g</td>
+                </tr>
+                <tr>
+                    <td class="nome">{{ valor.ref_43 }}</td>
+                    <td class="quant">{{ valor.quant_43 }} g</td>
+                </tr>
+                {% endif %}
 
-        </div>
 
-        <div class="ref_21">
+                {% if valor.ref_51 != '' %}
+                <thead>
+                    <tr class="nun_ref">
+                        <th class="nun_ref">5º Refeição</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td class="nome">{{ valor.ref_51 }}</td>
+                    <td class="quant">{{ valor.quant_51 }} g</td>
+                </tr>
+                <tr>
+                    <td class="nome">{{ valor.ref_52 }}</td>
+                    <td class="quant">{{ valor.quant_52 }} g</td>
+                </tr>
+                <tr>
+                    <td class="nome">{{ valor.ref_53 }}</td>
+                    <td class="quant">{{ valor.quant_53 }} g</td>
+                </tr>
+                {% endif %}
 
-            <label for="">{{ dieta.ref_21 }}</label>
-            <label for="">{{ dieta.quant_21 }}</label>
+                {% if valor.ref_61 != '' %}
+                <thead>
+                    <tr class="nun_ref">
+                        <th class="nun_ref">6º Refeição</th>
+                    </tr>
+                </thead>
 
-            <label for="">{{ dieta.ref_22 }}</label>
-            <label for="">{{ dieta.quant_22 }}</label>
-
-            <label for="">{{ dieta.ref_23 }}</label>
-            <label for="">{{ dieta.quant_23 }}</label>
-
-        </div>
-
-        {% if dieta.ref_31 != '' %}
-            <div class="ref2">
-
-                <label for="">{{ dieta.ref_31 }}</label>
-                <label for="">{{ dieta.quant_31 }}</label>
-
-                <label for="">{{ dieta.ref_32 }}</label>
-                <label for="">{{ dieta.quant_32 }}</label>
-
-                <label for="">{{ dieta.ref_33 }}</label>
-                <label for="">{{ dieta.quant_33 }}</label>
-
-            </div>
-        {% endif %}
-        
-        {% if dieta.ref_41 != '' %}
-            <div class="ref2">
-
-                <label for="">{{ dieta.ref_41 }}</label>
-                <label for="">{{ dieta.quant_41 }}</label>
-
-                <label for="">{{ dieta.ref_42 }}</label>
-                <label for="">{{ dieta.quant_42 }}</label>
-
-                <label for="">{{ dieta.ref_43 }}</label>
-                <label for="">{{ dieta.quant_43 }}</label>
-
-            </div>
-        {% endif %}
-
-        {% if dieta.ref_51 != '' %}
-            <div class="ref2">
-
-                <label for="">{{ dieta.ref_51 }}</label>
-                <label for="">{{ dieta.quant_51 }}</label>
-
-                <label for="">{{ dieta.ref_52 }}</label>
-                <label for="">{{ dieta.quant_52 }}</label>
-
-                <label for="">{{ dieta.ref_53 }}</label>
-                <label for="">{{ dieta.quant_53 }}</label>
-
-            </div>
-        {% endif %}
-
-        {% if dieta.ref_61 != '' %}
-            <div class="ref2">
-
-                <label for="">{{ dieta.ref_61 }}</label>
-                <label for="">{{ dieta.quant_61 }}</label>
-
-                <label for="">{{ dieta.ref_62 }}</label>
-                <label for="">{{ dieta.quant_62 }}</label>
-
-                <label for="">{{ dieta.ref_63 }}</label>
-                <label for="">{{ dieta.quant_63 }}</label>
-
-            </div>
-        {% endif %}
-
-        
+                <tr>
+                    <td class="nome">{{ valor.ref_61 }}</td>
+                    <td class="quant">{{ valor.quant_61 }} g</td>
+                </tr>
+                <tr>
+                    <td class="nome">{{ valor.ref_62 }}</td>
+                    <td class="quant">{{ valor.quant_62 }} g</td>
+                </tr>
+                <tr>
+                    <td class="nome">{{ valor.ref_63 }}</td>
+                    <td class="quant">{{ valor.quant_63 }} g</td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <br>
     </div>
-    
+
 </div>
+
+
 {% endblock %}
