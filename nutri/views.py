@@ -141,7 +141,10 @@ def tela_tmb(request):
     else:
         objetivo = Objetivo.objects.all()
         nivel_at = NivelAtividade.objects.all()
-        verUser = get_object_or_404(Dieta, usuario_id = request.user.id)
+        try:
+            verUser = get_object_or_404(Dieta, usuario_id = request.user.id)
+        except:
+            verUser = False    
         if request.method == 'POST':
             peso = request.POST.get('peso')
             altura = request.POST.get('height')
