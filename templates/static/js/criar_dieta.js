@@ -71,198 +71,7 @@ function adicionar_alimento(alimento_tabela) {
   gordura_do_alimentos = gordura_do_alimentos.replace('g','');
   let carboidratos_do_alimentos=alimento_escolhido.querySelector('.td_carb').innerText;
   carboidratos_do_alimentos=carboidratos_do_alimentos.replace('g','');
-
-  /*refeiçao 1*/
-  const alimento_da_ref_1_row_1 = document.getElementById(
-    "alimentos_linha_1_ref_1"
-  ).innerHTML;
-  const alimento_da_ref_1_row_2 = document.getElementById(
-    "alimentos_linha_2_ref_1"
-  ).innerHTML;
-  const alimento_da_ref_1_row_3 = document.getElementById(
-    "alimentos_linha_3_ref_1"
-  ).innerHTML;
-  /*refeiçao 2*/
-  const alimento_da_ref_2_row_1 = document.getElementById(
-    "alimentos_linha_1_ref_2"
-  ).innerHTML;
-  const alimento_da_ref_2_row_2 = document.getElementById(
-    "alimentos_linha_2_ref_2"
-  ).innerHTML;
-  const alimento_da_ref_2_row_3 = document.getElementById(
-    "alimentos_linha_3_ref_2"
-  ).innerHTML;
-  /*refeiçao 3*/
-  const alimento_da_ref_3_row_1 = document.getElementById(
-    "alimentos_linha_1_ref_3"
-  ).innerHTML;
-  const alimento_da_ref_3_row_2 = document.getElementById(
-    "alimentos_linha_2_ref_3"
-  ).innerHTML;
-  const alimento_da_ref_3_row_3 = document.getElementById(
-    "alimentos_linha_3_ref_3"
-  ).innerHTML;
-  /*refeiçao 4*/
-  const alimento_da_ref_4_row_1 = document.getElementById(
-    "alimentos_linha_1_ref_4"
-  ).innerHTML;
-  const alimento_da_ref_4_row_2 = document.getElementById(
-    "alimentos_linha_2_ref_4"
-  ).innerHTML;
-  const alimento_da_ref_4_row_3 = document.getElementById(
-    "alimentos_linha_3_ref_4"
-  ).innerHTML;
-  /*refeiçao 5*/
-  const alimento_da_ref_5_row_1 = document.getElementById(
-    "alimentos_linha_1_ref_5"
-  ).innerHTML;
-  const alimento_da_ref_5_row_2 = document.getElementById(
-    "alimentos_linha_2_ref_5"
-  ).innerHTML;
-  const alimento_da_ref_5_row_3 = document.getElementById(
-    "alimentos_linha_3_ref_5"
-  ).innerHTML;
-  /*refeiçao 6*/
-  const alimento_da_ref_6_row_1 = document.getElementById(
-    "alimentos_linha_1_ref_6"
-  ).innerHTML;
-  const alimento_da_ref_6_row_2 = document.getElementById(
-    "alimentos_linha_2_ref_6"
-  ).innerHTML;
-  const alimento_da_ref_6_row_3 = document.getElementById(
-    "alimentos_linha_3_ref_6"
-  ).innerHTML;
-  if (alimento_da_ref_1_row_1 == "") {
-    let LABEL_1 = document.getElementById("alimentos_linha_1_ref_1").innerText = nome_do_alimento;
-    let nome = document.getElementById("alimento_total_row1_ref_1").value=nome_do_alimento;
-    let kcal_1 = document.getElementById("kcal_total_row1_ref_1").value= kcal_do_alimentos;
-    let prot_1 = document.getElementById("prot_total_row1_ref_1").value=prot_do_alimentos;
-    let fat_1 = document.getElementById("gord_total_row1_ref_1").value=gordura_do_alimentos;
-    let carb_1 = document.getElementById("carb_total_row1_ref_1").value=carboidratos_do_alimentos;
-  } else if (alimento_da_ref_1_row_2 == "") {
-    let LABEL_2 = (document.getElementById("alimentos_linha_2_ref_1").innerText = nome_do_alimento);
-    let nome = document.getElementById("alimento_total_row2_ref_1").value=nome_do_alimento;
-    let kcal_2 = document.getElementById("kcal_total_row2_ref_1").value=kcal_do_alimentos;
-    let prot_2 = document.getElementById("prot_total_row2_ref_1").value=prot_do_alimentos;
-    let fat_2 = document.getElementById("gord_total_row2_ref_1").value=gordura_do_alimentos;
-    let carb_2 = document.getElementById("carb_total_row2_ref_1").value=carboidratos_do_alimentos;
-  } else if (alimento_da_ref_1_row_3 == "") {
-    let LABEL_3 = (document.getElementById("alimentos_linha_3_ref_1").innerText = nome_do_alimento);
-    let nome = document.getElementById("alimento_total_row3_ref_1").value=nome_do_alimento;
-    let kcal_3 = document.getElementById("kcal_total_row3_ref_1").value=kcal_do_alimentos;
-    let prot_3 = document.getElementById("prot_total_row3_ref_1").value=prot_do_alimentos;
-    let fat_3 = document.getElementById("gord_total_row3_ref_1").value=gordura_do_alimentos;
-    let carb_3 = document.getElementById("carb_total_row3_ref_1").value=carboidratos_do_alimentos;
-  } /*refeiçao 2*/ else if (alimento_da_ref_2_row_1 == "") {
-    let LABEL_1 = (document.getElementById("alimentos_linha_1_ref_2").innerText = nome_do_alimento);
-    let nome = document.getElementById("alimento_total_row1_ref_2").value=nome_do_alimento;
-    let kcal_1 = document.getElementById("kcal_total_row1_ref_2").value=kcal_do_alimentos;
-    let prot_1 = document.getElementById("prot_total_row1_ref_2").value=prot_do_alimentos;
-    let fat_1 = document.getElementById("gord_total_row1_ref_2").value=gordura_do_alimentos;
-    let carb_1 = document.getElementById("carb_total_row1_ref_2").value=carboidratos_do_alimentos;
-  } else if (alimento_da_ref_2_row_2 == "") {
-    let LABEL_2 = (document.getElementById("alimentos_linha_2_ref_2").innerText = nome_do_alimento);
-    let nome = document.getElementById("alimento_total_row2_ref_2").value=nome_do_alimento;
-    let kcal_2 = document.getElementById("kcal_total_row2_ref_2").value=kcal_do_alimentos;
-    let prot_2 = document.getElementById("prot_total_row2_ref_2").value=prot_do_alimentos;
-    let fat_2 = document.getElementById("gord_total_row2_ref_2").value=gordura_do_alimentos;
-    let carb_2 = document.getElementById("carb_total_row2_ref_2").value=carboidratos_do_alimentos;
-  } else if (alimento_da_ref_2_row_3 == "") {
-    let LABEL_3 = (document.getElementById("alimentos_linha_3_ref_2").innerText = nome_do_alimento);
-    let nome = document.getElementById("alimento_total_row3_ref_2").value=nome_do_alimento;
-    let kcal_3 = document.getElementById("kcal_total_row3_ref_2").value=kcal_do_alimentos;
-    let prot_3 = document.getElementById("prot_total_row3_ref_2").value=prot_do_alimentos;
-    let fat_3 = document.getElementById("gord_total_row3_ref_2").value=gordura_do_alimentos;
-    let carb_3 = document.getElementById("carb_total_row3_ref_2").value=carboidratos_do_alimentos;
-  } /*refeiçao 3*/ else if (alimento_da_ref_3_row_1 == "") {
-    let LABEL_1 = (document.getElementById("alimentos_linha_1_ref_3").innerText = nome_do_alimento);
-    let nome = document.getElementById("alimento_total_row1_ref_3").value=nome_do_alimento;
-    let kcal_1 = document.getElementById("kcal_total_row1_ref_3").value=kcal_do_alimentos;
-    let prot_1 = document.getElementById("prot_total_row1_ref_3").value=prot_do_alimentos;
-    let fat_1 = document.getElementById("gord_total_row1_ref_3").value=gordura_do_alimentos;
-    let carb_1 = document.getElementById("carb_total_row1_ref_3").value=carboidratos_do_alimentos;
-  } else if (alimento_da_ref_3_row_2 == "") {
-    let LABEL_2 = (document.getElementById("alimentos_linha_2_ref_3").innerText = nome_do_alimento);
-    let nome = document.getElementById("alimento_total_row2_ref_3").value=nome_do_alimento;
-    let kcal_2 = document.getElementById("kcal_total_row2_ref_3").value=kcal_do_alimentos;
-    let prot_2 = document.getElementById("prot_total_row2_ref_3").value=prot_do_alimentos;
-    let fat_2 = document.getElementById("gord_total_row2_ref_3").value=gordura_do_alimentos;
-    let carb_2 = document.getElementById("carb_total_row2_ref_3").value=carboidratos_do_alimentos;
-  } else if (alimento_da_ref_3_row_3 == "") {
-    let LABEL_3 = (document.getElementById("alimentos_linha_3_ref_3").innerText = nome_do_alimento);
-    let nome = document.getElementById("alimento_total_row3_ref_3").value=nome_do_alimento;
-    let kcal_3 = document.getElementById("kcal_total_row3_ref_3").value=kcal_do_alimentos;
-    let prot_3 = document.getElementById("prot_total_row3_ref_3").value=prot_do_alimentos;
-    let fat_3 = document.getElementById("gord_total_row3_ref_3").value=gordura_do_alimentos;
-    let carb_3 = document.getElementById("carb_total_row3_ref_3").value=carboidratos_do_alimentos;
-  } /*refeiçao 4*/ else if (alimento_da_ref_4_row_1 == "") {
-    let LABEL_1 = (document.getElementById("alimentos_linha_1_ref_4").innerText = nome_do_alimento);
-    let nome = document.getElementById("alimento_total_row1_ref_4").value=nome_do_alimento;
-    let kcal_1 = document.getElementById("kcal_total_row1_ref_4").value=kcal_do_alimentos;
-    let prot_1 = document.getElementById("prot_total_row1_ref_4").value=prot_do_alimentos;
-    let fat_1 = document.getElementById("gord_total_row1_ref_4").value=gordura_do_alimentos;
-    let carb_1 = document.getElementById("carb_total_row1_ref_4").value=carboidratos_do_alimentos;
-  } else if (alimento_da_ref_4_row_2 == "") {
-    let LABEL_2 = (document.getElementById("alimentos_linha_2_ref_4").innerText = nome_do_alimento);
-    let nome = document.getElementById("alimento_total_row2_ref_4").value=nome_do_alimento;
-    let kcal_2 = document.getElementById("kcal_total_row2_ref_4").value=kcal_do_alimentos;
-    let prot_2 = document.getElementById("prot_total_row2_ref_4").value=prot_do_alimentos;
-    let fat_2 = document.getElementById("gord_total_row2_ref_4").value=gordura_do_alimentos;
-    let carb_2 = document.getElementById("carb_total_row2_ref_4").value=carboidratos_do_alimentos;
-  } else if (alimento_da_ref_4_row_3 == "") {
-    let LABEL_3 = (document.getElementById("alimentos_linha_3_ref_4").innerText = nome_do_alimento);
-    let nome = document.getElementById("alimento_total_row3_ref_4").value=nome_do_alimento;
-    let kcal_3 = document.getElementById("kcal_total_row3_ref_4").value=kcal_do_alimentos;
-    let prot_3 = document.getElementById("prot_total_row3_ref_4").value=prot_do_alimentos;
-    let fat_3 = document.getElementById("gord_total_row3_ref_4").value=gordura_do_alimentos;
-    let carb_3 = document.getElementById("carb_total_row3_ref_4").value=carboidratos_do_alimentos;
-
-  } /*refeiçao 5*/ else if (alimento_da_ref_5_row_1 == "") {
-    let LABEL_1 = (document.getElementById("alimentos_linha_1_ref_5").innerText = nome_do_alimento);
-    let nome = document.getElementById("alimento_total_row1_ref_5").value=nome_do_alimento;
-    let kcal_1 = document.getElementById("kcal_total_row1_ref_5").value=kcal_do_alimentos;
-    let prot_1 = document.getElementById("prot_total_row1_ref_5").value=prot_do_alimentos;
-    let fat_1 = document.getElementById("gord_total_row1_ref_5").value=gordura_do_alimentos;
-    let carb_1 = document.getElementById("carb_total_row1_ref_5").value=carboidratos_do_alimentos;
-  } else if (alimento_da_ref_5_row_2 == "") {
-    let LABEL_2 = (document.getElementById("alimentos_linha_2_ref_5").innerText = nome_do_alimento);
-    let nome = document.getElementById("alimento_total_row2_ref_5").value=nome_do_alimento;
-    let kcal_2 = document.getElementById("kcal_total_row2_ref_5").value=kcal_do_alimentos;
-    let prot_2 = document.getElementById("prot_total_row2_ref_5").value=prot_do_alimentos;
-    let fat_2 = document.getElementById("gord_total_row2_ref_5").value=gordura_do_alimentos;
-    let carb_2 = document.getElementById("carb_total_row2_ref_5").value=carboidratos_do_alimentos;
-  } else if (alimento_da_ref_5_row_3 == "") {
-    let LABEL_3 = (document.getElementById("alimentos_linha_3_ref_5").innerText = nome_do_alimento);
-    let nome = document.getElementById("alimento_total_row3_ref_5").value=nome_do_alimento;
-    let kcal_3 = document.getElementById("kcal_total_row3_ref_5").value=kcal_do_alimentos;
-    let prot_3 = document.getElementById("prot_total_row3_ref_5").value=prot_do_alimentos;
-    let fat_3 = document.getElementById("gord_total_row3_ref_5").value=gordura_do_alimentos;
-    let carb_3 = document.getElementById("carb_total_row3_ref_5").value=carboidratos_do_alimentos;
-
-  } else if (alimento_da_ref_6_row_1 == "") {
-    let LABEL_1 = (document.getElementById("alimentos_linha_1_ref_6").innerText = nome_do_alimento);
-    let nome = document.getElementById("alimento_total_row1_ref_6").value=nome_do_alimento;
-    let kcal_1 = document.getElementById("kcal_total_row1_ref_6").value = kcal_do_alimentos;
-    let prot_1 = document.getElementById("prot_total_row1_ref_6").value = prot_do_alimentos;
-    let fat_1 = document.getElementById("gord_total_row1_ref_6").value = gordura_do_alimentos;
-    let carb_1 = document.getElementById("carb_total_row1_ref_6").value = carboidratos_do_alimentos;
-  } else if (alimento_da_ref_6_row_2 == "") {
-    let LABEL_2 = (document.getElementById("alimentos_linha_2_ref_6").innerText = nome_do_alimento);
-    let nome = document.getElementById("alimento_total_row2_ref_6").value = nome_do_alimento;
-    let kcal_2 = document.getElementById("kcal_total_row2_ref_6").value = kcal_do_alimentos;
-    let prot_2 = document.getElementById("prot_total_row2_ref_6").value = prot_do_alimentos;
-    let fat_2 = document.getElementById("gord_total_row2_ref_6").value = gordura_do_alimentos;
-    let carb_2 = document.getElementById("carb_total_row2_ref_6").value = carboidratos_do_alimentos;
-  } else if (alimento_da_ref_6_row_3 == "") {
-    let LABEL_2 = (document.getElementById("alimentos_linha_3_ref_6").innerText = nome_do_alimento);
-    let nome = document.getElementById("alimento_total_row3_ref_6").value = nome_do_alimento;
-    let kcal_3 = document.getElementById("kcal_total_row3_ref_6").value = kcal_do_alimentos;
-    let prot_3 = document.getElementById("prot_total_row3_ref_6").value = prot_do_alimentos;
-    let fat_3 = document.getElementById("gord_total_row3_ref_6").value = gordura_do_alimentos;
-    let carb_3 = document.getElementById("carb_total_row3_ref_6").value = carboidratos_do_alimentos;
-  } else {
-    console.log("FIM");
-  }
+  let AdicionandoNaRefeicao = Adicionando_Alimento(nome_do_alimento,kcal_do_alimentos,prot_do_alimentos,gordura_do_alimentos,carboidratos_do_alimentos)
 }
 
 function macros_refeicao(numero_da_ref) {
@@ -733,3 +542,198 @@ function limpar_refeicao(numero_da_refeicao){
       break 
   }
 };
+
+function Adicionando_Alimento(nome_do_alimento,kcal_do_alimentos,prot_do_alimentos,gordura_do_alimentos,carboidratos_do_alimentos){
+  /*refeiçao 1*/
+  const alimento_da_ref_1_row_1 = document.getElementById(
+    "alimentos_linha_1_ref_1"
+  ).innerHTML;
+  const alimento_da_ref_1_row_2 = document.getElementById(
+    "alimentos_linha_2_ref_1"
+  ).innerHTML;
+  const alimento_da_ref_1_row_3 = document.getElementById(
+    "alimentos_linha_3_ref_1"
+  ).innerHTML;
+  /*refeiçao 2*/
+  const alimento_da_ref_2_row_1 = document.getElementById(
+    "alimentos_linha_1_ref_2"
+  ).innerHTML;
+  const alimento_da_ref_2_row_2 = document.getElementById(
+    "alimentos_linha_2_ref_2"
+  ).innerHTML;
+  const alimento_da_ref_2_row_3 = document.getElementById(
+    "alimentos_linha_3_ref_2"
+  ).innerHTML;
+  /*refeiçao 3*/
+  const alimento_da_ref_3_row_1 = document.getElementById(
+    "alimentos_linha_1_ref_3"
+  ).innerHTML;
+  const alimento_da_ref_3_row_2 = document.getElementById(
+    "alimentos_linha_2_ref_3"
+  ).innerHTML;
+  const alimento_da_ref_3_row_3 = document.getElementById(
+    "alimentos_linha_3_ref_3"
+  ).innerHTML;
+  /*refeiçao 4*/
+  const alimento_da_ref_4_row_1 = document.getElementById(
+    "alimentos_linha_1_ref_4"
+  ).innerHTML;
+  const alimento_da_ref_4_row_2 = document.getElementById(
+    "alimentos_linha_2_ref_4"
+  ).innerHTML;
+  const alimento_da_ref_4_row_3 = document.getElementById(
+    "alimentos_linha_3_ref_4"
+  ).innerHTML;
+  /*refeiçao 5*/
+  const alimento_da_ref_5_row_1 = document.getElementById(
+    "alimentos_linha_1_ref_5"
+  ).innerHTML;
+  const alimento_da_ref_5_row_2 = document.getElementById(
+    "alimentos_linha_2_ref_5"
+  ).innerHTML;
+  const alimento_da_ref_5_row_3 = document.getElementById(
+    "alimentos_linha_3_ref_5"
+  ).innerHTML;
+  /*refeiçao 6*/
+  const alimento_da_ref_6_row_1 = document.getElementById(
+    "alimentos_linha_1_ref_6"
+  ).innerHTML;
+  const alimento_da_ref_6_row_2 = document.getElementById(
+    "alimentos_linha_2_ref_6"
+  ).innerHTML;
+  const alimento_da_ref_6_row_3 = document.getElementById(
+    "alimentos_linha_3_ref_6"
+  ).innerHTML;
+  if (alimento_da_ref_1_row_1 == "") {
+    let LABEL_1 = document.getElementById("alimentos_linha_1_ref_1").innerText = nome_do_alimento;
+    let nome = document.getElementById("alimento_total_row1_ref_1").value=nome_do_alimento;
+    let kcal_1 = document.getElementById("kcal_total_row1_ref_1").value= kcal_do_alimentos;
+    let prot_1 = document.getElementById("prot_total_row1_ref_1").value=prot_do_alimentos;
+    let fat_1 = document.getElementById("gord_total_row1_ref_1").value=gordura_do_alimentos;
+    let carb_1 = document.getElementById("carb_total_row1_ref_1").value=carboidratos_do_alimentos;
+  } else if (alimento_da_ref_1_row_2 == "") {
+    let LABEL_2 = (document.getElementById("alimentos_linha_2_ref_1").innerText = nome_do_alimento);
+    let nome = document.getElementById("alimento_total_row2_ref_1").value=nome_do_alimento;
+    let kcal_2 = document.getElementById("kcal_total_row2_ref_1").value=kcal_do_alimentos;
+    let prot_2 = document.getElementById("prot_total_row2_ref_1").value=prot_do_alimentos;
+    let fat_2 = document.getElementById("gord_total_row2_ref_1").value=gordura_do_alimentos;
+    let carb_2 = document.getElementById("carb_total_row2_ref_1").value=carboidratos_do_alimentos;
+  } else if (alimento_da_ref_1_row_3 == "") {
+    let LABEL_3 = (document.getElementById("alimentos_linha_3_ref_1").innerText = nome_do_alimento);
+    let nome = document.getElementById("alimento_total_row3_ref_1").value=nome_do_alimento;
+    let kcal_3 = document.getElementById("kcal_total_row3_ref_1").value=kcal_do_alimentos;
+    let prot_3 = document.getElementById("prot_total_row3_ref_1").value=prot_do_alimentos;
+    let fat_3 = document.getElementById("gord_total_row3_ref_1").value=gordura_do_alimentos;
+    let carb_3 = document.getElementById("carb_total_row3_ref_1").value=carboidratos_do_alimentos;
+  } /*refeiçao 2*/ else if (alimento_da_ref_2_row_1 == "") {
+    let LABEL_1 = (document.getElementById("alimentos_linha_1_ref_2").innerText = nome_do_alimento);
+    let nome = document.getElementById("alimento_total_row1_ref_2").value=nome_do_alimento;
+    let kcal_1 = document.getElementById("kcal_total_row1_ref_2").value=kcal_do_alimentos;
+    let prot_1 = document.getElementById("prot_total_row1_ref_2").value=prot_do_alimentos;
+    let fat_1 = document.getElementById("gord_total_row1_ref_2").value=gordura_do_alimentos;
+    let carb_1 = document.getElementById("carb_total_row1_ref_2").value=carboidratos_do_alimentos;
+  } else if (alimento_da_ref_2_row_2 == "") {
+    let LABEL_2 = (document.getElementById("alimentos_linha_2_ref_2").innerText = nome_do_alimento);
+    let nome = document.getElementById("alimento_total_row2_ref_2").value=nome_do_alimento;
+    let kcal_2 = document.getElementById("kcal_total_row2_ref_2").value=kcal_do_alimentos;
+    let prot_2 = document.getElementById("prot_total_row2_ref_2").value=prot_do_alimentos;
+    let fat_2 = document.getElementById("gord_total_row2_ref_2").value=gordura_do_alimentos;
+    let carb_2 = document.getElementById("carb_total_row2_ref_2").value=carboidratos_do_alimentos;
+  } else if (alimento_da_ref_2_row_3 == "") {
+    let LABEL_3 = (document.getElementById("alimentos_linha_3_ref_2").innerText = nome_do_alimento);
+    let nome = document.getElementById("alimento_total_row3_ref_2").value=nome_do_alimento;
+    let kcal_3 = document.getElementById("kcal_total_row3_ref_2").value=kcal_do_alimentos;
+    let prot_3 = document.getElementById("prot_total_row3_ref_2").value=prot_do_alimentos;
+    let fat_3 = document.getElementById("gord_total_row3_ref_2").value=gordura_do_alimentos;
+    let carb_3 = document.getElementById("carb_total_row3_ref_2").value=carboidratos_do_alimentos;
+  } /*refeiçao 3*/ else if (alimento_da_ref_3_row_1 == "") {
+    let LABEL_1 = (document.getElementById("alimentos_linha_1_ref_3").innerText = nome_do_alimento);
+    let nome = document.getElementById("alimento_total_row1_ref_3").value=nome_do_alimento;
+    let kcal_1 = document.getElementById("kcal_total_row1_ref_3").value=kcal_do_alimentos;
+    let prot_1 = document.getElementById("prot_total_row1_ref_3").value=prot_do_alimentos;
+    let fat_1 = document.getElementById("gord_total_row1_ref_3").value=gordura_do_alimentos;
+    let carb_1 = document.getElementById("carb_total_row1_ref_3").value=carboidratos_do_alimentos;
+  } else if (alimento_da_ref_3_row_2 == "") {
+    let LABEL_2 = (document.getElementById("alimentos_linha_2_ref_3").innerText = nome_do_alimento);
+    let nome = document.getElementById("alimento_total_row2_ref_3").value=nome_do_alimento;
+    let kcal_2 = document.getElementById("kcal_total_row2_ref_3").value=kcal_do_alimentos;
+    let prot_2 = document.getElementById("prot_total_row2_ref_3").value=prot_do_alimentos;
+    let fat_2 = document.getElementById("gord_total_row2_ref_3").value=gordura_do_alimentos;
+    let carb_2 = document.getElementById("carb_total_row2_ref_3").value=carboidratos_do_alimentos;
+  } else if (alimento_da_ref_3_row_3 == "") {
+    let LABEL_3 = (document.getElementById("alimentos_linha_3_ref_3").innerText = nome_do_alimento);
+    let nome = document.getElementById("alimento_total_row3_ref_3").value=nome_do_alimento;
+    let kcal_3 = document.getElementById("kcal_total_row3_ref_3").value=kcal_do_alimentos;
+    let prot_3 = document.getElementById("prot_total_row3_ref_3").value=prot_do_alimentos;
+    let fat_3 = document.getElementById("gord_total_row3_ref_3").value=gordura_do_alimentos;
+    let carb_3 = document.getElementById("carb_total_row3_ref_3").value=carboidratos_do_alimentos;
+  } /*refeiçao 4*/ else if (alimento_da_ref_4_row_1 == "") {
+    let LABEL_1 = (document.getElementById("alimentos_linha_1_ref_4").innerText = nome_do_alimento);
+    let nome = document.getElementById("alimento_total_row1_ref_4").value=nome_do_alimento;
+    let kcal_1 = document.getElementById("kcal_total_row1_ref_4").value=kcal_do_alimentos;
+    let prot_1 = document.getElementById("prot_total_row1_ref_4").value=prot_do_alimentos;
+    let fat_1 = document.getElementById("gord_total_row1_ref_4").value=gordura_do_alimentos;
+    let carb_1 = document.getElementById("carb_total_row1_ref_4").value=carboidratos_do_alimentos;
+  } else if (alimento_da_ref_4_row_2 == "") {
+    let LABEL_2 = (document.getElementById("alimentos_linha_2_ref_4").innerText = nome_do_alimento);
+    let nome = document.getElementById("alimento_total_row2_ref_4").value=nome_do_alimento;
+    let kcal_2 = document.getElementById("kcal_total_row2_ref_4").value=kcal_do_alimentos;
+    let prot_2 = document.getElementById("prot_total_row2_ref_4").value=prot_do_alimentos;
+    let fat_2 = document.getElementById("gord_total_row2_ref_4").value=gordura_do_alimentos;
+    let carb_2 = document.getElementById("carb_total_row2_ref_4").value=carboidratos_do_alimentos;
+  } else if (alimento_da_ref_4_row_3 == "") {
+    let LABEL_3 = (document.getElementById("alimentos_linha_3_ref_4").innerText = nome_do_alimento);
+    let nome = document.getElementById("alimento_total_row3_ref_4").value=nome_do_alimento;
+    let kcal_3 = document.getElementById("kcal_total_row3_ref_4").value=kcal_do_alimentos;
+    let prot_3 = document.getElementById("prot_total_row3_ref_4").value=prot_do_alimentos;
+    let fat_3 = document.getElementById("gord_total_row3_ref_4").value=gordura_do_alimentos;
+    let carb_3 = document.getElementById("carb_total_row3_ref_4").value=carboidratos_do_alimentos;
+
+  } /*refeiçao 5*/ else if (alimento_da_ref_5_row_1 == "") {
+    let LABEL_1 = (document.getElementById("alimentos_linha_1_ref_5").innerText = nome_do_alimento);
+    let nome = document.getElementById("alimento_total_row1_ref_5").value=nome_do_alimento;
+    let kcal_1 = document.getElementById("kcal_total_row1_ref_5").value=kcal_do_alimentos;
+    let prot_1 = document.getElementById("prot_total_row1_ref_5").value=prot_do_alimentos;
+    let fat_1 = document.getElementById("gord_total_row1_ref_5").value=gordura_do_alimentos;
+    let carb_1 = document.getElementById("carb_total_row1_ref_5").value=carboidratos_do_alimentos;
+  } else if (alimento_da_ref_5_row_2 == "") {
+    let LABEL_2 = (document.getElementById("alimentos_linha_2_ref_5").innerText = nome_do_alimento);
+    let nome = document.getElementById("alimento_total_row2_ref_5").value=nome_do_alimento;
+    let kcal_2 = document.getElementById("kcal_total_row2_ref_5").value=kcal_do_alimentos;
+    let prot_2 = document.getElementById("prot_total_row2_ref_5").value=prot_do_alimentos;
+    let fat_2 = document.getElementById("gord_total_row2_ref_5").value=gordura_do_alimentos;
+    let carb_2 = document.getElementById("carb_total_row2_ref_5").value=carboidratos_do_alimentos;
+  } else if (alimento_da_ref_5_row_3 == "") {
+    let LABEL_3 = (document.getElementById("alimentos_linha_3_ref_5").innerText = nome_do_alimento);
+    let nome = document.getElementById("alimento_total_row3_ref_5").value=nome_do_alimento;
+    let kcal_3 = document.getElementById("kcal_total_row3_ref_5").value=kcal_do_alimentos;
+    let prot_3 = document.getElementById("prot_total_row3_ref_5").value=prot_do_alimentos;
+    let fat_3 = document.getElementById("gord_total_row3_ref_5").value=gordura_do_alimentos;
+    let carb_3 = document.getElementById("carb_total_row3_ref_5").value=carboidratos_do_alimentos;
+
+  } else if (alimento_da_ref_6_row_1 == "") {
+    let LABEL_1 = (document.getElementById("alimentos_linha_1_ref_6").innerText = nome_do_alimento);
+    let nome = document.getElementById("alimento_total_row1_ref_6").value=nome_do_alimento;
+    let kcal_1 = document.getElementById("kcal_total_row1_ref_6").value = kcal_do_alimentos;
+    let prot_1 = document.getElementById("prot_total_row1_ref_6").value = prot_do_alimentos;
+    let fat_1 = document.getElementById("gord_total_row1_ref_6").value = gordura_do_alimentos;
+    let carb_1 = document.getElementById("carb_total_row1_ref_6").value = carboidratos_do_alimentos;
+  } else if (alimento_da_ref_6_row_2 == "") {
+    let LABEL_2 = (document.getElementById("alimentos_linha_2_ref_6").innerText = nome_do_alimento);
+    let nome = document.getElementById("alimento_total_row2_ref_6").value = nome_do_alimento;
+    let kcal_2 = document.getElementById("kcal_total_row2_ref_6").value = kcal_do_alimentos;
+    let prot_2 = document.getElementById("prot_total_row2_ref_6").value = prot_do_alimentos;
+    let fat_2 = document.getElementById("gord_total_row2_ref_6").value = gordura_do_alimentos;
+    let carb_2 = document.getElementById("carb_total_row2_ref_6").value = carboidratos_do_alimentos;
+  } else if (alimento_da_ref_6_row_3 == "") {
+    let LABEL_2 = (document.getElementById("alimentos_linha_3_ref_6").innerText = nome_do_alimento);
+    let nome = document.getElementById("alimento_total_row3_ref_6").value = nome_do_alimento;
+    let kcal_3 = document.getElementById("kcal_total_row3_ref_6").value = kcal_do_alimentos;
+    let prot_3 = document.getElementById("prot_total_row3_ref_6").value = prot_do_alimentos;
+    let fat_3 = document.getElementById("gord_total_row3_ref_6").value = gordura_do_alimentos;
+    let carb_3 = document.getElementById("carb_total_row3_ref_6").value = carboidratos_do_alimentos;
+  } else {
+    console.log("FIM");
+  }
+  
+}

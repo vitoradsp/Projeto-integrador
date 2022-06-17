@@ -82,3 +82,9 @@
 .btn_tmb1:hover,.btn_tmb:hover{
     color: yellowgreen;
 }
+@media (max-width: 820px) {
+    .tela_tmb > form{
+        padding-top: 40px;
+        margin-top: 0px;
+    }
+}

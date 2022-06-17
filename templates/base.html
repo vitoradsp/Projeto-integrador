@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{%block 'title'%}{%endblock%}</title>
+     <link rel="icon" type="image/x-icon" href="{% static 'img\logo_jovem_programador.png' %}">
     <link rel="stylesheet" href="{% static 'css/base.css' %}" />
     <link rel="stylesheet" href="{% static 'css/google.css' %}" />
     <link rel="stylesheet" href="{% static 'css/cadastro.css' %}" />
@@ -45,10 +46,18 @@
               <a href="{%url 'logout'%}"><i class="fa-solid fa-arrow-right-from-bracket"></i>
                 Logout
               </a>
+              {% if request.path != "/diet_screen/"%}
               <a href="{%url 'diet_screen'%}">
                 <i  class="fa-solid fa-bowl-food"></i>
                 Rever dieta
               </a>
+              {%endif%}
+              {% if request.path != "/criando_sua_dieta/"%}
+              <a class='nav_criar_dieta' href="{%url 'criar_dieta'%}">
+                <i  class="fa-solid fa-bowl-food"></i>
+                Criar Refeições
+              </a>
+              {%endif%}
             </details>
           </div>
           <div class="criar_diet">

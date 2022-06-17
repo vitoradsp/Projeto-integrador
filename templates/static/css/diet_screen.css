@@ -5,7 +5,10 @@
 
 .diet{
     background-image:url("https://www.paho.org/sites/default/files/alimentacao-saudavel-diversificada.jpg");
-    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    height: 100vh;
 }
 
 table{
@@ -23,6 +26,21 @@ table{
     flex-direction: column ;
     color: white;
     
+
+}
+.button_print{
+    margin-top: 10px;
+    font-size: 20px;
+    text-transform: capitalize;
+    padding: 10px;
+    border-radius: 5px;
+    appearance: none;
+    color: black;
+    background-color: gray;
+    margin-left: 230px;
+}
+.button_print:hover{
+    color: greenyellow;
 }
 
 .value_diet > table > thead > tr > th{

@@ -330,6 +330,12 @@
       <label style="color: white; text-decoration:underline red;" for=""
         >Valores referente a 100G</label
       >
+      <form  style='width:100%;' action="" method="get">
+        <span style='width:100%;'>
+          <input type="text" name="txtbuscar" id="" class="campo_de_busca_taco">
+          <button class="button_de_busca_taco" type="submit">Enviar</button>
+        </span>
+      </form>
       <table class="body_tabela_Taco">
         <thead class="titulos_tabela">
           <tr>
@@ -352,21 +358,6 @@
           {%endfor%}
         </tbody>
       </table>
-      <div class="pagination">
-        <span class="step-links">
-          {% if contacts.has_previous %}
-          <a href="?page={{ contacts.previous_page_number }}">Anterior</a>
-          {% endif %}
-
-          <span class="current">
-            Página {{ contacts.number }} De {{ contacts.paginator.num_pages }}.
-          </span>
-
-          {% if contacts.has_next %}
-          <a href="?page={{ contacts.next_page_number }}">Próxima</a>
-          {% endif %}
-        </span>
-      </div>
     </div>
   </div>
 </div>

@@ -6,3 +6,10 @@ admin.site.register(Objetivo)
 admin.site.register(NivelAtividade)
 admin.site.register(Dieta)
 admin.site.register(ImprimirDieta)
+class DietaAdmin(admin.ModelAdmin):
+    exclude = ()
+class ImprimirDietaAdmin(admin.ModelAdmin):
+    exclude = ()
+class DietaAdmin(admin.ModelAdmin):
+    exclude = ()
+

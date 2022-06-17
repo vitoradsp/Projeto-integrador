@@ -341,7 +341,7 @@
   overflow-y: scroll;
 }
 .campo_de_busca_taco {
-  width: 97%;
+  width: 82%;
   text-align: center;
   height: 20px;
   padding: 4px;
@@ -351,7 +351,16 @@
   border: black 3px solid;
   border-radius: 10px;
 }
-
+.button_de_busca_taco{
+  background-color:rgba(128, 128, 128, 0.519);
+  height: 35px;
+  width:100px;
+  padding: 4px;
+  user-select: text;
+  color:white;
+  font-size: 16px;
+  border-radius: 10px;
+}
 .body_tabela_Taco {
   justify-items: center;
   width: 100%;
@@ -673,7 +682,7 @@
   }
   .container_tabela_taco{
     width: 596px;
-    height: 505px;
+    height: 405px;
     margin-top: 400px;
   }
  }

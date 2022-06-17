@@ -5,6 +5,31 @@ from django.contrib import auth, messages
 from django.contrib.auth import login, logout
 from .models import *
 import requests
+from rest_framework import  viewsets
+from nutri.serializers import DietaSerializer,ImprimirDietaSerializer,UserSerializer 
+from rest_framework import filters
+
+class DietaViewSet(viewsets.ModelViewSet):
+    queryset = Dieta.objects.all()
+    serializer_class = DietaSerializer
+    filter_backends = [filters.SearchFilter,filters.OrderingFilter]
+    search_fields  = ['usuario','genero']
+    ordering_fields = ['usuario','genero']
+
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    filter_backends = [filters.SearchFilter,filters.OrderingFilter]
+    search_fields  = ['id','username']
+    ordering_fields = ['id','username']
+
+class ImprimirDietaViewSet(viewsets.ModelViewSet):
+    queryset = ImprimirDieta.objects.all()
+    serializer_class = ImprimirDietaSerializer
+    filter_backends = [filters.SearchFilter,filters.OrderingFilter]
+    search_fields  = ['id','usuario']
+    ordering_fields = ['id','usuario']
+
 
 def index(request):
     return render(request,'paginas/home.html')
@@ -61,12 +86,19 @@ def introducao(request):
         return render(request, 'paginas/introdução_dieta.html')
 
 def create_diet(request):
-    taco = requests.get('http://127.0.0.1:7000/alimentoes/').json()
-    dados = Dieta.objects.get(usuario_id=request.user.id)
     if request.user.is_authenticated == False:
         return redirect('login_site')
     #UPDATE DIETA        
     else:
+        taco = requests.get('http://127.0.0.1:7000/alimentos/?ordering=name').json()
+        print(taco)
+        dados = Dieta.objects.get(usuario_id=request.user.id)
+        pesquisa = request.GET.get('txtbuscar')
+        print(pesquisa)
+        if pesquisa != None:
+            print('entrou aqui')
+            taco = requests.get(f'http://127.0.0.1:7000/alimentos/?search={pesquisa}').json()
+            print(taco)
         if request.method == 'POST':
             ref_11 = request.POST.get('alimento_11')
             quant_ref_11 = request.POST.get('quant_ref_11')
@@ -181,6 +213,10 @@ def diet_screen(request):
         if request.user.is_authenticated == False:
             messages.info(request, 'Faça o Login')
             return redirect('login_site')
+        VerificarTmb=Dieta.objects.filter(usuario_id=request.user.id)
+        if len(VerificarTmb) != 0 :
+            messages.info(request, 'Faça as refeições')
+            return redirect('criar_dieta')
         messages.info(request, 'Crie sua dieta')
         return redirect('tela_tmb')   
     return render(request, 'paginas/diet_screen.html', {'dieta':dieta}) 
