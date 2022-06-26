@@ -7,358 +7,363 @@
     alert('{{message}}')
   </script>
   {%endfor%} {%endif%}
-  <div class="container_dados_ref">
-    <div class="div_opçoes_de_ref">
-      <div class="container_dados_dieta_user">
-        <div class="dados_dieta_user_linha1">
-            <label for="">Gasto calorico médio: <strong>{{dados.gasto_dia}}</strong></label>
-            <label for="">Caloria dieta: <strong>{{dados.caloria_dieta}}</strong></label>
+  <div class="body_dados_refeicao">
+    <div class="container_dados_ref">
+      <div class="div_opçoes_de_ref">
+        <div class="container_dados_dieta_user">
+          <div class="dados_dieta_user_linha1">
+              <label for="">Gasto calorico médio: <strong>{{dados.gasto_dia}}</strong></label>
+              <label for="">Caloria dieta: <strong>{{dados.caloria_dieta}}</strong></label>
+          </div>
+          <div class="dados_dieta_user_linha2">
+            <!--é feito um calculo de proteina(4 calorias)*2,gordura(9 calorias)*0.5 e carbo(4 calorias)*restante de calorias -->
+            <label for=""
+                >Max de proteina: <strong id="valores_total_de_proteina">{{dados.proteina}}</strong
+              ><!--2*78 (no 78 é o peso) /calculo proteina=624 calorias--></label
+            >
+            <label for=""
+                >Max de Gordura: <strong id="valores_total_de_gordura">{{dados.gordura}}</strong
+              ><!--0.8*78(meu peso)/ calculo gordura=561 calorias--></label
+            >
+            <!--somo as calorias acima 624 + 561=1185-1900=715-->
+            <label for=""
+              >Max de Carboidratos:
+                <strong id="valores_total_de_carboidratos">{{dados.carboidratos}}</strong
+              ><!--4\715(restante de calorias)/ calculo carboidratos=178G de carb--></label
+            >
+            <label for=""
+                >Max de Kcal: <strong id="valor_total_das_kcal">{{dados.caloria_dieta}}</strong
+              ><!--soma das contas acima--></label
+            >
+          </div>
+          <div class="dados_dieta_user_linha3">
+            <label for=""
+              >Max de proteina por refeição:
+              <strong id="proteina_max_ref_user"></strong></label
+            >
+            <label for=""
+              >Max de Gordura por refeição:
+              <strong id="gordura_max_ref_user"></strong></label
+            >
+            <label for=""
+              >Max de Carboidratos por refeição:
+              <strong id="carboidratos_max_ref_user"></strong></label
+            >
+            <label for=""
+              >Max de Kcal por refeição:
+              <strong id="calorias_max_ref_user"></strong></label
+            >
+          </div>
+          <div class="dados_dieta_user_opcoes">
+            <div class="dados_dieta_user_quant_ref">
+              <span>
+                <label for="">Quantidade de refeiçôes</label>
+                <select
+                  name="quantidade_de_refeicoes"
+                  id="quantidade_de_refeicoes"
+                >
+                  <option value="2">2 refeiçôes</option>
+                  <option value="3">3 refeiçôes</option>
+                  <option  value="4">4 refeiçôes</option>
+                  <option value="5">5 refeiçôes</option>
+                  <option selected="4" value="6">6 refeiçôes</option>
+                </select>
+              </span>
+            </div>
+            <button
+              class="button_macros"
+              onclick="macros_dieta_user()"
+              type="button">
+              Macros
+            </button>
+            <label for="">
+              Valores relacionados a 2g de proteina
+            </label>
+          </div>
         </div>
-        <div class="dados_dieta_user_linha2">
-          <!--é feito um calculo de proteina(4 calorias)*2,gordura(9 calorias)*0.5 e carbo(4 calorias)*restante de calorias -->
-          <label for=""
-              >Max de proteina: <strong id="valores_total_de_proteina">{{dados.proteina}}</strong
-            ><!--2*78 (no 78 é o peso) /calculo proteina=624 calorias--></label
-          >
-          <label for=""
-              >Max de Gordura: <strong id="valores_total_de_gordura">{{dados.gordura}}</strong
-            ><!--0.8*78(meu peso)/ calculo gordura=561 calorias--></label
-          >
-          <!--somo as calorias acima 624 + 561=1185-1900=715-->
-          <label for=""
-            >Max de Carboidratos:
-              <strong id="valores_total_de_carboidratos">{{dados.carboidratos}}</strong
-            ><!--4\715(restante de calorias)/ calculo carboidratos=178G de carb--></label
-          >
-          <label for=""
-              >Max de Kcal: <strong id="valor_total_das_kcal">{{dados.caloria_dieta}}</strong
-            ><!--soma das contas acima--></label
-          >
-        </div>
-        <div class="dados_dieta_user_linha3">
-          <label for=""
-            >Max de proteina por refeição:
-            <strong id="proteina_max_ref_user"></strong></label
-          >
-          <label for=""
-            >Max de Gordura por refeição:
-            <strong id="gordura_max_ref_user"></strong></label
-          >
-          <label for=""
-            >Max de Carboidratos por refeição:
-            <strong id="carboidratos_max_ref_user"></strong></label
-          >
-          <label for=""
-            >Max de Kcal por refeição:
-            <strong id="calorias_max_ref_user"></strong></label
-          >
-        </div>
-        <div class="dados_dieta_user_opcoes">
-          <div class="dados_dieta_user_quant_ref">
+      </div>
+      <form action="{% url 'criar_dieta' %}" method="POST" class="container_refeiçoes_user">{% csrf_token %}
+        <div class="refeicoes_user_one">
+          <div class="alimentos_refeicoes_one">
+            <label id="alimentos_linha_1_ref_1" for="" name=""></label><input type="number" min="0" required='True' placeholder="quantidade do alimento" name="quant_ref_11" id="quanti_row1_ref_1">        
+            <input type="hidden" id="alimento_total_row1_ref_1" name="alimento_11" value="">
+            <input type="hidden" id="kcal_total_row1_ref_1" name="kcal_total_11" value="">
+            <input type="hidden" id="prot_total_row1_ref_1" name="prot_total_11" value="">
+            <input type="hidden" id="gord_total_row1_ref_1" name="gord_total_11" value="">
+            <input type="hidden" id="carb_total_row1_ref_1" name="carb_total_11" value="">
+            <label id="alimentos_linha_2_ref_1" for="" name=""></label><input type="number" min="0" required='True'  placeholder="quantidade do alimento" name="quant_ref_12" id="quanti_row2_ref_1" >
+            <input type="hidden" id="alimento_total_row2_ref_1" name="alimento_12" value="">
+            <input type="hidden" id="kcal_total_row2_ref_1" name="kcal_total_12" value="">
+            <input type="hidden" id="prot_total_row2_ref_1" name="prot_total_12" value="">
+            <input type="hidden" id="gord_total_row2_ref_1" name="gord_total_12" value="">
+            <input type="hidden" id="carb_total_row2_ref_1" name="carb_total_12" value="">
+            <label id="alimentos_linha_3_ref_1" for="" name=""></label><input type="number" min="0" required='True' placeholder="quantidade do alimento" name="quant_ref_13" id="quanti_row3_ref_1">
+            <input type="hidden" id="alimento_total_row3_ref_1" name="alimento_13" value="">
+            <input type="hidden" id="kcal_total_row3_ref_1" name="kcal_total_13" value="">
+            <input type="hidden" id="prot_total_row3_ref_1" name="prot_total_13" value="">
+            <input type="hidden" id="gord_total_row3_ref_1" name="gord_total_13" value="">
+            <input type="hidden" id="carb_total_row3_ref_1" name="carb_total_13" value="">
+          </div>
+          <div class="macros_refeicoes_one">
+            <label for=""
+              >Kcal total: <strong id="calorias_da_ref_one"></strong>
+            </label>
+            <label for=""
+              >Proteina total: <strong id="proteina_da_ref_one"></strong>
+            </label>
+            <label for=""
+              >Gordura total: <strong id="gordura_da_ref_one"></strong>
+            </label>
+            <label for=""
+              >Carboidratos total: <strong id="carboidratos_da_ref_one"></strong>
+            </label>
             <span>
-              <label for="">Quantidade de refeiçôes</label>
-              <select
-                name="quantidade_de_refeicoes"
-                id="quantidade_de_refeicoes"
-              >
-                <option value="2">2 refeiçôes</option>
-                <option value="3">3 refeiçôes</option>
-                <option  value="4">4 refeiçôes</option>
-                <option value="5">5 refeiçôes</option>
-                <option selected="4" value="6">6 refeiçôes</option>
-              </select>
+              <input type="button" id="button_macros_ref" onclick="macros_refeicao(1)" value="Macros refeição" >
+              <input type="button"  id="limpar_ref" onclick="limpar_refeicao(1)" name="" value="limpar">
             </span>
           </div>
-          <button
-            class="button_macros"
-            onclick="macros_dieta_user()"
-            type="button">
-            Macros
-          </button>
-          <label for="">
-            Valores relacionados a 2g de proteina
-          </label>
         </div>
-      </div>
-    </div>
-    <form action="{% url 'criar_dieta' %}" method="POST" class="container_refeiçoes_user">{% csrf_token %}
-      <div class="refeicoes_user_one">
-        <div class="alimentos_refeicoes_one">
-          <label id="alimentos_linha_1_ref_1" for="" name=""></label><input type="number" min="0" placeholder="quantidade do alimento" name="quant_ref_11" id="quanti_row1_ref_1">        
-          <input type="hidden" id="alimento_total_row1_ref_1" name="alimento_11" value="">
-          <input type="hidden" id="kcal_total_row1_ref_1" name="kcal_total_hidden" value="">
-          <input type="hidden" id="prot_total_row1_ref_1" name="prot_total_hidden" value="">
-          <input type="hidden" id="gord_total_row1_ref_1" name="gord_total_hidden" value="">
-          <input type="hidden" id="carb_total_row1_ref_1" name="carb_total_hidden" value="">
-          <label id="alimentos_linha_2_ref_1" for="" name=""></label><input type="number" min="0"  placeholder="quantidade do alimento" name="quant_ref_12" id="quanti_row2_ref_1" >
-          <input type="hidden" id="alimento_total_row2_ref_1" name="alimento_12" value="">
-          <input type="hidden" id="kcal_total_row2_ref_1" name="kcal_total_hidden" value="">
-          <input type="hidden" id="prot_total_row2_ref_1" name="prot_total_hidden" value="">
-          <input type="hidden" id="gord_total_row2_ref_1" name="gord_total_hidden" value="">
-          <input type="hidden" id="carb_total_row2_ref_1" name="carb_total_hidden" value="">
-          <label id="alimentos_linha_3_ref_1" for="" name=""></label><input type="number" min="0" placeholder="quantidade do alimento" name="quant_ref_13" id="quanti_row3_ref_1">
-          <input type="hidden" id="alimento_total_row3_ref_1" name="alimento_13" value="">
-          <input type="hidden" id="kcal_total_row3_ref_1" name="kcal_total_hidden" value="">
-          <input type="hidden" id="prot_total_row3_ref_1" name="prot_total_hidden" value="">
-          <input type="hidden" id="gord_total_row3_ref_1" name="gord_total_hidden" value="">
-          <input type="hidden" id="carb_total_row3_ref_1" name="carb_total_hidden" value="">
+        <div class="refeicoes_user_two">
+          <div class="alimentos_refeicoes_two">
+            <label id="alimentos_linha_1_ref_2" for="" name="21"></label><input type="number" min="0" required='True' placeholder="quantidade do alimento" name="quant_ref_21" id="quanti_row1_ref_2">
+            <input type="hidden" id="alimento_total_row1_ref_2" name="alimento_21" value="">
+            <input type="hidden" id="kcal_total_row1_ref_2" name="kcal_total_21" value="">
+            <input type="hidden" id="prot_total_row1_ref_2" name="prot_total_21" value="">
+            <input type="hidden" id="gord_total_row1_ref_2" name="gord_total_21" value="">
+            <input type="hidden" id="carb_total_row1_ref_2" name="carb_total_21" value="">
+            <label id="alimentos_linha_2_ref_2" for="" name="22"></label><input type="number" min="0" required='True' placeholder="quantidade do alimento" name="quant_ref_22" id="quanti_row2_ref_2">
+            <input type="hidden" id="alimento_total_row2_ref_2" name="alimento_22" value="">
+            <input type="hidden" id="kcal_total_row2_ref_2" name="kcal_total_22" value="">
+            <input type="hidden" id="prot_total_row2_ref_2" name="prot_total_22" value="">
+            <input type="hidden" id="gord_total_row2_ref_2" name="gord_total_22" value="">
+            <input type="hidden" id="carb_total_row2_ref_2" name="carb_total_22" value="">
+            <label id="alimentos_linha_3_ref_2" for="" name="23"></label><input type="number" min="0" required='True' placeholder="quantidade do alimento" name="quant_ref_23" id="quanti_row3_ref_2">
+            <input type="hidden" id="alimento_total_row3_ref_2" name="alimento_23" value="">
+            <input type="hidden" id="kcal_total_row3_ref_2" name="kcal_total_23" value="">
+            <input type="hidden" id="prot_total_row3_ref_2" name="prot_total_23" value="">
+            <input type="hidden" id="gord_total_row3_ref_2" name="gord_total_23" value="">
+            <input type="hidden" id="carb_total_row3_ref_2" name="carb_total_23" value="">
+          </div>
+          <div class="macros_refeicoes_two">
+            <label for=""
+              >Kcal total: <strong id="calorias_da_ref_two"></strong>
+            </label>
+            <label for=""
+              >Proteina total: <strong id="proteina_da_ref_two"></strong>
+            </label>
+            <label for=""
+              >Gordura total: <strong id="gordura_da_ref_two"></strong>
+            </label>
+            <label for=""
+              >Carboidratos total: <strong id="carboidratos_da_ref_two"></strong>
+            </label>
+            <span>
+              <input type="button"  id="button_macros_ref"  onclick="macros_refeicao(2)"  value="Macros refeição" >
+              <input type="button" id="limpar_ref" onclick="limpar_refeicao(2)" name="" value="limpar">
+            </span>
+          </div>
         </div>
-        <div class="macros_refeicoes_one">
-          <label for=""
-            >Kcal total: <strong id="calorias_da_ref_one"></strong>
-          </label>
-          <label for=""
-            >Proteina total: <strong id="proteina_da_ref_one"></strong>
-          </label>
-          <label for=""
-            >Gordura total: <strong id="gordura_da_ref_one"></strong>
-          </label>
-          <label for=""
-            >Carboidratos total: <strong id="carboidratos_da_ref_one"></strong>
-          </label>
-          <span>
-            <input type="button" id="button_macros_ref" onclick="macros_refeicao(1)" value="Macros refeição" >
-            <input type="button"  id="limpar_ref" onclick="limpar_refeicao(1)" name="" value="limpar">
-          </span>
+        <div class="refeicoes_user_tree">
+          <div class="alimentos_refeicoes_tree">
+            <label id="alimentos_linha_1_ref_3" for=""></label><input type="number" min="0"  placeholder="quantidade do alimento" name="quant_ref_31" id="quanti_row1_ref_3">
+            <input type="hidden" id="alimento_total_row1_ref_3" name="alimento_31" value="">
+            <input type="hidden" id="kcal_total_row1_ref_3" name="kcal_total_31" value="">
+            <input type="hidden" id="prot_total_row1_ref_3" name="prot_total_31" value="">
+            <input type="hidden" id="gord_total_row1_ref_3" name="gord_total_31" value="">
+            <input type="hidden" id="carb_total_row1_ref_3" name="carb_total_31" value="">
+            <label id="alimentos_linha_2_ref_3" for=""></label><input type="number" min="0"  placeholder="quantidade do alimento" name="quant_ref_32" id="quanti_row2_ref_3">
+            <input type="hidden" id="alimento_total_row2_ref_3" name="alimento_32" value="">
+            <input type="hidden" id="kcal_total_row2_ref_3" name="kcal_total_32" value="">
+            <input type="hidden" id="prot_total_row2_ref_3" name="prot_total_32" value="">
+            <input type="hidden" id="gord_total_row2_ref_3" name="gord_total_32" value="">
+            <input type="hidden" id="carb_total_row2_ref_3" name="carb_total_32" value="">
+            <label id="alimentos_linha_3_ref_3" for=""></label><input type="number" min="0"  placeholder="quantidade do alimento" name="quant_ref_33" id="quanti_row3_ref_3">
+            <input type="hidden" id="alimento_total_row3_ref_3" name="alimento_33" value="">
+            <input type="hidden" id="kcal_total_row3_ref_3" name="kcal_total_33" value="">
+            <input type="hidden" id="prot_total_row3_ref_3" name="prot_total_33" value="">
+            <input type="hidden" id="gord_total_row3_ref_3" name="gord_total_33" value="">
+            <input type="hidden" id="carb_total_row3_ref_3" name="carb_total_33" value="">
+          </div>
+          <div class="macros_refeicoes_tree">
+            <label for=""
+              >Kcal total: <strong id="calorias_da_ref_tree"></strong>
+            </label>
+            <label for=""
+              >Proteina total: <strong id="proteina_da_ref_tree"></strong>
+            </label>
+            <label for=""
+              >Gordura total: <strong id="gordura_da_ref_tree"></strong>
+            </label>
+            <label for=""
+              >Carboidratos total: <strong id="carboidratos_da_ref_tree"></strong>
+            </label>
+            <span>
+              <input type="button"  id="button_macros_ref"  onclick="macros_refeicao(3)"  value="Macros refeição" >
+              <input type="button" id="limpar_ref" onclick="limpar_refeicao(3)" name="" value="limpar">
+            </span>
+          </div>
         </div>
-      </div>
-      <div class="refeicoes_user_two">
-        <div class="alimentos_refeicoes_two">
-          <label id="alimentos_linha_1_ref_2" for="" name="21"></label><input type="number" min="0" placeholder="quantidade do alimento" name="quant_ref_21" id="quanti_row1_ref_2">
-          <input type="hidden" id="alimento_total_row1_ref_2" name="alimento_21" value="">
-          <input type="hidden" id="kcal_total_row1_ref_2" name="kcal_total_hidden" value="">
-          <input type="hidden" id="prot_total_row1_ref_2" name="prot_total_hidden" value="">
-          <input type="hidden" id="gord_total_row1_ref_2" name="gord_total_hidden" value="">
-          <input type="hidden" id="carb_total_row1_ref_2" name="carb_total_hidden" value="">
-          <label id="alimentos_linha_2_ref_2" for="" name="22"></label><input type="number" min="0" placeholder="quantidade do alimento" name="quant_ref_22" id="quanti_row2_ref_2">
-          <input type="hidden" id="alimento_total_row2_ref_2" name="alimento_22" value="">
-          <input type="hidden" id="kcal_total_row2_ref_2" name="kcal_total_hidden" value="">
-          <input type="hidden" id="prot_total_row2_ref_2" name="prot_total_hidden" value="">
-          <input type="hidden" id="gord_total_row2_ref_2" name="gord_total_hidden" value="">
-          <input type="hidden" id="carb_total_row2_ref_2" name="carb_total_hidden" value="">
-          <label id="alimentos_linha_3_ref_2" for="" name="23"></label><input type="number" min="0" placeholder="quantidade do alimento" name="quant_ref_23" id="quanti_row3_ref_2">
-          <input type="hidden" id="alimento_total_row3_ref_2" name="alimento_23" value="">
-          <input type="hidden" id="kcal_total_row3_ref_2" name="kcal_total_hidden" value="">
-          <input type="hidden" id="prot_total_row3_ref_2" name="prot_total_hidden" value="">
-          <input type="hidden" id="gord_total_row3_ref_2" name="gord_total_hidden" value="">
-          <input type="hidden" id="carb_total_row3_ref_2" name="carb_total_hidden" value="">
+        <div class="refeicoes_user_four">
+          <div class="alimentos_refeicoes_four">
+            <label id="alimentos_linha_1_ref_4" for=""></label><input type="number"  min="0" placeholder="quantidade do alimento" name="quant_ref_41" id="quanti_row1_ref_4">
+            <input type="hidden" id="alimento_total_row1_ref_4" name="alimento_41" value="">
+            <input type="hidden" id="kcal_total_row1_ref_4" name="kcal_total_41" value="">
+            <input type="hidden" id="prot_total_row1_ref_4" name="prot_total_41" value="">
+            <input type="hidden" id="gord_total_row1_ref_4" name="gord_total_41" value="">
+            <input type="hidden" id="carb_total_row1_ref_4" name="carb_total_41" value="">
+            <label id="alimentos_linha_2_ref_4" for=""></label><input type="number"  min="0" placeholder="quantidade do alimento" name="quant_ref_42" id="quanti_row2_ref_4">
+            <input type="hidden" id="alimento_total_row2_ref_4" name="alimento_42" value="">
+            <input type="hidden" id="kcal_total_row2_ref_4" name="kcal_total_42" value="">
+            <input type="hidden" id="prot_total_row2_ref_4" name="prot_total_42" value="">
+            <input type="hidden" id="gord_total_row2_ref_4" name="gord_total_42" value="">
+            <input type="hidden" id="carb_total_row2_ref_4" name="carb_total_42" value="">
+            <label id="alimentos_linha_3_ref_4" for=""></label><input type="number"  min="0" placeholder="quantidade do alimento" name="quant_ref_43" id="quanti_row3_ref_4">
+            <input type="hidden" id="alimento_total_row3_ref_4" name="alimento_43" value="">
+            <input type="hidden" id="kcal_total_row3_ref_4" name="kcal_total_43" value="">
+            <input type="hidden" id="prot_total_row3_ref_4" name="prot_total_43" value="">
+            <input type="hidden" id="gord_total_row3_ref_4" name="gord_total_43" value="">
+            <input type="hidden" id="carb_total_row3_ref_4" name="carb_total_43" value="">
+          </div>
+          <div class="macros_refeicoes_four">
+            <label for=""
+              >Kcal total: <strong id="calorias_da_ref_four"></strong>
+            </label>
+            <label for=""
+              >Proteina total: <strong id="proteina_da_ref_four"></strong>
+            </label>
+            <label for=""
+              >Gordura total: <strong id="gordura_da_ref_four"></strong>
+            </label>
+            <label for=""
+              >Carboidratos total: <strong id="carboidratos_da_ref_four"></strong>
+            </label>
+            <span>
+              <input type="button"  id="button_macros_ref"  onclick="macros_refeicao(4)"  value="Macros refeição" >
+              <input type="button" id="limpar_ref" onclick="limpar_refeicao(4)" name="" value="limpar">
+            </span>
+          </div>
         </div>
-        <div class="macros_refeicoes_two">
-          <label for=""
-            >Kcal total: <strong id="calorias_da_ref_two"></strong>
-          </label>
-          <label for=""
-            >Proteina total: <strong id="proteina_da_ref_two"></strong>
-          </label>
-          <label for=""
-            >Gordura total: <strong id="gordura_da_ref_two"></strong>
-          </label>
-          <label for=""
-            >Carboidratos total: <strong id="carboidratos_da_ref_two"></strong>
-          </label>
-          <span>
-            <input type="button"  id="button_macros_ref"  onclick="macros_refeicao(2)"  value="Macros refeição" >
-            <input type="button" id="limpar_ref" onclick="limpar_refeicao(2)" name="" value="limpar">
-          </span>
+        <div class="refeicoes_user_five">
+          <div class="alimentos_refeicoes_five">
+            <label id="alimentos_linha_1_ref_5" for=""></label><input type="number" placeholder="quantidade do alimento"  min="0" name="quant_ref_51" id="quanti_row1_ref_5">
+            <input type="hidden" id="alimento_total_row1_ref_5" name="alimento_51" value="">
+            <input type="hidden" id="kcal_total_row1_ref_5" name="kcal_total_51" value="">
+            <input type="hidden" id="prot_total_row1_ref_5" name="prot_total_51" value="">
+            <input type="hidden" id="gord_total_row1_ref_5" name="gord_total_51" value="">
+            <input type="hidden" id="carb_total_row1_ref_5" name="carb_total_51" value="">
+            <label id="alimentos_linha_2_ref_5" for=""></label><input type="number" placeholder="quantidade do alimento"  min="0" name="quant_ref_52" id="quanti_row2_ref_5">
+            <input type="hidden" id="alimento_total_row2_ref_5" name="alimento_52" value="">
+            <input type="hidden" id="kcal_total_row2_ref_5" name="kcal_total_52" value="">
+            <input type="hidden" id="prot_total_row2_ref_5" name="prot_total_52" value="">
+            <input type="hidden" id="gord_total_row2_ref_5" name="gord_total_52" value="">
+            <input type="hidden" id="carb_total_row2_ref_5" name="carb_total_52" value="">
+            <label id="alimentos_linha_3_ref_5" for=""></label><input type="number" placeholder="quantidade do alimento"  min="0" name="quant_ref_53" id="quanti_row3_ref_5">
+            <input type="hidden" id="alimento_total_row3_ref_5" name="alimento_53" value="">
+            <input type="hidden" id="kcal_total_row3_ref_5" name="kcal_total_53" value="">
+            <input type="hidden" id="prot_total_row3_ref_5" name="prot_total_53" value="">
+            <input type="hidden" id="gord_total_row3_ref_5" name="gord_total_53" value="">
+            <input type="hidden" id="carb_total_row3_ref_5" name="carb_total_53" value="">
+          </div>
+          <div class="macros_refeicoes_five">
+            <label for=""
+              >Kcal total: <strong id="calorias_da_ref_five"></strong>
+            </label>
+            <label for=""
+              >Proteina total: <strong id="proteina_da_ref_five"></strong>
+            </label>
+            <label for=""
+              >Gordura total: <strong id="gordura_da_ref_five"></strong>
+            </label>
+            <label for=""
+              >Carboidratos total: <strong id="carboidratos_da_ref_five"></strong>
+            </label>
+            <span>
+              <input type="button"  id="button_macros_ref"  onclick="macros_refeicao(5)"  value="Macros refeição" >
+              <input type="button" id="limpar_ref" onclick="limpar_refeicao(5)" name="" value="limpar">
+            </span>
+          </div>
         </div>
-      </div>
-      <div class="refeicoes_user_tree">
-        <div class="alimentos_refeicoes_tree">
-          <label id="alimentos_linha_1_ref_3" for=""></label><input type="number" min="0" value="0" placeholder="quantidade do alimento" name="quant_ref_31" id="quanti_row1_ref_3">
-          <input type="hidden" id="alimento_total_row1_ref_3" name="alimento_31" value="">
-          <input type="hidden" id="kcal_total_row1_ref_3" name="kcal_total_hidden" value="">
-          <input type="hidden" id="prot_total_row1_ref_3" name="prot_total_hidden" value="">
-          <input type="hidden" id="gord_total_row1_ref_3" name="gord_total_hidden" value="">
-          <input type="hidden" id="carb_total_row1_ref_3" name="carb_total_hidden" value="">
-          <label id="alimentos_linha_2_ref_3" for=""></label><input type="number" min="0" value="0" placeholder="quantidade do alimento" name="quant_ref_32" id="quanti_row2_ref_3">
-          <input type="hidden" id="alimento_total_row2_ref_3" name="alimento_32" value="">
-          <input type="hidden" id="kcal_total_row2_ref_3" name="kcal_total_hidden" value="">
-          <input type="hidden" id="prot_total_row2_ref_3" name="prot_total_hidden" value="">
-          <input type="hidden" id="gord_total_row2_ref_3" name="gord_total_hidden" value="">
-          <input type="hidden" id="carb_total_row2_ref_3" name="carb_total_hidden" value="">
-          <label id="alimentos_linha_3_ref_3" for=""></label><input type="number" min="0" value="0" placeholder="quantidade do alimento" name="quant_ref_33" id="quanti_row3_ref_3">
-          <input type="hidden" id="alimento_total_row3_ref_3" name="alimento_33" value="">
-          <input type="hidden" id="kcal_total_row3_ref_3" name="kcal_total_hidden" value="">
-          <input type="hidden" id="prot_total_row3_ref_3" name="prot_total_hidden" value="">
-          <input type="hidden" id="gord_total_row3_ref_3" name="gord_total_hidden" value="">
-          <input type="hidden" id="carb_total_row3_ref_3" name="carb_total_hidden" value="">
+        <div class="refeicoes_user_six">
+          <div class="alimentos_refeicoes_six">
+            <label id="alimentos_linha_1_ref_6" for=""></label><input type="number" placeholder="quantidade do alimento"  min="0" name="quant_ref_61" id="quanti_row1_ref_6">
+            <input type="hidden" id="alimento_total_row1_ref_6" name="alimento_61" value="">
+            <input type="hidden" id="kcal_total_row1_ref_6" name="kcal_total_61" value="">
+            <input type="hidden" id="prot_total_row1_ref_6" name="prot_total_61" value="">
+            <input type="hidden" id="gord_total_row1_ref_6" name="gord_total_61" value="">
+            <input type="hidden" id="carb_total_row1_ref_6" name="carb_total_61" value="">
+            <label id="alimentos_linha_2_ref_6" for=""></label><input type="number" placeholder="quantidade do alimento"  min="0" name="quant_ref_62" id="quanti_row2_ref_6">
+            <input type="hidden" id="alimento_total_row2_ref_6" name="alimento_62" value="">
+            <input type="hidden" id="kcal_total_row2_ref_6" name="kcal_total_62" value="">
+            <input type="hidden" id="prot_total_row2_ref_6" name="prot_total_62" value="">
+            <input type="hidden" id="gord_total_row2_ref_6" name="gord_total_62" value="">
+            <input type="hidden" id="carb_total_row2_ref_6" name="carb_total_62" value="">
+            <label id="alimentos_linha_3_ref_6" for=""></label><input type="number" placeholder="quantidade do alimento"  min="0" name="quant_ref_63" id="quanti_row3_ref_6">
+            <input type="hidden" id="alimento_total_row3_ref_6" name="alimento_63" value="">
+            <input type="hidden" id="kcal_total_row3_ref_6" name="kcal_total_63" value="">
+            <input type="hidden" id="prot_total_row3_ref_6" name="prot_total_63" value="">
+            <input type="hidden" id="gord_total_row3_ref_6" name="gord_total_63" value="">
+            <input type="hidden" id="carb_total_row3_ref_6" name="carb_total_63" value="">
+          </div>
+          <div class="macros_refeicoes_six">
+            <label for=""
+              >Kcal total: <strong id="calorias_da_ref_six"></strong>
+            </label>
+            <label for=""
+              >Proteina total: <strong id="proteina_da_ref_six"></strong>
+            </label>
+            <label for=""
+              >Gordura total: <strong id="gordura_da_ref_six"></strong>
+            </label>
+            <label for=""
+              >Carboidratos total: <strong id="carboidratos_da_ref_six"></strong>
+            </label>
+            <span>
+              <input type="button"  id="button_macros_ref"  onclick="macros_refeicao(6)"  value="Macros refeição" >
+              <input type="button" id="limpar_ref" onclick="limpar_refeicao(6)" name="" value="limpar">
+            </span>
+          </div>
         </div>
-        <div class="macros_refeicoes_tree">
-          <label for=""
-            >Kcal total: <strong id="calorias_da_ref_tree"></strong>
-          </label>
-          <label for=""
-            >Proteina total: <strong id="proteina_da_ref_tree"></strong>
-          </label>
-          <label for=""
-            >Gordura total: <strong id="gordura_da_ref_tree"></strong>
-          </label>
-          <label for=""
-            >Carboidratos total: <strong id="carboidratos_da_ref_tree"></strong>
-          </label>
-          <span>
-            <input type="button"  id="button_macros_ref"  onclick="macros_refeicao(3)"  value="Macros refeição" >
-            <input type="button" id="limpar_ref" onclick="limpar_refeicao(3)" name="" value="limpar">
-          </span>
-        </div>
-      </div>
-      <div class="refeicoes_user_four">
-        <div class="alimentos_refeicoes_four">
-          <label id="alimentos_linha_1_ref_4" for=""></label><input type="number" value="0" min="0" placeholder="quantidade do alimento" name="quant_ref_41" id="quanti_row1_ref_4">
-          <input type="hidden" id="alimento_total_row1_ref_4" name="alimento_41" value="">
-          <input type="hidden" id="kcal_total_row1_ref_4" name="kcal_total_hidden" value="">
-          <input type="hidden" id="prot_total_row1_ref_4" name="prot_total_hidden" value="">
-          <input type="hidden" id="gord_total_row1_ref_4" name="gord_total_hidden" value="">
-          <input type="hidden" id="carb_total_row1_ref_4" name="carb_total_hidden" value="">
-          <label id="alimentos_linha_2_ref_4" for=""></label><input type="number" value="0" min="0" placeholder="quantidade do alimento" name="quant_ref_42" id="quanti_row2_ref_4">
-          <input type="hidden" id="alimento_total_row2_ref_4" name="alimento_42" value="">
-          <input type="hidden" id="kcal_total_row2_ref_4" name="kcal_total_hidden" value="">
-          <input type="hidden" id="prot_total_row2_ref_4" name="prot_total_hidden" value="">
-          <input type="hidden" id="gord_total_row2_ref_4" name="gord_total_hidden" value="">
-          <input type="hidden" id="carb_total_row2_ref_4" name="carb_total_hidden" value="">
-          <label id="alimentos_linha_3_ref_4" for=""></label><input type="number" value="0" min="0" placeholder="quantidade do alimento" name="quant_ref_43" id="quanti_row3_ref_4">
-          <input type="hidden" id="alimento_total_row3_ref_4" name="alimento_43" value="">
-          <input type="hidden" id="kcal_total_row3_ref_4" name="kcal_total_hidden" value="">
-          <input type="hidden" id="prot_total_row3_ref_4" name="prot_total_hidden" value="">
-          <input type="hidden" id="gord_total_row3_ref_4" name="gord_total_hidden" value="">
-          <input type="hidden" id="carb_total_row3_ref_4" name="carb_total_hidden" value="">
-        </div>
-        <div class="macros_refeicoes_four">
-          <label for=""
-            >Kcal total: <strong id="calorias_da_ref_four"></strong>
-          </label>
-          <label for=""
-            >Proteina total: <strong id="proteina_da_ref_four"></strong>
-          </label>
-          <label for=""
-            >Gordura total: <strong id="gordura_da_ref_four"></strong>
-          </label>
-          <label for=""
-            >Carboidratos total: <strong id="carboidratos_da_ref_four"></strong>
-          </label>
-          <span>
-            <input type="button"  id="button_macros_ref"  onclick="macros_refeicao(4)"  value="Macros refeição" >
-            <input type="button" id="limpar_ref" onclick="limpar_refeicao(4)" name="" value="limpar">
-          </span>
-        </div>
-      </div>
-      <div class="refeicoes_user_five">
-        <div class="alimentos_refeicoes_five">
-          <label id="alimentos_linha_1_ref_5" for=""></label><input type="number" placeholder="quantidade do alimento" value="0" min="0" name="quant_ref_51" id="quanti_row1_ref_5">
-          <input type="hidden" id="alimento_total_row1_ref_5" name="alimento_51" value="">
-          <input type="hidden" id="kcal_total_row1_ref_5" name="kcal_total_hidden" value="">
-          <input type="hidden" id="prot_total_row1_ref_5" name="prot_total_hidden" value="">
-          <input type="hidden" id="gord_total_row1_ref_5" name="gord_total_hidden" value="">
-          <input type="hidden" id="carb_total_row1_ref_5" name="carb_total_hidden" value="">
-          <label id="alimentos_linha_2_ref_5" for=""></label><input type="number" placeholder="quantidade do alimento" value="0" min="0" name="quant_ref_52" id="quanti_row2_ref_5">
-          <input type="hidden" id="alimento_total_row2_ref_5" name="alimento_52" value="">
-          <input type="hidden" id="kcal_total_row2_ref_5" name="kcal_total_hidden" value="">
-          <input type="hidden" id="prot_total_row2_ref_5" name="prot_total_hidden" value="">
-          <input type="hidden" id="gord_total_row2_ref_5" name="gord_total_hidden" value="">
-          <input type="hidden" id="carb_total_row2_ref_5" name="carb_total_hidden" value="">
-          <label id="alimentos_linha_3_ref_5" for=""></label><input type="number" placeholder="quantidade do alimento" value="0" min="0" name="quant_ref_53" id="quanti_row3_ref_5">
-          <input type="hidden" id="alimento_total_row3_ref_5" name="alimento_53" value="">
-          <input type="hidden" id="kcal_total_row3_ref_5" name="kcal_total_hidden" value="">
-          <input type="hidden" id="prot_total_row3_ref_5" name="prot_total_hidden" value="">
-          <input type="hidden" id="gord_total_row3_ref_5" name="gord_total_hidden" value="">
-          <input type="hidden" id="carb_total_row3_ref_5" name="carb_total_hidden" value="">
-        </div>
-        <div class="macros_refeicoes_five">
-          <label for=""
-            >Kcal total: <strong id="calorias_da_ref_five"></strong>
-          </label>
-          <label for=""
-            >Proteina total: <strong id="proteina_da_ref_five"></strong>
-          </label>
-          <label for=""
-            >Gordura total: <strong id="gordura_da_ref_five"></strong>
-          </label>
-          <label for=""
-            >Carboidratos total: <strong id="carboidratos_da_ref_five"></strong>
-          </label>
-          <span>
-            <input type="button"  id="button_macros_ref"  onclick="macros_refeicao(5)"  value="Macros refeição" >
-            <input type="button" id="limpar_ref" onclick="limpar_refeicao(5)" name="" value="limpar">
-          </span>
-        </div>
-      </div>
-      <div class="refeicoes_user_six">
-        <div class="alimentos_refeicoes_six">
-          <label id="alimentos_linha_1_ref_6" for=""></label><input type="number" placeholder="quantidade do alimento" value="0" min="0" name="quant_ref_61" id="quanti_row1_ref_6">
-          <input type="hidden" id="alimento_total_row1_ref_6" name="alimento_61" value="">
-          <input type="hidden" id="kcal_total_row1_ref_6" name="kcal_total_hidden" value="">
-          <input type="hidden" id="prot_total_row1_ref_6" name="prot_total_hidden" value="">
-          <input type="hidden" id="gord_total_row1_ref_6" name="gord_total_hidden" value="">
-          <input type="hidden" id="carb_total_row1_ref_6" name="carb_total_hidden" value="">
-          <label id="alimentos_linha_2_ref_6" for=""></label><input type="number" placeholder="quantidade do alimento" value="0" min="0" name="quant_ref_62" id="quanti_row2_ref_6">
-          <input type="hidden" id="alimento_total_row2_ref_6" name="alimento_62" value="">
-          <input type="hidden" id="kcal_total_row2_ref_6" name="kcal_total_hidden" value="">
-          <input type="hidden" id="prot_total_row2_ref_6" name="prot_total_hidden" value="">
-          <input type="hidden" id="gord_total_row2_ref_6" name="gord_total_hidden" value="">
-          <input type="hidden" id="carb_total_row2_ref_6" name="carb_total_hidden" value="">
-          <label id="alimentos_linha_3_ref_6" for=""></label><input type="number" placeholder="quantidade do alimento" value="0" min="0" name="quant_ref_63" id="quanti_row3_ref_6">
-          <input type="hidden" id="alimento_total_row3_ref_6" name="alimento_63" value="">
-          <input type="hidden" id="kcal_total_row3_ref_6" name="kcal_total_hidden" value="">
-          <input type="hidden" id="prot_total_row3_ref_6" name="prot_total_hidden" value="">
-          <input type="hidden" id="gord_total_row3_ref_6" name="gord_total_hidden" value="">
-          <input type="hidden" id="carb_total_row3_ref_6" name="carb_total_hidden" value="">
-        </div>
-        <div class="macros_refeicoes_six">
-          <label for=""
-            >Kcal total: <strong id="calorias_da_ref_six"></strong>
-          </label>
-          <label for=""
-            >Proteina total: <strong id="proteina_da_ref_six"></strong>
-          </label>
-          <label for=""
-            >Gordura total: <strong id="gordura_da_ref_six"></strong>
-          </label>
-          <label for=""
-            >Carboidratos total: <strong id="carboidratos_da_ref_six"></strong>
-          </label>
-          <span>
-            <input type="button"  id="button_macros_ref"  onclick="macros_refeicao(6)"  value="Macros refeição" >
-            <input type="button" id="limpar_ref" onclick="limpar_refeicao(6)" name="" value="limpar">
-          </span>
-        </div>
-      </div>
-      <button type="submit">Salvar dieta</button>
-    </form>
-  </div>
-  <div class="tabela_taco">
-    <div class="container_tabela_taco">
-      <label style="color: white; text-decoration:underline red;" for=""
-        >Valores referente a 100G</label
-      >
-      <form  style='width:100%;' action="" method="get">
-        <span style='width:100%;'>
-          <input type="text" name="txtbuscar" id="" class="campo_de_busca_taco">
-          <button class="button_de_busca_taco" type="submit">Enviar</button>
-        </span>
+        <button type="submit">Salvar dieta</button>
       </form>
-      <table class="body_tabela_Taco">
-        <thead class="titulos_tabela">
-          <tr>
-            <th class="th_alimento">alimento</th>
-            <th class="th_kcal">Kcal</th>
-            <th class="th_prot">Proteina</th>
-            <th class="th_gordura">Gordura</th>
-            <th class="th_carb">Carboidratos</th>
-          </tr>
-        </thead>
-        <tbody id="alimentos_tabela_Taco">
-          {%for info in taco%}
-          <tr class="row_alimentos" onclick="adicionar_alimento(this)">
-            <td id="td_alimento_1" class="td_alimento_1">{{info.name}}</td>
-            <td class="td_kcal">{{info.kcal}}kcal</td>
-            <td class="td_prot">{{info.protein}}g</td>
-            <td class="td_gordura">{{info.fat}}g</td>
-            <td class="td_carb">{{info.carbo}}g</td>
-          </tr>
-          {%endfor%}
-        </tbody>
-      </table>
+    </div>
+  </div>
+  <div class="body_tabela_taco">
+    <div class="tabela_taco">
+      <div class="container_tabela_taco">
+        <label style="color: white; text-decoration:underline red;" for=""
+          >Valores referente a 100G</label
+        >
+        <form  style='width:100%;' action="" method="get">
+          <span class="bodyButtonBuscar" style='width:100%;'>
+            <input type="text" name="txtbuscar" id="" class="campo_de_busca_taco">
+            <button class="button_de_busca_taco" type="submit">Enviar</button>
+          </span>
+        </form>
+        <table class="body_tabela_Taco">
+          <thead class="titulos_tabela">
+            <tr>
+              <th class="th_alimento">alimento</th>
+              <th class="th_kcal">Kcal</th>
+              <th class="th_prot">Proteina</th>
+              <th class="th_gordura">Gordura</th>
+              <th class="th_carb">Carboidratos</th>
+            </tr>
+          </thead>
+          <tbody id="alimentos_tabela_Taco">
+            {%for info in taco%}
+            <tr class="row_alimentos" onclick="adicionar_alimento(this)">
+              <td id="td_alimento_1" class="td_alimento_1">{{info.name}}</td>
+              <td class="td_kcal">{{info.kcal}}kcal</td>
+              <td class="td_prot">{{info.protein}}g</td>
+              <td class="td_gordura">{{info.fat}}g</td>
+              <td class="td_carb">{{info.carbo}}g</td>
+            </tr>
+            {%endfor%}
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>
+  
 {%endblock%}

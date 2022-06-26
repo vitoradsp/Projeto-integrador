@@ -9,25 +9,33 @@
                 <tr >
                     <th>Alimento</th>
                     <th>Quantidade (g)</th>
+                    <th>Macros</th>
                 </tr>
             </thead>
             <tbody>
                 <br>
                 <br>
                 {% for valor in dieta %}
+                <thead>
+                    <tr class="nun_ref">
+                        <th class="nun_ref">1º Refeição</th>
+                    </tr>
+                </thead>
                 <tr>
                     <td class="nome">{{ valor.ref_11 }}</td>
                     <td class="quant">{{ valor.quant_11 }} g</td>
+                    <td class='Macros'>Prot: <strong>{{ valor.prot_11 }}</strong> Carb: <strong>{{ valor.carb_11 }}</strong> Gord: <strong>{{ valor.gord_11 }}</strong>  Kcal: <strong>{{ valor.kcal_11 }}</strong> </td>
                 </tr>
                 <tr>
                     <td class="nome">{{ valor.ref_12 }}</td>
                     <td class="quant">{{ valor.quant_12 }} g</td>
+                    <td class='Macros'>Prot: <strong>{{ valor.prot_12 }}</strong> Carb:<strong>{{ valor.carb_12 }}</strong> Gord: <strong>{{ valor.gord_12 }}</strong>  Kcal: <strong>{{ valor.kcal_12 }}</strong> </td>
                 </tr>
                 <tr>
                     <td class="nome">{{ valor.ref_13 }}</td>
                     <td class="quant">{{ valor.quant_13 }} g</td>
+                    <td class='Macros'>Prot: <strong>{{ valor.prot_13 }}</strong> Carb:<strong>{{ valor.carb_13 }}</strong> Gord: <strong>{{ valor.gord_13 }}</strong>  Kcal: <strong>{{ valor.kcal_13 }}</strong> </td>
                 </tr>
-
                 <thead>
                     <tr class="nun_ref">
                         <th class="nun_ref">2º Refeição</th>
@@ -37,14 +45,17 @@
                 <tr>
                     <td class="nome">{{ valor.ref_21 }}</td>
                     <td class="quant">{{ valor.quant_21 }} g</td>
+                    <td class='Macros'>Prot: <strong>{{ valor.prot_21 }}</strong> Carb:<strong>{{ valor.carb_21 }}</strong> Gord: <strong>{{ valor.gord_21 }}</strong>  Kcal: <strong>{{ valor.kcal_21 }}</strong> </td>
                 </tr>
                 <tr>
                     <td class="nome">{{ valor.ref_22 }}</td>
                     <td class="quant">{{ valor.quant_22 }} g</td>
+                    <td class='Macros'>Prot: <strong>{{ valor.prot_22 }}</strong> Carb:<strong>{{ valor.carb_22 }}</strong> Gord: <strong>{{ valor.gord_22 }}</strong>  Kcal: <strong>{{ valor.kcal_22 }}</strong> </td>
                 </tr>
                 <tr>
                     <td class="nome">{{ valor.ref_23 }}</td>
                     <td class="quant">{{ valor.quant_23 }} g</td>
+                    <td class='Macros'>Prot: <strong>{{ valor.prot_23 }}</strong> Carb:<strong>{{ valor.carb_23 }}</strong> Gord: <strong>{{ valor.gord_23 }}</strong>  Kcal: <strong>{{ valor.kcal_23 }}</strong> </td>
                 </tr>
 
                 {% if valor.ref_31 != '' %}
@@ -57,14 +68,17 @@
                 <tr>
                     <td class="nome">{{ valor.ref_31 }}</td>
                     <td class="quant">{{ valor.quant_31 }} g</td>
+                    <td class='Macros'>Prot: <strong>{{ valor.prot_31 }}</strong> Carb:<strong>{{ valor.carb_31 }}</strong> Gord: <strong>{{ valor.gord_31 }}</strong>  Kcal: <strong>{{ valor.kcal_31 }}</strong> </td>
                 </tr>
                 <tr>
                     <td class="nome">{{ valor.ref_32 }}</td>
                     <td class="quant">{{ valor.quant_32 }} g</td>
+                    <td class='Macros'>Prot: <strong>{{ valor.prot_32 }}</strong> Carb:<strong>{{ valor.carb_32 }}</strong> Gord: <strong>{{ valor.gord_32 }}</strong>  Kcal: <strong>{{ valor.kcal_32 }}</strong> </td>
                 </tr>
                 <tr>
                     <td class="nome">{{ valor.ref_33 }}</td>
                     <td class="quant">{{ valor.quant_33 }} g</td>
+                    <td class='Macros'>Prot: <strong>{{ valor.prot_33 }}</strong> Carb:<strong>{{ valor.carb_33 }}</strong> Gord: <strong>{{ valor.gord_33 }}</strong>  Kcal: <strong>{{ valor.kcal_33 }}</strong> </td>
                 </tr>
                 {% endif %}
                 
@@ -78,14 +92,17 @@
                 <tr>
                     <td class="nome">{{ valor.ref_41 }}</td>
                     <td class="quant">{{ valor.quant_41 }} g</td>
+                    <td class='Macros'>Prot: <strong>{{ valor.prot_41 }}</strong> Carb:<strong>{{ valor.carb_41 }}</strong> Gord: <strong>{{ valor.gord_41 }}</strong>  Kcal: <strong>{{ valor.kcal_41 }}</strong> </td>
                 </tr>
                 <tr>
                     <td class="nome">{{ valor.ref_42 }}</td>
                     <td class="quant">{{ valor.quant_42 }} g</td>
+                    <td class='Macros'>Prot: <strong>{{ valor.prot_42 }}</strong> Carb:<strong>{{ valor.carb_42 }}</strong> Gord: <strong>{{ valor.gord_42 }}</strong>  Kcal: <strong>{{ valor.kcal_42 }}</strong> </td>
                 </tr>
                 <tr>
                     <td class="nome">{{ valor.ref_43 }}</td>
                     <td class="quant">{{ valor.quant_43 }} g</td>
+                    <td class='Macros'>Prot: <strong>{{ valor.prot_43 }}</strong> Carb:<strong>{{ valor.carb_43 }}</strong> Gord: <strong>{{ valor.gord_43 }}</strong>  Kcal: <strong>{{ valor.kcal_43 }}</strong> </td>
                 </tr>
                 {% endif %}
 
@@ -99,14 +116,17 @@
                 <tr>
                     <td class="nome">{{ valor.ref_51 }}</td>
                     <td class="quant">{{ valor.quant_51 }} g</td>
+                    <td class='Macros'>Prot: <strong>{{ valor.prot_51 }}</strong> Carb:<strong>{{ valor.carb_51 }}</strong> Gord: <strong>{{ valor.gord_51 }}</strong>  Kcal: <strong>{{ valor.kcal_51 }}</strong> </td>
                 </tr>
                 <tr>
                     <td class="nome">{{ valor.ref_52 }}</td>
                     <td class="quant">{{ valor.quant_52 }} g</td>
+                    <td class='Macros'>Prot: <strong>{{ valor.prot_52 }}</strong> Carb:<strong>{{ valor.carb_52 }}</strong> Gord: <strong>{{ valor.gord_52 }}</strong>  Kcal: <strong>{{ valor.kcal_52 }}</strong> </td>
                 </tr>
                 <tr>
                     <td class="nome">{{ valor.ref_53 }}</td>
                     <td class="quant">{{ valor.quant_53 }} g</td>
+                    <td class='Macros'>Prot: <strong>{{ valor.prot_53 }}</strong> Carb:<strong>{{ valor.carb_53 }}</strong> Gord: <strong>{{ valor.gord_53 }}</strong>  Kcal: <strong>{{ valor.kcal_53 }}</strong> </td>
                 </tr>
                 {% endif %}
 
@@ -120,17 +140,31 @@
                 <tr>
                     <td class="nome">{{ valor.ref_61 }}</td>
                     <td class="quant">{{ valor.quant_61 }} g</td>
+                    <td class='Macros'>Prot: <strong>{{ valor.prot_61 }}</strong> Carb:<strong>{{ valor.carb_61 }}</strong> Gord: <strong>{{ valor.gord_61 }}</strong>  Kcal: <strong>{{ valor.kcal_61 }}</strong> </td>
                 </tr>
                 <tr>
                     <td class="nome">{{ valor.ref_62 }}</td>
                     <td class="quant">{{ valor.quant_62 }} g</td>
+                    <td class='Macros'>Prot: <strong>{{ valor.prot_62 }}</strong> Carb:<strong>{{ valor.carb_62 }}</strong> Gord: <strong>{{ valor.gord_62 }}</strong>  Kcal: <strong>{{ valor.kcal_62 }}</strong> </td>
                 </tr>
                 <tr>
                     <td class="nome">{{ valor.ref_63 }}</td>
                     <td class="quant">{{ valor.quant_63 }} g</td>
+                    <td class='Macros'>Prot: <strong>{{ valor.prot_63 }}</strong> Carb:<strong>{{ valor.carb_63 }}</strong> Gord: <strong>{{ valor.gord_63 }}</strong>  Kcal: <strong>{{ valor.kcal_63 }}</strong> </td>
                 </tr>
                 {% endif %}
                 {% endfor %}
+                <thead>
+                    <tr class="nun_ref">
+                        <th class="nun_ref">Macros</th>
+                    </tr>
+                </thead>
+                <tr style="display: flex;flex-direction:row;">
+                    <td style="color: white;" for="">Caloria: {{total_caloria}}</td>
+                    <td>Proteina: {{total_proteina}}</td>
+                    <td>Carboidratos: {{total_carboidratos}}</td>
+                    <td>Gordura: {{total_gordura}}</td>
+                </tr>
             </tbody>
         </table>
         <br>

@@ -2,15 +2,19 @@
 /*refeiçoes e macros do User*/
 .body_create_diet {
   width: 98vw;
-  height: 1800px;
   display: flex;
   justify-content: space-around;
   justify-items: center;
+  padding: 1rem;
   padding-bottom: 50px;
 }
-.container_dados_ref {
+.body_dados_refeicao{
   width: 800px;
   height: 1600px;
+}
+.container_dados_ref {
+  width: 100%;
+  height: 100%;
   display: grid;
   grid-area: dados;
   grid-template-areas: "opçoes" "refeicoes";
@@ -44,11 +48,11 @@
   align-items: center;
   justify-content: center;
   text-align: justify;
-  gap: 20px;
-  padding: 5px;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
 }
 .dados_dieta_user_linha1 {
-  width: 120px;
+  width: 20%;
   height: 85%;
   background-color: #ffffff;
   display: flex;
@@ -68,7 +72,7 @@
 }
 .dados_dieta_user_linha2 {
   background-color: #ffffff;
-  width: 130px;
+  width: 25%;
   height: 85%;
   display: flex;
   text-align: start;
@@ -89,7 +93,7 @@
 }
 .dados_dieta_user_linha3 {
   background-color: #ffffff;
-  width: 130px;
+  width: 35%;
   height: 85%;
   display: flex;
   text-align: start;
@@ -107,8 +111,8 @@
   background-color: #0e274d;
 }
 .dados_dieta_user_opcoes {
-  width: 150px;
-  height: 75%;
+  width: 25%;
+  height: 80%;
   background-color: #ffffff;
   padding: 15px;
   display: flex;
@@ -321,15 +325,19 @@
 
 
 /*tabela taco*/
-.tabela_taco {
+.body_tabela_taco{
   width: 800px;
   height: 1800px;
+}
+.tabela_taco {
+  width: 100%;
+  height: 100%;
   padding: 10px;
 }
 .container_tabela_taco {
   display: flex;
   flex-direction: column;
-  width: 700px;
+  width: 90%;
   height: 1538px;
   justify-items: center;
   background-color: rgba(1, 1, 1, 0.8);
@@ -341,7 +349,7 @@
   overflow-y: scroll;
 }
 .campo_de_busca_taco {
-  width: 82%;
+  width: 70%;
   text-align: center;
   height: 20px;
   padding: 4px;
@@ -354,7 +362,7 @@
 .button_de_busca_taco{
   background-color:rgba(128, 128, 128, 0.519);
   height: 35px;
-  width:100px;
+  width:25% ;
   padding: 4px;
   user-select: text;
   color:white;
@@ -428,23 +436,37 @@
   background-color: darkorange;
   color: white;
 }
-@media only screen and (max-width: 1650px) {
-  .container_dados_ref {
-    width: 600px;
+@media  (max-width: 3200px){
+  .body_tabela_taco{
+    width: 1000px;
+    height: 1800px;
+  }
+  .body_dados_refeicao{
+    width: 1000px;
     height: 1600px;
-    display: grid;
-    grid-area: dados;
-    grid-template-areas: "opçoes" "refeicoes";
-    grid-template-columns: 1fr;
-    grid-template-rows: 350px 1fr;
-    justify-items: center;
-    align-items: center;
-    background: rgba(1, 1, 1, 0.8);
-    margin-top: 40px;
-    border-radius: 15px;
+  }
+}
+@media  (max-width: 2350px){
+  .body_tabela_taco{
+    width: 900px;
+    height: 1800px;
+  }
+  .body_dados_refeicao{
+    width: 900px;
+    height: 1600px;
+  }
+}
+@media only screen and (max-width: 1920px) {
+  .body_tabela_taco{
+    width: 700px;
+    height: 1800px;
+  }
+  .body_dados_refeicao{
+    width: 700px;
+    height: 1600px;
   }
   .div_opçoes_de_ref {
-    width: 90%;
+    width: 95%;
     height: 80%;
     grid: opçoes;
     background-color: #ffffff;
@@ -454,8 +476,8 @@
     justify-content: center;
   }
   .container_dados_dieta_user {
-    width: 95%;
-    height: 90%;
+    width: 92%;
+    height: 85%;
     background-color: #c4c4c4;
     border-radius: 15px;
     box-shadow: black 5px 3px 8px 3px;
@@ -468,7 +490,7 @@
     gap: 20px;
   }
   .dados_dieta_user_linha1 {
-    width: 100px;
+    width: 20%;
     height: 85%;
     background-color: #ffffff;
     display: flex;
@@ -488,7 +510,7 @@
   }
   .dados_dieta_user_linha2 {
     background-color: #ffffff;
-    width: 100px;
+    width: 25%;
     height: 85%;
     display: flex;
     text-align: start;
@@ -507,7 +529,7 @@
   }
   .dados_dieta_user_linha3 {
     background-color: #ffffff;
-    width: 100px;
+    width: 35%;
     height: 85%;
     display: flex;
     text-align: start;
@@ -625,12 +647,16 @@
   }
 }
 @media (max-width: 1820px) {
-  .container_dados_ref {
-    width: 600px;
+  .body_tabela_taco{
+    width: 650px;
+    height: 1800px;
+  }
+  .body_dados_refeicao{
+    width: 650px;
     height: 1600px;
   }
   .div_opçoes_de_ref {
-    width: 75%;
+    width: 95%;
     height: 80%;
     grid: opçoes;
     background-color: #ffffff;
@@ -646,8 +672,8 @@
     padding: 5px;
   }
   .dados_dieta_user_linha1 {
-    width: 120px;
-    height: 95%;
+    width: 20%;
+    height: 90%;
     background-color: #ffffff;
     display: flex;
     text-align: start;
@@ -658,13 +684,22 @@
     padding: 5px;
   }
   .container_refeiçoes_user{
-    width: 80%;
+    width: 90%;
   }
 }
 @media(max-width: 1500px) {
+  .body_tabela_taco{
+    width: 600px;
+    height: 1800px;
+  }
+  .body_dados_refeicao{
+    width: 600px;
+    height: 1600px;
+  }
+  
   .dados_dieta_user_opcoes{
-    width: 180px;
-    height: 75%;
+    width: 25%;
+    height: 80%;
     background-color: #ffffff;
     padding: 15px;
     display: flex;
@@ -674,27 +709,70 @@
     font-weight: 600;
     gap: 7px;
   }
-}
-@media(max-width: 1000px) {
-  .body_create_diet{
-    flex-direction: column-reverse;
-    margin-left: 50px;
+  .campo_de_busca_taco{
+    width: 100%;
   }
-  .container_tabela_taco{
-    width: 596px;
-    height: 405px;
-    margin-top: 400px;
+  .bodyButtonBuscar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100px;
+  }
+}
+@media(max-width: 1275px) {
+  .container_tabela_taco {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-items: center;
+    background-color: rgba(1, 1, 1, 0.8);
+    margin-top: 30px;
+    padding: 30px;
+    text-transform: capitalize;
+    gap: 10px;
+    border-radius: 15px;
+    overflow-y: scroll;
+  }
+  .body_create_diet{
+    width: 95%;
+    height: 100%;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .bodyButtonBuscar{
+    position: relative;
+  }
+  .body_tabela_taco{
+    width: 900px;
+    height: 500px;
+  }
+  .body_dados_refeicao{
+    margin-top: 5rem;
+    width: 950px;
+    height: 100%;
   }
  }
- @media( max-width: 600px){
-  .container_tabela_taco{
-    width: 500px;
-  }
+ @media( max-width: 800px){
   .body_create_diet{
-    margin-left: -18px
+    width: 95%;
+    height: 100%;
+    flex-direction: row-reverse;
+    justify-content: space-around;
   }
-  .container_dados_ref{
+  .bodyButtonBuscar{
+    position: relative;
+  }
+  .body_tabela_taco{
+    width: 300px;
+    height: 200px;
+    overflow-y: scroll;
+    background-color: #0e274d;
+  }
+  .body_dados_refeicao{
     width: 500px;
-    height: 1000px;
+    height: 1600px;
   }
  }
