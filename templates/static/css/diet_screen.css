@@ -19,8 +19,15 @@ table{
     box-shadow: #000000 10px 10px 10px 10px;
     justify-items: center;
     margin: 0 auto;
+    padding: 2rem;
 }
-
+.value_diet{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .value_diet > table{
     display: flex;
     flex-direction: column ;
@@ -29,18 +36,21 @@ table{
 
 }
 .button_print{
-    margin-top: 10px;
-    font-size: 20px;
+    width: 20%;
+    margin-top: 1rem;
+    font-size: 1rem;
     text-transform: capitalize;
     padding: 10px;
     border-radius: 5px;
     appearance: none;
     color: black;
     background-color: gray;
-    margin-left: 230px;
+    cursor: grab;
+    color: white;
 }
 .button_print:hover{
     color: greenyellow;
+    cursor: grab;
 }
 
 .value_diet > table > thead > tr > th{
@@ -120,3 +130,8 @@ table{
 
 
 
+@media print{
+    .button_print{
+        display: none;
+    }
+}
