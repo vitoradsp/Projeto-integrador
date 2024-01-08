@@ -21,7 +21,7 @@
     .\venv\Scripts\activate
 
 7º Instalar o riqueriments.txt
-    pip install -r riqueriments.txt
+    pip install -r requirements.txt
 
 8º Rodar o Projeto Intregador
     python manage.py runserver
