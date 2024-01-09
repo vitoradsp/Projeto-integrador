@@ -10,8 +10,8 @@
     python -m venv venv
     .\venv\Scripts\activate
 
-4º Instalar o riqueriments.txt
-    pip install -r riqueriments.txt
+4º Instalar o requirements.txt
+    pip install -r requirements.txt
 
 5º Rodar o API-Taco na porta 7000
     python manage.py runserver 7000
